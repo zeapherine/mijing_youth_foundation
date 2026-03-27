@@ -39,22 +39,22 @@ const StorySection = ({ label, title, description, quote, image, reverse }: Stor
           className="space-y-12"
         >
           <div className="space-y-4">
-            <span className="text-secondary font-bold tracking-[0.2em] uppercase text-xs">{label}</span>
-            <h2 className="text-5xl md:text-7xl font-heading font-bold tracking-tighter leading-none">{title}</h2>
+            <span className="text-secondary font-bold tracking-[0.2em] uppercase text-body-xs">{label}</span>
+            <h2 className="font-heading font-black tracking-tight leading-[0.9] uppercase" style={{ fontSize: 'var(--display-md)' }}>{title}</h2>
           </div>
           
           <div className="space-y-8">
-            <p className="text-xl text-foreground/60 leading-relaxed max-w-lg">
+            <p className="text-body-lg text-foreground/50 leading-relaxed max-w-lg font-medium">
               {description}
             </p>
             
             <div className="p-8 border-l-[4px] border-primary/20 bg-primary/5 rounded-r-lg">
-              <p className="text-lg md:text-xl font-medium italic text-foreground/80">
+              <p className="font-heading italic text-foreground/80 leading-snug" style={{ fontSize: 'var(--headline-md)' }}>
                 &ldquo;{quote}&rdquo;
               </p>
             </div>
             
-            <button className="flex items-center gap-4 group text-lg font-bold">
+            <button className="flex items-center gap-4 group text-body-lg font-black uppercase tracking-wider">
               <span className="border-b-2 border-primary pb-1 group-hover:text-primary transition-colors">Read Journey</span>
               <div className="w-10 h-10 rounded-full glass flex items-center justify-center group-hover:bg-primary group-hover:text-white transition-all transform group-hover:rotate-45">
                  <ArrowUpRight className="w-5 h-5" />

@@ -39,7 +39,8 @@ export default function About() {
           </motion.div>
 
           <motion.h1 
-            className="text-7xl md:text-8xl lg:text-[7.5rem] font-heading font-black tracking-[calc(-0.04em)] leading-[0.85] text-foreground max-w-5xl"
+            className="font-heading font-black tracking-tight leading-[0.85] text-foreground max-w-5xl"
+            style={{ fontSize: 'var(--display-lg)' }}
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2, duration: 0.8, ease: "circOut" as const }}
@@ -49,7 +50,7 @@ export default function About() {
           </motion.h1>
           
           <motion.p 
-            className="text-xl md:text-2xl text-foreground/50 max-w-2xl font-medium leading-relaxed italic"
+            className="text-body-lg md:text-body-lg text-foreground/50 max-w-2xl font-medium leading-relaxed italic"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.4, duration: 1 }}
@@ -74,8 +75,8 @@ export default function About() {
                    <Target className="h-8 w-8 text-secondary" />
                 </div>
                 <div className="space-y-6">
-                   <h2 className="text-5xl font-heading font-black uppercase tracking-tight">Our Mission</h2>
-                   <p className="text-xl text-foreground/50 font-medium leading-[1.6]">
+                   <h2 className="font-heading font-black uppercase tracking-tight" style={{ fontSize: 'var(--display-md)' }}>Our Mission</h2>
+                   <p className="text-body-lg text-foreground/50 font-medium leading-[1.6]">
                       To empower young minds through quality education, vocational training, and holistic 
                       development programs. We strive to create opportunities that bridge the gap 
                       between potential and excellence.
@@ -93,8 +94,8 @@ export default function About() {
                    <Sparkles className="h-8 w-8 text-white" />
                 </div>
                 <div className="space-y-6">
-                   <h2 className="text-5xl font-heading font-black text-white uppercase tracking-tight">Our Vision</h2>
-                   <p className="text-xl text-white/50 font-medium leading-[1.6]">
+                   <h2 className="font-heading font-black text-white uppercase tracking-tight" style={{ fontSize: 'var(--display-md)' }}>Our Vision</h2>
+                   <p className="text-body-lg text-white/50 font-medium leading-[1.6]">
                       A world where every young individual has the resources, skills, and confidence 
                       to shape their own future and contribute meaningfully to society and 
                       environmental sustainability.
@@ -116,8 +117,8 @@ export default function About() {
             {...fadeInUp}
           >
             <div className="space-y-4">
-               <h2 className="text-6xl md:text-7xl font-heading font-black tracking-[calc(-0.04em)] uppercase leading-[0.9]">Ethos of Empowerment</h2>
-               <p className="text-xl text-foreground/50 max-w-xl font-medium italic underline decoration-primary/20 underline-offset-8">The fundamental principles that guide every initiative we undertake.</p>
+               <h2 className="font-heading font-black tracking-tight uppercase leading-[0.9]" style={{ fontSize: 'var(--display-md)' }}>Ethos of Empowerment</h2>
+               <p className="text-body-lg text-foreground/50 max-w-xl font-medium italic underline decoration-primary/20 underline-offset-8">The fundamental principles that guide every initiative we undertake.</p>
             </div>
             <div className="px-8 py-3 rounded-full border border-secondary/20 bg-secondary/5 text-secondary font-black text-xs uppercase tracking-[0.2em] flex items-center gap-3">
                <div className="h-2 w-2 rounded-full bg-secondary animate-pulse" />
@@ -174,8 +175,8 @@ export default function About() {
                        <value.icon className={`h-7 w-7 ${value.text}`} />
                     </div>
                     <div className="space-y-4">
-                       <h3 className="text-3xl font-heading font-black uppercase tracking-tight">{value.title}</h3>
-                       <p className="text-foreground/50 text-lg font-medium leading-relaxed">{value.desc}</p>
+                       <h3 className="font-heading font-black uppercase tracking-tight" style={{ fontSize: 'var(--display-sm)' }}>{value.title}</h3>
+                       <p className="text-foreground/50 text-body-md font-medium leading-relaxed">{value.desc}</p>
                     </div>
                  </Card>
               </motion.div>
@@ -191,8 +192,8 @@ export default function About() {
             className="text-center space-y-6 max-w-3xl mx-auto"
             {...fadeInUp}
           >
-             <h2 className="text-6xl md:text-7xl font-heading font-black tracking-[calc(-0.04em)] uppercase leading-[0.9]">Architects of Change</h2>
-             <p className="text-xl text-foreground/50 font-medium italic">Meet the dedicated team driving our vision forward with passion and expertise.</p>
+             <h2 className="font-heading font-black tracking-tight uppercase leading-[0.9]" style={{ fontSize: 'var(--display-md)' }}>Architects of Change</h2>
+             <p className="text-body-lg text-foreground/50 font-medium italic">Meet the dedicated team driving our vision forward with passion and expertise.</p>
           </motion.div>
 
           <motion.div 

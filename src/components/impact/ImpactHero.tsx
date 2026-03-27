@@ -21,7 +21,7 @@ export const ImpactHero = () => {
             Archive 2024
           </motion.span>
           
-          <h1 className="text-7xl md:text-[8rem] lg:text-[10rem] font-heading font-bold leading-[0.8] tracking-tighter mb-12 flex flex-col">
+          <h1 className="font-heading font-black leading-[0.8] tracking-tight mb-12 flex flex-col" style={{ fontSize: 'var(--display-lg)' }}>
             <span>Voices of</span>
             <span className="text-primary italic pr-4">Change.</span>
             <span className="text-foreground/20">Stories of</span>

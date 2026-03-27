@@ -38,10 +38,10 @@ export const ImpactFeature = () => {
               </div>
 
               <div className="max-w-2xl">
-                 <h2 className="text-4xl md:text-7xl font-heading font-bold text-white tracking-tighter mb-4">
+                 <h2 className="font-heading font-black text-white tracking-tight mb-4" style={{ fontSize: 'var(--display-md)' }}>
                     The Collective <br /> Future
                  </h2>
-                 <p className="text-white/60 text-lg font-medium">
+                 <p className="text-white/60 text-body-lg font-medium">
                     How decentralized community action is rewriting the narrative of urban resilience.
                  </p>
               </div>
@@ -55,8 +55,8 @@ export const ImpactFeature = () => {
             transition={{ delay: 0.4, duration: 0.8 }}
             className="hidden lg:block absolute -top-12 -right-12 w-80 p-8 glass rounded-lg"
           >
-             <h3 className="text-6xl font-heading font-bold text-primary mb-4">84%</h3>
-             <p className="text-foreground/60 text-sm leading-relaxed">
+             <h3 className="font-heading font-black text-primary mb-4" style={{ fontSize: 'var(--display-md)' }}>84%</h3>
+             <p className="text-foreground/60 text-body-sm leading-relaxed">
                 Increase in youth-led local initiatives across the valley since winter 2024.
              </p>
           </motion.div>

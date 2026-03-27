@@ -16,19 +16,19 @@ export const ImpactCTA = () => {
         <div className="absolute top-0 right-0 w-96 h-96 bg-white/10 rounded-full -translate-y-1/2 translate-x-1/2 blur-3xl pointer-events-none" />
         
         <div className="relative z-10 max-w-3xl mx-auto space-y-12">
-          <h2 className="text-5xl md:text-8xl font-heading font-bold tracking-tighter leading-none">
+          <h2 className="font-heading font-black tracking-tight leading-[0.9] uppercase" style={{ fontSize: 'var(--display-lg)' }}>
             Create Your Own <br /> Impact Story
           </h2>
           
-          <p className="text-xl md:text-2xl text-white/80 font-medium">
+          <p className="text-body-lg text-white/80 font-medium">
             Every contribution, every volunteer hour, and every membership creates a ripple that turns into a wave.
           </p>
           
           <div className="flex flex-col md:flex-row items-center justify-center gap-6">
-            <button className="px-12 py-6 bg-white text-primary rounded-full text-lg font-bold hover:scale-[1.05] transition-transform flex items-center gap-3">
+            <button className="px-12 py-6 bg-white text-primary rounded-full text-body-lg font-black uppercase tracking-wider hover:scale-[1.05] transition-transform flex items-center gap-3">
               Join the Movement <ArrowRight className="w-5 h-5" />
             </button>
-            <button className="px-12 py-6 bg-white/20 backdrop-blur-md text-white rounded-full text-lg font-bold hover:bg-white/30 transition-colors">
+            <button className="px-12 py-6 bg-white/20 backdrop-blur-md text-white rounded-full text-body-lg font-black uppercase tracking-wider hover:bg-white/30 transition-colors">
               Donate Now
             </button>
           </div>

@@ -54,14 +54,14 @@ export default function ContactPage() {
           {/* Left: Form */}
           <div className="space-y-12">
             <motion.div variants={itemVariants} className="space-y-6">
-              <span className="inline-block px-4 py-1.5 rounded-full bg-secondary-container text-secondary text-[12px] font-bold tracking-[0.1em] uppercase">
+              <span className="inline-block px-4 py-1.5 rounded-full bg-secondary-container text-secondary text-body-xs font-bold tracking-[0.1em] uppercase">
                 Connect With Us
               </span>
-              <h1 className="text-6xl md:text-8xl font-heading font-black leading-[0.9] tracking-tighter">
+              <h1 className="font-heading font-black leading-[0.9] tracking-tight uppercase" style={{ fontSize: 'var(--display-lg)' }}>
                 Join the <br />
                 <span className="text-primary italic">Movement.</span>
               </h1>
-              <p className="text-xl text-foreground/60 font-medium max-w-lg leading-relaxed">
+                            <p className="text-body-lg text-foreground/60 font-medium max-w-lg leading-relaxed">
                 Your energy, skills, and support can change lives. Send us a message and let&apos;s start a conversation about empowering the youth of Assam.
               </p>
             </motion.div>
@@ -73,7 +73,7 @@ export default function ContactPage() {
             >
               <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                 <div className="space-y-2">
-                  <label className="text-[13px] font-bold uppercase tracking-wider text-foreground/50 ml-1">Full Name</label>
+                  <label className="text-body-xs font-bold uppercase tracking-wider text-foreground/50 ml-1">Full Name</label>
                   <input 
                     type="text" 
                     placeholder="John Doe"
@@ -81,7 +81,7 @@ export default function ContactPage() {
                   />
                 </div>
                 <div className="space-y-2">
-                  <label className="text-[13px] font-bold uppercase tracking-wider text-foreground/50 ml-1">Email Address</label>
+                  <label className="text-body-xs font-bold uppercase tracking-wider text-foreground/50 ml-1">Email Address</label>
                   <input 
                     type="email" 
                     placeholder="hello@example.com"
@@ -91,7 +91,7 @@ export default function ContactPage() {
               </div>
 
               <div className="space-y-2">
-                <label className="text-[13px] font-bold uppercase tracking-wider text-foreground/50 ml-1">Interest</label>
+                <label className="text-body-xs font-bold uppercase tracking-wider text-foreground/50 ml-1">Interest</label>
                 <select className="w-full h-16 px-6 rounded-2xl bg-surface-low border-none focus:ring-2 focus:ring-secondary/20 transition-all font-medium appearance-none outline-none cursor-pointer">
                   <option>Volunteering</option>
                   <option>Partnership</option>
@@ -101,7 +101,7 @@ export default function ContactPage() {
               </div>
 
               <div className="space-y-2">
-                <label className="text-[13px] font-bold uppercase tracking-wider text-foreground/50 ml-1">Your Message</label>
+                <label className="text-body-xs font-bold uppercase tracking-wider text-foreground/50 ml-1">Your Message</label>
                 <textarea 
                   rows={4}
                   placeholder="How would you like to contribute?"
@@ -136,7 +136,7 @@ export default function ContactPage() {
               </div>
 
               <div className="relative w-full glass rounded-[3rem] p-10 space-y-10 group transition-all duration-700 hover:shadow-2xl">
-                <h2 className="text-3xl font-heading font-black tracking-tight">Reach Out Directly</h2>
+                <h2 className="font-heading font-black tracking-tight" style={{ fontSize: 'var(--headline-lg)' }}>Reach Out Directly</h2>
                 
                 <div className="space-y-8">
                   <div className="flex gap-6 items-start">
@@ -144,8 +144,8 @@ export default function ContactPage() {
                       <MapPin className="h-6 w-6 text-primary" />
                     </div>
                     <div>
-                      <p className="font-bold text-lg">Main Office</p>
-                      <p className="text-foreground/60 font-medium">Ward No. 10, Kokrajhar Town, BTR, Assam 783370</p>
+                      <p className="font-black text-body-lg uppercase tracking-tight">Main Office</p>
+                      <p className="text-foreground/60 font-medium text-body-sm">Ward No. 10, Kokrajhar Town, BTR, Assam 783370</p>
                     </div>
                   </div>
 
@@ -199,7 +199,7 @@ export default function ContactPage() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-4xl md:text-5xl font-heading font-black tracking-tight">Other Ways to Help</h2>
+            <h2 className="font-heading font-black tracking-tight uppercase" style={{ fontSize: 'var(--display-md)' }}>Other Ways to Help</h2>
           </motion.div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -234,11 +234,11 @@ export default function ContactPage() {
                 <div className={`h-16 w-16 rounded-2xl flex items-center justify-center shrink-0 ${item.color}`}>
                   <item.icon className="h-8 w-8" />
                 </div>
-                <h3 className="text-2xl font-bold tracking-tight">{item.title}</h3>
-                <p className="text-foreground/60 font-medium leading-relaxed">
+                <h3 className="text-body-lg font-black uppercase tracking-tight">{item.title}</h3>
+                <p className="text-foreground/60 font-medium text-body-sm leading-relaxed">
                   {item.desc}
                 </p>
-              </motion.div>
+               </motion.div>
             ))}
           </div>
         </div>

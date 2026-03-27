@@ -3,60 +3,77 @@ import { X, Linkedin, Instagram } from "lucide-react"
 
 export function Footer() {
   return (
-    <footer className="bg-[#0b0c0b] text-white py-20 px-6">
-      <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-12 border-b border-white/5 pb-20">
-        {/* Column 1: Logo & Info */}
-        <div className="space-y-6">
-          <Link href="/" className="text-xl font-heading font-black tracking-tighter uppercase block">
-            Mijing Foundation
-          </Link>
-          <p className="text-white/40 leading-relaxed font-medium text-xs max-w-[200px]">
-            Empowering the dreams of tomorrow&apos;s leaders through education and innovation.
-          </p>
-        </div>
-
-        {/* Column 2: Resources */}
-        <div className="space-y-6 text-xs">
-          <h4 className="font-black uppercase tracking-[0.2em] text-primary">Resources</h4>
-          <ul className="space-y-4 text-white/40 font-medium tracking-wide">
-            <li><Link href="/privacy" className="hover:text-primary transition-colors">Privacy Policy</Link></li>
-            <li><Link href="/terms" className="hover:text-primary transition-colors">Terms of Service</Link></li>
-          </ul>
-        </div>
-
-        {/* Column 3: Engagement */}
-        <div className="space-y-6 text-xs">
-          <h4 className="font-black uppercase tracking-[0.2em] text-primary">Engagement</h4>
-          <ul className="space-y-4 text-white/40 font-medium tracking-wide">
-            <li><Link href="/volunteer" className="hover:text-primary transition-colors">Volunteer Portal</Link></li>
-            <li><Link href="/annual-reports" className="hover:text-primary transition-colors">Annual Reports</Link></li>
-          </ul>
-        </div>
-
-        {/* Column 4: Connect */}
-        <div className="space-y-6 text-xs">
-          <h4 className="font-black uppercase tracking-[0.2em] text-primary">Connect</h4>
-          <div className="space-y-4 text-white/40 font-medium tracking-wide">
-            <p>Kokrajhar, BTC, Assam</p>
-            <p className="hover:text-primary transition-colors cursor-pointer">contact@mijingfoundation.org</p>
-          </div>
-        </div>
+    <footer className="bg-[#0b0c0b] text-white py-32 px-6 lg:px-12 relative overflow-hidden">
+      {/* Background Decorative Text - Positioned to not overlap content */}
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full flex flex-col justify-center items-center pointer-events-none gap-4">
+        <span className="text-[10vw] font-black uppercase tracking-tighter leading-none opacity-[0.03] select-none">RESOURCES</span>
+        <span className="text-[10vw] font-black uppercase tracking-tighter leading-none opacity-[0.03] select-none">ENGAGEMENT</span>
+        <span className="text-[10vw] font-black uppercase tracking-tighter leading-none opacity-[0.03] select-none">CONNECT</span>
       </div>
 
-      <div className="max-w-7xl mx-auto pt-10 flex flex-col md:row justify-between items-center gap-6">
-        <p className="text-[10px] text-white/20 font-medium">
-          © 2024 Mijing Youth Empowerment Foundation. All rights reserved.
-        </p>
-        <div className="flex gap-6 items-center">
-          <Link href="#" className="text-white/30 hover:text-white transition-colors">
-            <X className="h-4 w-4" />
-          </Link>
-          <Link href="#" className="text-white/30 hover:text-white transition-colors">
-            <Linkedin className="h-4 w-4" />
-          </Link>
-          <Link href="#" className="text-white/30 hover:text-white transition-colors">
-            <Instagram className="h-4 w-4" />
-          </Link>
+      <div className="max-w-7xl mx-auto relative z-10">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-16 lg:gap-8 pb-32">
+          {/* Logo & Info */}
+          <div className="space-y-8">
+            <div className="space-y-4">
+              <div className="h-12 w-12 bg-primary rounded-2xl flex items-center justify-center">
+                <span className="text-on-primary font-black text-2xl">M</span>
+              </div>
+              <h3 className="text-2xl font-black uppercase tracking-tighter leading-none">Mijing Youth <br/> Foundation</h3>
+            </div>
+            <p className="text-white/30 text-xs font-bold leading-relaxed max-w-[240px] uppercase tracking-[0.2em]">
+              Empowering the next generation through education, health, and sustainable development.
+            </p>
+          </div>
+
+          {/* Resources */}
+          <div className="space-y-8">
+            <h4 className="text-[10px] font-black uppercase tracking-[0.4em] text-primary">Resources</h4>
+            <ul className="space-y-4">
+              {['Privacy Policy', 'Terms of Service', 'Cookie Policy'].map((item) => (
+                <li key={item}><Link href="#" className="font-bold text-sm uppercase tracking-widest text-white/40 hover:text-primary transition-colors">{item}</Link></li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Engagement */}
+          <div className="space-y-8">
+            <h4 className="text-[10px] font-black uppercase tracking-[0.4em] text-primary">Engagement</h4>
+            <ul className="space-y-4">
+              {['Volunteer Portal', 'Annual Reports', 'Support Us'].map((item) => (
+                <li key={item}><Link href="#" className="font-bold text-sm uppercase tracking-widest text-white/40 hover:text-primary transition-colors">{item}</Link></li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Connect */}
+          <div className="space-y-8">
+            <h4 className="text-[10px] font-black uppercase tracking-[0.4em] text-primary">Connect</h4>
+            <div className="space-y-4">
+              <p className="font-bold text-sm uppercase tracking-widest text-white/40">Kokrajhar, BTC, Assam</p>
+              <p className="font-bold text-sm uppercase tracking-widest text-white/40 hover:text-primary transition-all cursor-pointer">contact@mijingfoundation.org</p>
+            </div>
+            <div className="flex gap-4 items-center pt-4">
+              <Link href="#" className="h-10 w-10 rounded-full border border-white/10 flex items-center justify-center text-white/30 hover:text-primary hover:border-primary transition-all">
+                <X className="h-4 w-4" />
+              </Link>
+              <Link href="#" className="h-10 w-10 rounded-full border border-white/10 flex items-center justify-center text-white/30 hover:text-primary hover:border-primary transition-all">
+                <Linkedin className="h-4 w-4" />
+              </Link>
+              <Link href="#" className="h-10 w-10 rounded-full border border-white/10 flex items-center justify-center text-white/30 hover:text-primary hover:border-primary transition-all">
+                <Instagram className="h-4 w-4" />
+              </Link>
+            </div>
+          </div>
+        </div>
+
+        <div className="border-t border-white/5 pt-10 flex flex-col md:flex-row justify-between items-center gap-6">
+          <p className="text-[10px] text-white/20 font-bold uppercase tracking-widest">
+            © 2024 Mijing Youth Empowerment Foundation.
+          </p>
+          <div className="flex gap-8">
+            <span className="text-[10px] text-white/10 font-black uppercase tracking-[0.3em]">Crafted for impact</span>
+          </div>
         </div>
       </div>
     </footer>

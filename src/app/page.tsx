@@ -6,7 +6,7 @@ import { Button } from "@/components/ui/button"
 import { Card } from "@/components/ui/Card"
 import Image from "next/image"
 import { motion } from "framer-motion"
-import { Sparkles, Laptop, Trophy, Heart, TreePine, Palette, Megaphone, Users, ArrowRight } from "lucide-react"
+import { Laptop, Trophy, Heart, TreePine, Palette, Megaphone, Users, ArrowRight } from "lucide-react"
 
 const fadeInUp = {
   initial: { opacity: 0, y: 30 },
@@ -35,13 +35,13 @@ export default function Home() {
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, ease: "circOut" as const }}
           >
-            <h1 className="text-7xl md:text-8xl lg:text-[7.5rem] font-heading font-black tracking-[calc(-0.04em)] leading-[0.85] text-foreground">
+            <h1 className="font-heading font-black tracking-tight leading-[0.85] text-foreground" style={{ fontSize: 'var(--display-lg)' }}>
               Empowering <br />
               <span className="text-primary italic font-serif normal-case">Young Minds.</span> <br />
               Shaping the Future.
             </h1>
             
-            <p className="text-xl md:text-2xl text-foreground/50 max-w-xl font-medium leading-snug">
+            <p className="text-body-md md:text-body-lg text-foreground/50 max-w-xl font-medium leading-snug">
               We nurture the next generation through holistic development, environmental stewardship, and community-driven innovation.
             </p>
 
@@ -74,37 +74,40 @@ export default function Home() {
             
             {/* Floating Impact Card */}
             <motion.div 
-              className="absolute bottom-10 -left-10 lg:-left-20"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.6, duration: 0.6 }}
+              className="absolute -bottom-12 -left-6 md:-left-20 bg-white/95 backdrop-blur-xl p-8 md:p-10 rounded-[3rem] shadow-premium max-w-[280px] md:max-w-sm border border-white/20"
+              initial={{ opacity: 0, x: -50 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ delay: 0.8, duration: 1, ease: [0.16, 1, 0.3, 1] }}
             >
-               <Card className="bg-secondary p-8 rounded-[2.5rem] border-none shadow-2xl space-y-3 max-w-[280px] hover:translate-y-[-10px] transition-transform cursor-default">
-                 <div className="p-3 bg-white/20 rounded-2xl w-fit">
-                    <Sparkles className="h-6 w-6 text-on-secondary" />
-                 </div>
-                 <div className="space-y-1 text-on-secondary">
-                    <p className="text-4xl font-heading font-black leading-none">12k+</p>
-                    <p className="text-sm font-bold opacity-70 leading-tight uppercase tracking-wider">
-                        Lives Impacted <br/> since 2020
-                    </p>
-                 </div>
-               </Card>
+              <div className="space-y-6">
+                <div className="flex items-center gap-4">
+                  <div className="h-12 w-12 md:h-14 md:w-14 rounded-2xl bg-primary/10 flex items-center justify-center">
+                    <Users className="h-6 w-6 md:h-7 md:w-7 text-primary" />
+                  </div>
+                  <div>
+                    <p className="text-3xl md:text-[2.5rem] font-black leading-none tracking-tighter text-foreground">1,200+</p>
+                    <p className="text-[10px] font-black uppercase tracking-[0.2em] text-foreground/40">Lives Impacted</p>
+                  </div>
+                </div>
+                <p className="text-sm md:text-body-md text-foreground/60 font-medium leading-relaxed italic">
+                  &quot;Our goal is to build a future where every youth has the <span className="text-primary font-bold font-sans">tools to thrive</span>.&quot;
+                </p>
+              </div>
             </motion.div>
           </motion.div>
         </div>
       </section>
 
       {/* Our Core Pillars Section */}
-      <section className="py-32 px-6 bg-background">
+      <section className="py-24 px-6 bg-background">
         <div className="max-w-7xl mx-auto">
           <motion.div 
-            className="flex flex-col md:flex-row justify-between items-start md:items-end mb-20 gap-8"
+            className="flex flex-col md:flex-row justify-between items-start md:items-end mb-16 gap-8"
             {...fadeInUp}
           >
             <div className="space-y-4">
-               <h2 className="text-6xl md:text-7xl font-heading font-black tracking-[calc(-0.04em)] uppercase leading-[0.9]">Our Core Pillars</h2>
-               <p className="text-xl text-foreground/50 max-w-xl font-medium italic underline decoration-primary/20 underline-offset-8">Investing in diverse pathways for growth, from physical health to technological literacy.</p>
+               <h2 className="font-heading font-black tracking-tight uppercase leading-[0.9]" style={{ fontSize: 'var(--display-md)' }}>Our Core Pillars</h2>
+               <p className="text-body-lg text-foreground/50 max-w-xl font-medium italic underline decoration-primary/20 underline-offset-8">Investing in diverse pathways for growth, from physical health to technological literacy.</p>
             </div>
             <div className="px-8 py-3 rounded-full border border-secondary/20 bg-secondary/5 text-secondary font-black text-xs uppercase tracking-[0.2em] flex items-center gap-3">
                <div className="h-2 w-2 rounded-full bg-secondary animate-pulse" />
@@ -121,15 +124,15 @@ export default function Home() {
           >
             {/* Skill Development */}
             <motion.div className="md:col-span-2" variants={fadeInUp}>
-              <Card className="rounded-[4rem] p-12 bg-white shadow-premium border-none flex flex-col justify-between min-h-[450px] group hover:scale-[1.01] transition-transform">
+              <Card level={1} className="p-10 flex flex-col justify-between min-h-[400px] h-full group hover:scale-[1.01] transition-all">
                  <div className="space-y-6">
                     <div className="h-14 w-14 rounded-2xl bg-primary/10 flex items-center justify-center">
                       <Laptop className="h-7 w-7 text-primary" />
                     </div>
-                    <h3 className="text-4xl font-heading font-black uppercase">Skill Development</h3>
-                    <p className="text-foreground/50 text-lg font-medium max-w-md">Vocational training and digital literacy workshops for modern careers.</p>
+                    <h3 className="font-heading font-black uppercase text-foreground" style={{ fontSize: 'var(--display-sm)' }}>Skill Development</h3>
+                    <p className="text-foreground/60 text-body-md font-medium max-w-md">Vocational training and digital literacy workshops for modern careers.</p>
                  </div>
-                 <div className="relative h-56 w-full mt-12 rounded-[3rem] overflow-hidden grayscale opacity-40 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-700">
+                 <div className="relative h-48 w-full mt-10 rounded-[2.5rem] overflow-hidden grayscale group-hover:grayscale-0 transition-all duration-700">
                     <Image src="/images/green.png" alt="Laptop" fill className="object-cover" />
                  </div>
               </Card>
@@ -137,13 +140,13 @@ export default function Home() {
 
             {/* Sports & Athletics */}
             <motion.div variants={fadeInUp}>
-              <Card className="h-full rounded-[4rem] p-12 bg-secondary border-none flex flex-col items-center justify-center text-center space-y-8 group hover:scale-[1.02] transition-transform">
-                 <div className="h-20 w-20 rounded-full bg-white/20 flex items-center justify-center group-hover:rotate-12 transition-transform">
-                    <Trophy className="h-10 w-10 text-on-secondary" />
+              <Card className="h-full p-10 bg-secondary border-none flex flex-col items-center justify-center text-center space-y-8 group hover:scale-[1.02] transition-transform">
+                 <div className="h-16 w-16 rounded-full bg-white/20 flex items-center justify-center group-hover:rotate-12 transition-transform">
+                    <Trophy className="h-10 w-10 text-white" />
                  </div>
                  <div className="space-y-4">
-                    <h3 className="text-4xl font-heading font-black text-on-secondary uppercase leading-none">Sports & Athletics</h3>
-                    <p className="text-on-secondary/60 text-lg font-medium">Building teamwork and resilience through local leagues.</p>
+                    <h3 className="font-heading font-black text-white uppercase leading-none" style={{ fontSize: 'var(--display-sm)' }}>Sports & <br/> Athletics</h3>
+                    <p className="text-white/70 text-body-md font-medium">Building teamwork and resilience through local leagues.</p>
                  </div>
               </Card>
             </motion.div>
@@ -201,11 +204,11 @@ export default function Home() {
             className="flex-1 space-y-12"
             {...fadeInUp}
           >
-             <h2 className="text-6xl md:text-[5.5rem] font-heading font-black tracking-[calc(-0.04em)] leading-[0.85] uppercase">
+             <h2 className="font-heading font-black tracking-tight leading-[0.85] uppercase" style={{ fontSize: 'var(--display-md)' }}>
                 Quantifying the <br/>
                 <span className="text-primary italic font-serif normal-case">Change</span> We Create.
              </h2>
-             <p className="text-xl text-white/50 max-w-md font-medium leading-relaxed italic">
+             <p className="text-body-lg text-white/50 max-w-md font-medium leading-relaxed italic">
                 Our data-driven approach ensures every resource is maximized for long-term community benefit.
              </p>
              <Button size="xl" className="rounded-full px-12 h-20 text-xl font-black uppercase tracking-widest bg-primary hover:bg-primary/90 text-on-primary border-none shadow-3xl shadow-primary/20 transition-all">
@@ -241,8 +244,8 @@ export default function Home() {
             {...fadeInUp}
           >
             <div className="space-y-4">
-               <h2 className="text-5xl md:text-[6rem] font-heading font-black tracking-tighter uppercase leading-[0.85]">Be a part of the <br/> movement.</h2>
-               <p className="text-xl opacity-70 max-w-xl mx-auto font-medium italic underline underline-offset-4 decoration-white/20">Sign up for our monthly newsletter to get stories of impact and volunteer opportunities.</p>
+               <h2 className="font-heading font-black tracking-tighter uppercase leading-[0.85]" style={{ fontSize: 'var(--display-md)' }}>Be a part of the <br/> movement.</h2>
+               <p className="text-body-lg opacity-70 max-w-xl mx-auto font-medium italic underline underline-offset-4 decoration-white/20">Sign up for our monthly newsletter to get stories of impact and volunteer opportunities.</p>
             </div>
             
             <div className="max-w-xl mx-auto flex flex-col md:flex-row gap-4 p-2 bg-white/10 backdrop-blur-xl rounded-[3rem] md:rounded-full">

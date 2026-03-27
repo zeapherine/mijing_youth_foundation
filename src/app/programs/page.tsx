@@ -41,11 +41,11 @@ export default function ProgramsPage() {
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.8, ease: "circOut" as const }}
         >
-           <h1 className="text-7xl md:text-[9rem] font-heading font-black tracking-tighter leading-[0.85]">
+           <h1 className="font-heading font-black tracking-tight leading-[0.85]" style={{ fontSize: 'var(--display-lg)' }}>
               Programs & <br/>
               <span className="text-primary italic font-serif normal-case">Initiatives</span>
            </h1>
-           <p className="text-2xl text-foreground/50 max-w-2xl font-medium leading-tight">
+           <p className="text-body-lg md:text-body-lg text-foreground/50 max-w-2xl font-medium leading-tight italic">
               Empowering the youth of today to build the heritage of tomorrow. Our initiatives span across cultural preservation, physical wellness, and sustainable innovation.
            </p>
         </motion.div>
@@ -64,8 +64,8 @@ export default function ProgramsPage() {
               </span>
             </div>
             <div className="space-y-6">
-              <h2 className="text-5xl md:text-7xl font-heading font-black tracking-tighter uppercase">Sports & Culture</h2>
-              <p className="text-xl text-foreground/60 leading-relaxed font-medium">
+              <h2 className="font-heading font-black tracking-tight uppercase" style={{ fontSize: 'var(--display-md)' }}>Sports & Culture</h2>
+              <p className="text-body-lg text-foreground/60 leading-relaxed font-medium">
                 We believe in the transformative power of discipline and tradition. Through rigorous physical training and vibrant youth festivals, we celebrate our roots while fostering a competitive spirit.
               </p>
             </div>
@@ -130,8 +130,8 @@ export default function ProgramsPage() {
            <div className="flex-1 space-y-12">
               <motion.div className="space-y-6" {...fadeInUp}>
                  <span className="text-[10px] font-bold tracking-[0.2em] uppercase text-tertiary">02. Humanitarian Care</span>
-                 <h2 className="text-5xl md:text-7xl font-heading font-black tracking-tighter uppercase">Social Service & Health</h2>
-                 <p className="text-xl text-foreground/50 leading-relaxed font-medium">
+                 <h2 className="font-heading font-black tracking-tight uppercase" style={{ fontSize: 'var(--display-md)' }}>Social Service & Health</h2>
+                 <p className="text-body-lg text-foreground/50 leading-relaxed font-medium">
                    Our response to crisis is immediate and our commitment to health is permanent. From rapid disaster relief to regular community health checkups, we ensure no one is left behind in times of need or transition.
                  </p>
               </motion.div>
@@ -148,8 +148,8 @@ export default function ProgramsPage() {
                         <Ambulance className="h-6 w-6 text-tertiary" />
                       </div>
                       <div className="space-y-2">
-                        <h3 className="text-xl font-heading font-black uppercase">Disaster Relief</h3>
-                        <p className="text-sm text-foreground/60 font-medium">Rapid response teams trained for high-altitude and flood emergency logistics.</p>
+                        <h3 className="font-heading font-black uppercase" style={{ fontSize: 'var(--headline-md)' }}>Disaster Relief</h3>
+                        <p className="text-body-sm text-foreground/60 font-medium">Rapid response teams trained for high-altitude and flood emergency logistics.</p>
                       </div>
                    </Card>
                  </motion.div>
@@ -160,8 +160,8 @@ export default function ProgramsPage() {
                         <Stethoscope className="h-6 w-6 text-tertiary" />
                       </div>
                       <div className="space-y-2">
-                        <h3 className="text-xl font-heading font-black uppercase">Health Checkups</h3>
-                        <p className="text-sm text-foreground/60 font-medium">Mobile clinics specializing in basic triage and pediatric diagnostic care.</p>
+                        <h3 className="font-heading font-black uppercase" style={{ fontSize: 'var(--headline-md)' }}>Health Checkups</h3>
+                        <p className="text-body-sm text-foreground/60 font-medium">Mobile clinics specializing in basic triage and pediatric diagnostic care.</p>
                       </div>
                    </Card>
                  </motion.div>
@@ -175,8 +175,8 @@ export default function ProgramsPage() {
         <div className="max-w-7xl mx-auto space-y-20">
            <motion.div className="text-center max-w-2xl mx-auto space-y-6" {...fadeInUp}>
               <span className="text-[10px] font-bold tracking-[0.2em] uppercase text-secondary">03. Environmental Stewardship</span>
-              <h2 className="text-5xl md:text-[5.5rem] font-heading font-black tracking-tighter uppercase leading-[0.9]">Afforestation & Green Work</h2>
-              <p className="text-xl text-foreground/50 font-medium">Restoring our landscapes through intentional and disciplined conservation efforts.</p>
+              <h2 className="font-heading font-black tracking-tight uppercase leading-[0.9]" style={{ fontSize: 'var(--display-md)' }}>Afforestation & Green Work</h2>
+              <p className="text-body-lg text-foreground/50 font-medium">Restoring our landscapes through intentional and disciplined conservation efforts.</p>
            </motion.div>
 
            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 auto-rows-[300px]">
@@ -277,8 +277,8 @@ export default function ProgramsPage() {
           className="max-w-4xl mx-auto space-y-12"
           {...fadeInUp}
         >
-           <h2 className="text-6xl md:text-[5.5rem] font-heading font-black tracking-tighter uppercase leading-[0.9]">Ready to make <br/> an impact?</h2>
-           <p className="text-xl text-foreground/50 font-medium max-w-xl mx-auto italic leading-relaxed">
+           <h2 className="font-heading font-black tracking-tight uppercase leading-[0.9]" style={{ fontSize: 'var(--display-md)' }}>Ready to make <br/> an impact?</h2>
+           <p className="text-body-lg text-foreground/50 font-medium max-w-xl mx-auto italic leading-relaxed">
              Whether you&apos;re looking to volunteer, donate, or enroll in our programs, your journey starts here.
            </p>
            <div className="flex flex-col md:flex-row gap-6 justify-center items-center pt-8">
