@@ -1,66 +1,61 @@
 @import "tailwindcss";
 
 @theme {
-  --font-heading: "Epilogue", sans-serif;
-  --font-serif: 'var(--font-serif)', serif;
+  --font-heading: "Playfair Display", serif;
+  --font-serif: "Libre Baskerville", serif;
   --font-sans: "Inter", sans-serif;
 
-  /* Lumina Organic Palette - Exact Hex from Stitch Design System */
-  --color-background: #f1fcf7;
-  --color-foreground: #142421;
+  /* Modern Humanitarian Editorial Palette - NATURE FIRST */
+  --color-forest: #1B4332;
+  --color-terracotta: #BC4749;
+  --color-parchment: #F8F7F2;
+  --color-moss: #95A5A6;
+
+  --color-background: var(--color-parchment);
+  --color-foreground: var(--color-forest);
   
-  --color-primary: #FF6F61;
-  --color-on-primary: #ffffff;
-  --color-primary-container: #ff8a7d;
+  --color-primary: var(--color-forest);
+  --color-on-primary: var(--color-parchment);
   
-  --color-secondary: #A8B58E;
-  --color-on-secondary: #142421;
-  --color-secondary-container: #c4cea6;
+  --color-secondary: var(--color-moss);
+  --color-on-secondary: var(--color-parchment);
 
-  --color-tertiary: #B4A7D6;
-  --color-on-tertiary: #142421;
-  --color-tertiary-container: #d2caf3;
+  --color-tertiary: var(--color-terracotta);
+  --color-on-tertiary: var(--color-parchment);
 
-  --color-neutral: #142421;
+  --color-surface: #F2F1EC;
+  --color-surface-low: #EBEAE4;
+  --color-surface-lowest: var(--color-parchment);
+  --color-surface-high: #E4E3DB;
 
-  --color-surface: #f7f6f3;
-  --color-surface-low: #f1f1ee;
-  --color-surface-lowest: #ffffff;
-  --color-surface-high: #e8e8e5;
+  --color-outline: rgba(27, 67, 50, 0.1);
 
-  --color-outline: #767775;
-  --color-outline-variant: rgba(173, 173, 171, 0.15);
+  /* Spacing Scale - Editorial Breathability */
+  --spacing-12: 4rem;
+  --spacing-16: 6rem;
+  --spacing-20: 8rem;
 
-  /* Spacing Scale */
-  --spacing-12: 3rem;
-  --spacing-16: 4rem;
-  --spacing-20: 5rem;
+  /* Institutional Geometry - REFINED */
+  --radius-xl: 0.5rem; 
+  --radius-lg: 0.375rem;
+  --radius-md: 0.25rem;
+  --radius-sm: 0.125rem;
 
-  /* Organic Radius */
-  --radius-xl: 3rem;
-  --radius-lg: 2rem;
-  --radius-md: 1.5rem;
-  --radius-sm: 0.75rem;
+  /* Minimal Shadows - Tonal Depth */
+  --shadow-premium: 0 20px 40px -12px rgba(27, 67, 50, 0.08);
 
-  /* Ambient Shadows - Deepened for better contrast */
-  --shadow-premium: 0 40px 80px -16px rgba(20, 36, 33, 0.15);
+  /* Typography Scale - Institutional Impact */
+  --display-lg: clamp(4rem, 10vw, 7rem);
+  --display-md: clamp(3rem, 7vw, 5rem);
+  --display-sm: clamp(2.5rem, 6vw, 3.5rem);
 
-  /* Typography Scale - Adjusted for editorial balance */
-  --display-lg: clamp(3.5rem, 8vw, 5.5rem);
-  --display-md: clamp(2.75rem, 6vw, 4.25rem);
-  --display-sm: clamp(2.25rem, 5vw, 3.25rem);
+  --headline-lg: clamp(2rem, 5vw, 3rem);
+  --headline-md: clamp(1.75rem, 4vw, 2.25rem);
+  --headline-sm: clamp(1.5rem, 3vw, 1.75rem);
 
-  --headline-lg: clamp(1.875rem, 4vw, 2.5rem);
-  --headline-md: clamp(1.5rem, 3vw, 2rem);
-  --headline-sm: clamp(1.25rem, 2.5vw, 1.5rem);
-
-  --body-lg: 1.125rem;
-  --body-md: 1rem;
-  --body-sm: 0.875rem;
-
-  --label-lg: 0.875rem;
-  --label-md: 0.75rem;
-  --label-sm: 0.625rem;
+  --body-lg: 1.25rem;
+  --body-md: 1.125rem;
+  --body-sm: 0.9375rem;
 }
 
 @layer base {
@@ -68,92 +63,71 @@
     @apply border-none;
   }
   body {
-    @apply bg-background text-foreground font-sans antialiased selection:bg-primary/10;
+    @apply bg-background text-foreground font-sans antialiased selection:bg-forest/20;
   }
   h1 { font-size: var(--display-lg); }
   h2 { font-size: var(--display-md); }
   h3 { font-size: var(--display-sm); }
-  h4 { font-size: var(--headline-lg); }
-  h5 { font-size: var(--headline-md); }
-  h6 { font-size: var(--headline-sm); }
 
   h1, h2, h3, h4, h5, h6 {
-    @apply font-heading leading-[1.1];
-    letter-spacing: -0.025em;
+    @apply font-heading leading-[1.05] tracking-tight;
   }
 }
 
 @layer utilities {
-  /* Glassmorphism - Floating & Persistent Elements */
   .glass {
-    @apply bg-background/70 backdrop-blur-[24px] border-none shadow-premium;
+    @apply bg-parchment/80 backdrop-blur-[24px] border border-forest/10 shadow-premium;
   }
 
-  /* Gradient CTAs */
-  .btn-primary-gradient {
-    @apply text-on-primary rounded-full transition-transform hover:scale-[1.02] active:scale-[0.98] shadow-premium;
-    background: linear-gradient(135deg, var(--color-primary), var(--color-primary-container));
-  }
-
-  /* Editorial Spacing */
   .section-padding {
-    @apply py-20 px-6;
-  }
-  @media (min-width: 768px) {
-    .section-padding {
-      @apply px-12;
-    }
-  }
-  @media (min-width: 1024px) {
-    .section-padding {
-      @apply px-16;
-    }
+    @apply py-24 px-6 md:px-12 lg:px-16;
   }
 
-  /* Tonal Layering Utilities */
-  .tonal-layer-1 {
-    @apply bg-surface-low border-none;
-  }
-  .tonal-layer-2 {
-    @apply bg-surface-lowest shadow-premium border-none;
+  .text-editorial {
+    @apply font-serif italic text-terracotta;
   }
 }
 
 :root {
-  /* Functional Mapping for shadcn/ui and legacy support */
-  --background: 45 10% 96%;
-  --foreground: 165 15% 12%;
+  /* Shadcn Functional Mappings (HSL) - Synced with Palette */
+  --background: 50 24% 96%; /* Parchment #F8F7F2 */
+  --foreground: 153 57% 16%; /* Forest #1B4332 */
   
-  --card: 0 0% 100%;
-  --card-foreground: 165 15% 12%;
+  --card: 50 24% 98%;
+  --card-foreground: 153 57% 16%;
   
-  --primary: 6 100% 69%; /* #FF6F61 */
-  --primary-foreground: 0 0% 100%;
+  --popover: 50 24% 98%;
+  --popover-foreground: 153 57% 16%;
+
+  --primary: 153 57% 16%; /* Forest #1B4332 */
+  --primary-foreground: 50 24% 96%;
   
-  --secondary: 82 23% 63%; /* #A8B58E */
-  --secondary-foreground: 165 15% 12%;
+  --secondary: 165 8% 62%; /* Moss #95A5A6 */
+  --secondary-foreground: 50 24% 96%;
   
-  --muted: 45 10% 94%;
-  --muted-foreground: 0 0% 40%;
+  --tertiary: 359 45% 51%; /* Terracotta #BC4749 */
+  --tertiary-foreground: 50 24% 96%;
+
+  --accent: 359 45% 51%; /* Terracotta */
+  --accent-foreground: 50 24% 96%;
+
+  --muted: 50 10% 90%;
+  --muted-foreground: 153 10% 40%;
   
-  --radius: 2rem;
+  --border: 153 57% 16% / 0.1;
+  --input: 153 57% 16% / 0.1;
+  --ring: 153 57% 16%;
+
+  --radius: 0.25rem;
 }
 
 .dark {
-  /* System is optimized for Light Mode "Sand" foundation, but providing a luxury dark alternative */
   --background: 0 0% 5%;
-  --foreground: 45 10% 96%;
+  --foreground: 50 24% 96%;
   
-  --card: 0 0% 10%;
-  --card-foreground: 45 10% 96%;
+  --primary: 153 57% 16%;
+  --primary-foreground: 50 24% 96%;
   
-  --primary: 4 61% 41%;
-  --primary-foreground: 4 61% 97%;
-  
-  --secondary: 64 100% 19%;
-  --secondary-foreground: 64 100% 97%;
-  
-  --border: 0 0% 20%;
-  --input: 0 0% 20%;
-  --ring: 4 61% 41%;
+  --secondary: 359 45% 51%;
+  --secondary-foreground: 50 24% 96%;
 }

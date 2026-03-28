@@ -19,10 +19,10 @@ const Card = React.forwardRef<HTMLDivElement, CardProps>(
         variants={animateHover ? hoverLift : undefined}
         whileHover={animateHover ? "hover" : undefined}
         className={cn(
-          "rounded-[3rem] p-8 transition-colors duration-500",
-          level === 0 && "bg-background",
-          level === 1 && "tonal-layer-1",
-          level === 2 && "tonal-layer-2",
+          "rounded-sm p-10 transition-all duration-500",
+          level === 0 && "bg-transparent",
+          level === 1 && "bg-surface-low shadow-sm",
+          level === 2 && "bg-surface-lowest shadow-premium",
           glass && "glass",
           className
         )}

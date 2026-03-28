@@ -15,9 +15,9 @@ export const ImpactHero = () => {
         >
           <motion.span 
             variants={fadeInUp}
-            className="text-xs font-bold tracking-[0.3em] uppercase text-primary mb-6 block"
+            className="text-xs font-bold tracking-[0.4em] uppercase text-primary/60 mb-8 block"
           >
-            Archive 2024
+            Institutional Archive 2024
           </motion.span>
           
           <motion.h1 

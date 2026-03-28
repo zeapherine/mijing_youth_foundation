@@ -26,9 +26,9 @@ export function Navbar() {
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 1, ease: editorialEasing, delay: 0.2 }}
     >
-      <div className="w-full max-w-7xl glass rounded-full px-10 py-5 flex items-center justify-between shadow-sm">
-        <Link href="/" className="text-2xl font-heading font-extrabold tracking-tighter text-foreground group">
-          Mijing <span className="text-primary transition-colors group-hover:text-primary/70">Foundation</span>
+      <div className="w-full max-w-7xl bg-parchment/80 backdrop-blur-md border border-forest/10 rounded-sm px-10 py-5 flex items-center justify-between shadow-xl">
+        <Link href="/" className="text-2xl font-heading font-extrabold tracking-tighter text-forest group">
+          Mijing <span className="text-terracotta transition-colors group-hover:text-forest">Foundation</span>
         </Link>
         
         <div className="hidden md:flex items-center gap-10">
@@ -39,17 +39,17 @@ export function Navbar() {
                 key={link.href}
                 href={link.href} 
                 className={cn(
-                  "text-[15px] relative py-1 transition-colors duration-300",
+                  "text-[13px] uppercase font-bold tracking-[0.2em] relative py-1 transition-colors duration-300",
                   isActive 
-                    ? "font-bold text-primary" 
-                    : "font-medium text-foreground/70 hover:text-primary"
+                    ? "text-terracotta" 
+                    : "text-forest/60 hover:text-forest"
                 )}
               >
                 {link.label}
                 {isActive && (
                   <motion.div
                     layoutId="navbar-active"
-                    className="absolute -bottom-1 left-0 right-0 h-0.5 bg-primary"
+                    className="absolute -bottom-1 left-0 right-0 h-[1px] bg-terracotta"
                     transition={{ type: "spring", stiffness: 380, damping: 30 }}
                   />
                 )}
@@ -58,7 +58,7 @@ export function Navbar() {
           })}
         </div>
 
-        <Button className="rounded-full px-8 bg-primary hover:bg-primary/90 text-white font-bold h-12 border-none text-[15px] transition-transform active:scale-95">
+        <Button className="rounded-sm px-8 bg-forest hover:bg-forest/90 text-parchment font-bold h-12 border-none text-[13px] uppercase tracking-widest transition-transform active:scale-95">
           Get Involved
         </Button>
       </div>

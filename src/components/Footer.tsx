@@ -7,14 +7,7 @@ import { fadeInUp, staggerContainer } from "@/lib/animations"
 
 export function Footer() {
   return (
-    <footer className="bg-[#0b0c0b] text-white py-20 px-6 lg:px-12 relative overflow-hidden">
-      {/* Background Decorative Text - Positioned to not overlap content */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full flex flex-col justify-center items-center pointer-events-none gap-4">
-        <span className="text-[10vw] font-black uppercase tracking-tighter leading-none opacity-[0.03] select-none">RESOURCES</span>
-        <span className="text-[10vw] font-black uppercase tracking-tighter leading-none opacity-[0.03] select-none">ENGAGEMENT</span>
-        <span className="text-[10vw] font-black uppercase tracking-tighter leading-none opacity-[0.03] select-none">CONNECT</span>
-      </div>
-
+    <footer className="bg-forest text-parchment py-24 px-6 lg:px-12 relative overflow-hidden border-t border-forest/10">
       <motion.div 
         className="max-w-7xl mx-auto relative z-10"
         variants={staggerContainer}
@@ -26,25 +19,25 @@ export function Footer() {
           {/* Logo & Info */}
           <motion.div className="space-y-8" variants={fadeInUp}>
             <div className="space-y-4">
-              <div className="h-12 w-12 bg-primary rounded-2xl flex items-center justify-center">
-                <span className="text-on-primary font-black text-2xl">M</span>
+              <div className="h-12 w-12 bg-terracotta rounded-sm flex items-center justify-center">
+                <span className="text-parchment font-black text-2xl">M</span>
               </div>
-              <h3 className="text-2xl font-black uppercase tracking-tighter leading-none">
+              <h3 className="text-2xl font-black uppercase tracking-tighter leading-none text-parchment">
                 Mijing Youth <br/> Foundation
               </h3>
             </div>
-            <p className="text-white/30 text-xs font-bold leading-relaxed max-w-[240px] uppercase tracking-[0.2em]">
+            <p className="text-parchment/40 text-[11px] font-bold leading-relaxed max-w-[240px] uppercase tracking-[0.3em]">
               Empowering the next generation through education, health, and sustainable development.
             </p>
           </motion.div>
 
           {/* Resources */}
           <motion.div className="space-y-8" variants={fadeInUp}>
-            <h4 className="text-[10px] font-black uppercase tracking-[0.4em] text-primary">Resources</h4>
+            <h4 className="text-[11px] font-black uppercase tracking-[0.4em] text-terracotta">Resources</h4>
             <ul className="space-y-4">
               {['Privacy Policy', 'Terms of Service', 'Cookie Policy'].map((item) => (
                 <li key={item}>
-                  <Link href="#" className="font-bold text-sm uppercase tracking-widest text-white/40 hover:text-primary transition-colors">
+                  <Link href="#" className="font-bold text-[11px] uppercase tracking-[0.2em] text-parchment/60 hover:text-terracotta transition-colors">
                     {item}
                   </Link>
                 </li>
@@ -54,11 +47,11 @@ export function Footer() {
 
           {/* Engagement */}
           <motion.div className="space-y-8" variants={fadeInUp}>
-            <h4 className="text-[10px] font-black uppercase tracking-[0.4em] text-primary">Engagement</h4>
+            <h4 className="text-[11px] font-black uppercase tracking-[0.4em] text-terracotta">Engagement</h4>
             <ul className="space-y-4">
               {['Volunteer Portal', 'Annual Reports', 'Support Us'].map((item) => (
                 <li key={item}>
-                  <Link href="#" className="font-bold text-sm uppercase tracking-widest text-white/40 hover:text-primary transition-colors">
+                  <Link href="#" className="font-bold text-[11px] uppercase tracking-[0.2em] text-parchment/60 hover:text-terracotta transition-colors">
                     {item}
                   </Link>
                 </li>
@@ -68,31 +61,28 @@ export function Footer() {
 
           {/* Connect */}
           <motion.div className="space-y-8" variants={fadeInUp}>
-            <h4 className="text-[10px] font-black uppercase tracking-[0.4em] text-primary">Connect</h4>
+            <h4 className="text-[11px] font-black uppercase tracking-[0.4em] text-terracotta">Connect</h4>
             <div className="space-y-4">
-              <p className="font-bold text-sm uppercase tracking-widest text-white/40">Kokrajhar, BTC, Assam</p>
-              <p className="font-bold text-sm uppercase tracking-widest text-white/40 hover:text-primary transition-all cursor-pointer">contact@mijingfoundation.org</p>
+              <p className="font-bold text-[11px] uppercase tracking-[0.2em] text-parchment/60">Kokrajhar, BTC, Assam</p>
+              <p className="font-bold text-[11px] uppercase tracking-[0.2em] text-parchment/60 hover:text-terracotta transition-all cursor-pointer">hello@mijingfoundation.org</p>
             </div>
             <div className="flex gap-4 items-center pt-4">
-              <Link href="#" className="h-10 w-10 rounded-full border border-white/10 flex items-center justify-center text-white/30 hover:text-primary hover:border-primary transition-all">
-                <X className="h-4 w-4" />
-              </Link>
-              <Link href="#" className="h-10 w-10 rounded-full border border-white/10 flex items-center justify-center text-white/30 hover:text-primary hover:border-primary transition-all">
-                <Linkedin className="h-4 w-4" />
-              </Link>
-              <Link href="#" className="h-10 w-10 rounded-full border border-white/10 flex items-center justify-center text-white/30 hover:text-primary hover:border-primary transition-all">
-                <Instagram className="h-4 w-4" />
-              </Link>
+              {[X, Linkedin, Instagram].map((Icon, i) => (
+                <Link key={i} href="#" className="h-10 w-10 rounded-sm border border-parchment/10 flex items-center justify-center text-parchment/40 hover:text-terracotta hover:border-terracotta transition-all bg-parchment/5">
+                  <Icon className="h-4 w-4" />
+                </Link>
+              ))}
             </div>
           </motion.div>
         </div>
 
-        <div className="border-t border-white/5 pt-10 flex flex-col md:flex-row justify-between items-center gap-6">
-          <p className="text-[10px] text-white/20 font-bold uppercase tracking-widest">
-            © 2024 Mijing Youth Empowerment Foundation.
+        <div className="border-t border-parchment/10 pt-10 flex flex-col md:flex-row justify-between items-center gap-6">
+          <p className="text-[10px] text-parchment/20 font-bold uppercase tracking-widest leading-relaxed">
+            © 2024 Mijing Youth Empowerment Foundation. <br className="md:hidden" />
+            Empowering the Future, Sustainably.
           </p>
           <div className="flex gap-8">
-            <span className="text-[10px] text-white/10 font-black uppercase tracking-[0.3em]">Crafted for impact</span>
+            <span className="text-[10px] text-parchment/10 font-black uppercase tracking-[0.3em]">Institutional Archive</span>
           </div>
         </div>
       </motion.div>

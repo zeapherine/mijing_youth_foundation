@@ -5,30 +5,30 @@ import { cva, type VariantProps } from "class-variance-authority"
 import { cn } from "@/lib/utils"
 
 const buttonVariants = cva(
-  "inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-all duration-300 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 active:scale-95 hover:scale-[1.02]",
+  "inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-bold transition-all duration-300 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-primary disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 active:scale-95",
   {
     variants: {
       variant: {
         default:
-          "bg-primary text-primary-foreground shadow-ambient hover:bg-primary/90 hover:shadow-glow",
+          "bg-primary text-on-primary hover:bg-primary/90 shadow-sm",
         destructive:
-          "bg-destructive text-destructive-foreground shadow-ambient hover:bg-destructive/90",
+          "bg-tertiary text-on-tertiary hover:bg-tertiary/90 shadow-sm",
         outline:
-          "border border-foreground/10 bg-transparent shadow-sm hover:bg-foreground/5",
+          "border border-primary/20 bg-transparent hover:bg-primary/5 text-primary",
         secondary:
-          "bg-secondary text-secondary-foreground shadow-ambient hover:bg-secondary/80",
+          "bg-secondary text-on-secondary hover:bg-secondary/80",
         tertiary:
-          "bg-tertiary text-foreground shadow-ambient hover:bg-tertiary/80",
-        ghost: "hover:bg-accent hover:text-accent-foreground",
+          "bg-tertiary text-on-tertiary hover:bg-tertiary/80",
+        ghost: "hover:bg-primary/5 text-primary",
         link: "text-primary underline-offset-4 hover:underline",
-        inverted: "bg-neutral text-background shadow-ambient hover:bg-neutral/90",
+        inverted: "bg-surface-lowest text-primary hover:bg-surface-high shadow-sm",
       },
       size: {
-        default: "h-11 px-8 py-2",
-        sm: "h-9 rounded-full px-4 text-xs",
-        lg: "h-14 rounded-full px-10 text-lg",
-        xl: "h-16 rounded-full px-12 text-xl",
-        "2xl": "h-20 rounded-full px-16 text-2xl",
+        default: "h-12 px-8 py-3",
+        sm: "h-10 px-4 text-xs",
+        lg: "h-14 px-10 text-lg",
+        xl: "h-16 px-12 text-xl font-heading",
+        "2xl": "h-20 px-16 text-2xl font-heading",
         icon: "h-10 w-10",
         pill: "h-12 px-10 rounded-full",
       },
@@ -51,7 +51,7 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
     const Comp = asChild ? Slot : "button"
     return (
       <Comp
-        className={cn(buttonVariants({ variant, size, className }), "rounded-full")}
+        className={cn(buttonVariants({ variant, size, className }), "rounded-sm")}
         ref={ref}
         {...props}
       />
