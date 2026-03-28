@@ -21,7 +21,7 @@ export default function Home() {
   useEffect(() => {
     const timer = setInterval(() => {
       setCurrentImage((prev) => (prev + 1) % heroImages.length);
-    }, 4000); // 3s hold + 1s transition (approx)
+    }, 5000); // 3s hold + 2s transition
     return () => clearInterval(timer);
   }, []);
 
@@ -79,10 +79,10 @@ export default function Home() {
             <AnimatePresence mode="popLayout">
               <motion.div
                 key={currentImage}
-                initial={{ opacity: 0, scale: 1.05, filter: "blur(30px)" }}
+                initial={{ opacity: 0, scale: 1.05, filter: "blur(40px)" }}
                 animate={{ opacity: 1, scale: 1, filter: "blur(0px)" }}
-                exit={{ opacity: 0, scale: 1.02, filter: "blur(30px)" }}
-                transition={{ duration: 1.2, ease: [0.23, 1, 0.32, 1] }}
+                exit={{ opacity: 0, scale: 1.02, filter: "blur(40px)" }}
+                transition={{ duration: 2, ease: [0.23, 1, 0.32, 1] }}
                 className="absolute inset-0 z-0"
               >
                 <Image 
