@@ -1,5 +1,9 @@
+"use client"
+
 import Link from "next/link"
 import { X, Linkedin, Instagram } from "lucide-react"
+import { motion } from "framer-motion"
+import { fadeInUp, staggerContainer } from "@/lib/animations"
 
 export function Footer() {
   return (
@@ -11,43 +15,59 @@ export function Footer() {
         <span className="text-[10vw] font-black uppercase tracking-tighter leading-none opacity-[0.03] select-none">CONNECT</span>
       </div>
 
-      <div className="max-w-7xl mx-auto relative z-10">
+      <motion.div 
+        className="max-w-7xl mx-auto relative z-10"
+        variants={staggerContainer}
+        initial="initial"
+        whileInView="animate"
+        viewport={{ once: true }}
+      >
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-16 lg:gap-8 pb-32">
           {/* Logo & Info */}
-          <div className="space-y-8">
+          <motion.div className="space-y-8" variants={fadeInUp}>
             <div className="space-y-4">
               <div className="h-12 w-12 bg-primary rounded-2xl flex items-center justify-center">
                 <span className="text-on-primary font-black text-2xl">M</span>
               </div>
-              <h3 className="text-2xl font-black uppercase tracking-tighter leading-none">Mijing Youth <br/> Foundation</h3>
+              <h3 className="text-2xl font-black uppercase tracking-tighter leading-none">
+                Mijing Youth <br/> Foundation
+              </h3>
             </div>
             <p className="text-white/30 text-xs font-bold leading-relaxed max-w-[240px] uppercase tracking-[0.2em]">
               Empowering the next generation through education, health, and sustainable development.
             </p>
-          </div>
+          </motion.div>
 
           {/* Resources */}
-          <div className="space-y-8">
+          <motion.div className="space-y-8" variants={fadeInUp}>
             <h4 className="text-[10px] font-black uppercase tracking-[0.4em] text-primary">Resources</h4>
             <ul className="space-y-4">
               {['Privacy Policy', 'Terms of Service', 'Cookie Policy'].map((item) => (
-                <li key={item}><Link href="#" className="font-bold text-sm uppercase tracking-widest text-white/40 hover:text-primary transition-colors">{item}</Link></li>
+                <li key={item}>
+                  <Link href="#" className="font-bold text-sm uppercase tracking-widest text-white/40 hover:text-primary transition-colors">
+                    {item}
+                  </Link>
+                </li>
               ))}
             </ul>
-          </div>
+          </motion.div>
 
           {/* Engagement */}
-          <div className="space-y-8">
+          <motion.div className="space-y-8" variants={fadeInUp}>
             <h4 className="text-[10px] font-black uppercase tracking-[0.4em] text-primary">Engagement</h4>
             <ul className="space-y-4">
               {['Volunteer Portal', 'Annual Reports', 'Support Us'].map((item) => (
-                <li key={item}><Link href="#" className="font-bold text-sm uppercase tracking-widest text-white/40 hover:text-primary transition-colors">{item}</Link></li>
+                <li key={item}>
+                  <Link href="#" className="font-bold text-sm uppercase tracking-widest text-white/40 hover:text-primary transition-colors">
+                    {item}
+                  </Link>
+                </li>
               ))}
             </ul>
-          </div>
+          </motion.div>
 
           {/* Connect */}
-          <div className="space-y-8">
+          <motion.div className="space-y-8" variants={fadeInUp}>
             <h4 className="text-[10px] font-black uppercase tracking-[0.4em] text-primary">Connect</h4>
             <div className="space-y-4">
               <p className="font-bold text-sm uppercase tracking-widest text-white/40">Kokrajhar, BTC, Assam</p>
@@ -64,7 +84,7 @@ export function Footer() {
                 <Instagram className="h-4 w-4" />
               </Link>
             </div>
-          </div>
+          </motion.div>
         </div>
 
         <div className="border-t border-white/5 pt-10 flex flex-col md:flex-row justify-between items-center gap-6">
@@ -75,7 +95,7 @@ export function Footer() {
             <span className="text-[10px] text-white/10 font-black uppercase tracking-[0.3em]">Crafted for impact</span>
           </div>
         </div>
-      </div>
+      </motion.div>
     </footer>
   )
 }

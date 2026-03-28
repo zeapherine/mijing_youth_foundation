@@ -3,6 +3,7 @@
 import { motion } from "framer-motion"
 import Image from "next/image"
 import { ArrowUpRight } from "lucide-react"
+import { fadeInUp, staggerContainer, editorialEasing } from "@/lib/animations"
 
 interface StoryProps {
   label: string;
@@ -18,48 +19,48 @@ const StorySection = ({ label, title, description, quote, image, reverse }: Stor
     <section className={`py-32 px-6 md:px-12 lg:px-16 ${reverse ? 'bg-surface-low' : 'bg-background'}`}>
       <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-24 items-center">
         <motion.div
-          initial={{ opacity: 0, x: reverse ? 40 : -40 }}
+          initial={{ opacity: 0, x: reverse ? 60 : -60 }}
           whileInView={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.8 }}
-          viewport={{ once: true }}
+          transition={{ duration: 1.2, ease: editorialEasing }}
+          viewport={{ once: true, margin: "-100px" }}
           className={`relative ${reverse ? 'lg:order-2' : ''}`}
         >
-          <div className="relative aspect-square rounded-xl overflow-hidden tonal-layer-2">
-            <Image src={image} alt={title} fill className="object-cover" />
+          <div className="relative aspect-square rounded-xl overflow-hidden tonal-layer-2 shadow-premium">
+            <Image src={image} alt={title} fill className="object-cover transition-transform duration-1000 hover:scale-105" />
           </div>
           {/* Decorative organic shape accent */}
           <div className={`absolute -bottom-8 -right-8 w-48 h-48 bg-secondary/10 rounded-full blur-3xl -z-10`} />
         </motion.div>
 
         <motion.div
-          initial={{ opacity: 0, y: 40 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.2 }}
-          viewport={{ once: true }}
+          variants={staggerContainer}
+          initial="initial"
+          whileInView="animate"
+          viewport={{ once: true, margin: "-100px" }}
           className="space-y-12"
         >
           <div className="space-y-4">
-            <span className="text-secondary font-bold tracking-[0.2em] uppercase text-body-xs">{label}</span>
-            <h2 className="font-heading font-black tracking-tight leading-[0.9] uppercase" style={{ fontSize: 'var(--display-md)' }}>{title}</h2>
+            <motion.span variants={fadeInUp} className="text-secondary font-bold tracking-[0.2em] uppercase text-body-xs">{label}</motion.span>
+            <motion.h2 variants={fadeInUp} className="font-heading font-black tracking-tight leading-[0.9] uppercase" style={{ fontSize: 'var(--display-md)' }}>{title}</motion.h2>
           </div>
           
           <div className="space-y-8">
-            <p className="text-body-lg text-foreground/50 leading-relaxed max-w-lg font-medium">
+            <motion.p variants={fadeInUp} className="text-body-lg text-foreground/50 leading-relaxed max-w-lg font-medium">
               {description}
-            </p>
+            </motion.p>
             
-            <div className="p-8 border-l-[4px] border-primary/20 bg-primary/5 rounded-r-lg">
+            <motion.div variants={fadeInUp} className="p-8 border-l-[4px] border-primary/20 bg-primary/5 rounded-r-lg">
               <p className="font-heading italic text-foreground/80 leading-snug" style={{ fontSize: 'var(--headline-md)' }}>
                 &ldquo;{quote}&rdquo;
               </p>
-            </div>
+            </motion.div>
             
-            <button className="flex items-center gap-4 group text-body-lg font-black uppercase tracking-wider">
+            <motion.button variants={fadeInUp} className="flex items-center gap-4 group text-body-lg font-black uppercase tracking-wider active:scale-95 transition-transform">
               <span className="border-b-2 border-primary pb-1 group-hover:text-primary transition-colors">Read Journey</span>
               <div className="w-10 h-10 rounded-full glass flex items-center justify-center group-hover:bg-primary group-hover:text-white transition-all transform group-hover:rotate-45">
                  <ArrowUpRight className="w-5 h-5" />
               </div>
-            </button>
+            </motion.button>
           </div>
         </motion.div>
       </div>

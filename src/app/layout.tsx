@@ -23,6 +23,8 @@ export const metadata: Metadata = {
   description: "A premium editorial-style foundation for youth empowerment.",
 };
 
+import { ClientLayout } from "@/components/ClientLayout";
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -33,7 +35,9 @@ export default function RootLayout({
       lang="en"
       className={`${inter.variable} ${epilogue.variable} ${playfair.variable} h-full antialiased selection:bg-primary/20`}
     >
-      <body className="min-h-full flex flex-col font-sans">{children}</body>
+      <body className="min-h-full font-sans">
+        <ClientLayout>{children}</ClientLayout>
+      </body>
     </html>
   );
 }

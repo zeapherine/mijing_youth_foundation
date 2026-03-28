@@ -1,8 +1,6 @@
-'use client'
+"use client"
 
 import { motion } from "framer-motion"
-import { Navbar } from "@/components/Navbar"
-import { Footer } from "@/components/Footer"
 import { Button } from "@/components/ui/button"
 import { 
   Mail, 
@@ -16,64 +14,44 @@ import {
   Puzzle,
   UserCheck
 } from "lucide-react"
+import { fadeInUp, staggerContainer, pageVariants, editorialEasing } from "@/lib/animations"
 
 export default function ContactPage() {
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.1,
-        delayChildren: 0.2
-      }
-    }
-  }
-
-  const itemVariants = {
-    hidden: { opacity: 0, y: 30 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: { duration: 0.8, ease: [0.33, 1, 0.68, 1] as const }
-    }
-  }
-
   return (
     <main className="min-h-screen bg-background text-foreground">
-      <Navbar />
       
       {/* Hero Section */}
       <section className="pt-40 pb-20 px-6 max-w-7xl mx-auto">
         <motion.div 
           className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start"
-          initial="hidden"
-          whileInView="visible"
+          variants={staggerContainer}
+          initial="initial"
+          whileInView="animate"
           viewport={{ once: true }}
-          variants={containerVariants}
         >
           {/* Left: Form */}
           <div className="space-y-12">
-            <motion.div variants={itemVariants} className="space-y-6">
-              <span className="inline-block px-4 py-1.5 rounded-full bg-secondary-container text-secondary text-body-xs font-bold tracking-[0.1em] uppercase">
+            <motion.div variants={fadeInUp} className="space-y-6">
+              <span className="inline-block px-4 py-1.5 rounded-full bg-secondary-container text-secondary text-label-sm font-bold tracking-[0.1em] uppercase">
                 Connect With Us
               </span>
-              <h1 className="font-heading font-black leading-[0.9] tracking-tight uppercase" style={{ fontSize: 'var(--display-lg)' }}>
+              <h1 className="font-heading font-black leading-[0.9] tracking-tighter uppercase" style={{ fontSize: 'var(--display-lg)' }}>
                 Join the <br />
                 <span className="text-primary italic">Movement.</span>
               </h1>
-                            <p className="text-body-lg text-foreground/60 font-medium max-w-lg leading-relaxed">
+              <p className="text-body-lg text-foreground/60 font-medium max-w-lg leading-relaxed">
                 Your energy, skills, and support can change lives. Send us a message and let&apos;s start a conversation about empowering the youth of Assam.
               </p>
             </motion.div>
 
             <motion.form 
-              variants={itemVariants} 
+              variants={fadeInUp} 
               className="space-y-8"
               onSubmit={(e) => e.preventDefault()}
             >
               <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                 <div className="space-y-2">
-                  <label className="text-body-xs font-bold uppercase tracking-wider text-foreground/50 ml-1">Full Name</label>
+                  <label className="text-label-sm font-bold uppercase tracking-wider text-foreground/50 ml-1">Full Name</label>
                   <input 
                     type="text" 
                     placeholder="John Doe"
@@ -81,7 +59,7 @@ export default function ContactPage() {
                   />
                 </div>
                 <div className="space-y-2">
-                  <label className="text-body-xs font-bold uppercase tracking-wider text-foreground/50 ml-1">Email Address</label>
+                  <label className="text-label-sm font-bold uppercase tracking-wider text-foreground/50 ml-1">Email Address</label>
                   <input 
                     type="email" 
                     placeholder="hello@example.com"
@@ -91,7 +69,7 @@ export default function ContactPage() {
               </div>
 
               <div className="space-y-2">
-                <label className="text-body-xs font-bold uppercase tracking-wider text-foreground/50 ml-1">Interest</label>
+                <label className="text-label-sm font-bold uppercase tracking-wider text-foreground/50 ml-1">Interest</label>
                 <select className="w-full h-16 px-6 rounded-2xl bg-surface-low border-none focus:ring-2 focus:ring-secondary/20 transition-all font-medium appearance-none outline-none cursor-pointer">
                   <option>Volunteering</option>
                   <option>Partnership</option>
@@ -101,7 +79,7 @@ export default function ContactPage() {
               </div>
 
               <div className="space-y-2">
-                <label className="text-body-xs font-bold uppercase tracking-wider text-foreground/50 ml-1">Your Message</label>
+                <label className="text-label-sm font-bold uppercase tracking-wider text-foreground/50 ml-1">Your Message</label>
                 <textarea 
                   rows={4}
                   placeholder="How would you like to contribute?"
@@ -122,10 +100,10 @@ export default function ContactPage() {
 
           {/* Right: Info Card */}
           <motion.div 
-            variants={itemVariants}
+            variants={fadeInUp}
             className="lg:sticky lg:top-40"
           >
-            <div className="relative rounded-[4rem] overflow-hidden min-h-[700px] flex items-end p-8 tonal-layer-1">
+            <div className="relative rounded-[4rem] overflow-hidden min-h-[700px] flex items-end p-8 tonal-layer-1 shadow-premium">
               {/* Map Placeholder Graphic */}
               <div className="absolute inset-0 opacity-10 pointer-events-none mix-blend-multiply">
                  <svg width="100%" height="100%" viewBox="0 0 800 1200" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -145,7 +123,7 @@ export default function ContactPage() {
                     </div>
                     <div>
                       <p className="font-black text-body-lg uppercase tracking-tight">Main Office</p>
-                      <p className="text-foreground/60 font-medium text-body-sm">Ward No. 10, Kokrajhar Town, BTR, Assam 783370</p>
+                      <p className="text-foreground/60 font-medium text-body-sm leading-relaxed max-w-[280px]">Ward No. 10, Kokrajhar Town, BTR, Assam 783370</p>
                     </div>
                   </div>
 
@@ -194,15 +172,22 @@ export default function ContactPage() {
       <section className="py-32 bg-surface-low">
         <div className="max-w-7xl mx-auto px-6">
           <motion.div 
-            className="text-center space-y-4 mb-20"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
+            variants={staggerContainer}
+            initial="initial"
+            whileInView="animate"
             viewport={{ once: true }}
+            className="text-center space-y-4 mb-20"
           >
-            <h2 className="font-heading font-black tracking-tight uppercase" style={{ fontSize: 'var(--display-md)' }}>Other Ways to Help</h2>
+            <motion.h2 variants={fadeInUp} className="font-heading font-black tracking-tight uppercase" style={{ fontSize: 'var(--display-sm)' }}>Other Ways to Help</motion.h2>
           </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <motion.div 
+            variants={staggerContainer}
+            initial="initial"
+            whileInView="animate"
+            viewport={{ once: true }}
+            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+          >
             {[
               {
                 title: "Ambassador Program",
@@ -225,26 +210,22 @@ export default function ContactPage() {
             ].map((item, idx) => (
               <motion.div
                 key={idx}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: idx * 0.1 }}
+                variants={fadeInUp}
                 className="tonal-layer-2 p-10 rounded-[3rem] space-y-6 group cursor-pointer hover:-translate-y-2 transition-transform duration-500"
               >
                 <div className={`h-16 w-16 rounded-2xl flex items-center justify-center shrink-0 ${item.color}`}>
                   <item.icon className="h-8 w-8" />
                 </div>
-                <h3 className="text-body-lg font-black uppercase tracking-tight">{item.title}</h3>
-                <p className="text-foreground/60 font-medium text-body-sm leading-relaxed">
+                <h3 className="font-heading font-black uppercase tracking-tight break-words hyphens-auto" style={{ fontSize: 'var(--headline-md)', lineHeight: '1.2' }}>{item.title}</h3>
+                <p className="text-foreground/60 font-medium text-body-sm leading-relaxed opacity-80 group-hover:opacity-100 transition-opacity">
                   {item.desc}
                 </p>
                </motion.div>
             ))}
-          </div>
+          </motion.div>
         </div>
       </section>
 
-      <Footer />
     </main>
   )
 }

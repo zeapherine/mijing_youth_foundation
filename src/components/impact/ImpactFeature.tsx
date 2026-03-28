@@ -3,20 +3,24 @@
 import { motion } from "framer-motion"
 import Image from "next/image"
 import { ArrowRight } from "lucide-react"
+import { fadeInUp, editorialEasing, staggerContainer } from "@/lib/animations"
 
 export const ImpactFeature = () => {
   return (
     <section className="px-6 md:px-12 lg:px-16 py-24">
       <div className="max-w-7xl mx-auto">
         <motion.div
-          initial={{ opacity: 0, scale: 0.95 }}
-          whileInView={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
-          viewport={{ once: true }}
+          variants={staggerContainer}
+          initial="initial"
+          whileInView="animate"
+          viewport={{ once: true, margin: "-100px" }}
           className="relative group cursor-pointer"
         >
           {/* Main Large Card */}
-          <div className="relative aspect-[16/9] md:aspect-[21/9] rounded-xl overflow-hidden tonal-layer-2 group">
+          <motion.div 
+            variants={fadeInUp}
+            className="relative aspect-[16/9] md:aspect-[21/9] rounded-xl overflow-hidden tonal-layer-2 group shadow-premium"
+          >
             <Image 
               src="/images/impact-sports.png" 
               alt="The Collective Future" 
@@ -46,14 +50,12 @@ export const ImpactFeature = () => {
                  </p>
               </div>
             </div>
-          </div>
+          </motion.div>
 
-          {/* Overlapping Text Element (Betraying the habit) */}
+          {/* Overlapping Text Element */}
           <motion.div
-            initial={{ x: 40, opacity: 0 }}
-            whileInView={{ x: 0, opacity: 1 }}
-            transition={{ delay: 0.4, duration: 0.8 }}
-            className="hidden lg:block absolute -top-12 -right-12 w-80 p-8 glass rounded-lg"
+            variants={fadeInUp}
+            className="hidden lg:block absolute -top-12 -right-12 w-80 p-8 glass rounded-lg shadow-premium z-20"
           >
              <h3 className="font-heading font-black text-primary mb-4" style={{ fontSize: 'var(--display-md)' }}>84%</h3>
              <p className="text-foreground/60 text-body-sm leading-relaxed">

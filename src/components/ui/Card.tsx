@@ -1,18 +1,25 @@
-import * as React from "react"
-import { cn } from "@/lib/utils"
+"use client"
 
-interface CardProps extends React.HTMLAttributes<HTMLDivElement> {
+import * as React from "react"
+import { motion, HTMLMotionProps } from "framer-motion"
+import { cn } from "@/lib/utils"
+import { hoverLift } from "@/lib/animations"
+
+interface CardProps extends Omit<HTMLMotionProps<"div">, "level"> {
   level?: 0 | 1 | 2
   glass?: boolean
+  animateHover?: boolean
 }
 
 const Card = React.forwardRef<HTMLDivElement, CardProps>(
-  ({ className, level = 1, glass = false, ...props }, ref) => {
+  ({ className, level = 1, glass = false, animateHover = true, ...props }, ref) => {
     return (
-      <div
+      <motion.div
         ref={ref}
+        variants={animateHover ? hoverLift : undefined}
+        whileHover={animateHover ? "hover" : undefined}
         className={cn(
-          "rounded-[3rem] p-8 transition-all duration-500",
+          "rounded-[3rem] p-8 transition-colors duration-500",
           level === 0 && "bg-background",
           level === 1 && "tonal-layer-1",
           level === 2 && "tonal-layer-2",
