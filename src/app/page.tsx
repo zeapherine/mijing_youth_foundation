@@ -1,13 +1,30 @@
 "use client"
 
+import { useState, useEffect } from "react"
 import { Button } from "@/components/ui/button"
 import { Card } from "@/components/ui/Card"
 import Image from "next/image"
-import { motion } from "framer-motion"
+import { motion, AnimatePresence } from "framer-motion"
 import { Laptop, Trophy, Heart, TreePine, Palette, Megaphone, Users, ArrowRight } from "lucide-react"
 import { fadeInUp, staggerContainer, editorialEasing } from "@/lib/animations"
 
+const heroImages = [
+  "/images/hero-basketball-v2.png", // Sports & Youth
+  "/images/programs-health-v2.png", // Health & Crisis
+  "/images/impact-green-v2.png",    // Environment
+  "/images/programs-vocational-v2.png" // Social/Vocational
+];
+
 export default function Home() {
+  const [currentImage, setCurrentImage] = useState(0);
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrentImage((prev) => (prev + 1) % heroImages.length);
+    }, 4000); // 3s hold + 1s transition (approx)
+    return () => clearInterval(timer);
+  }, []);
+
   return (
     <main className="relative min-h-screen bg-background overflow-x-hidden selection:bg-primary/20">
 
@@ -52,22 +69,33 @@ export default function Home() {
             </motion.div>
           </motion.div>
 
-          {/* Right: Immersive Imagery (Above the fold) */}
+          {/* Right: Immersive Imagery Slideshow (Above the fold) */}
           <motion.div 
-            className="relative w-full h-[60vh] lg:h-screen lg:min-h-[800px] overflow-hidden group"
+            className="relative w-full h-[60vh] lg:h-screen lg:min-h-[800px] overflow-hidden group bg-surface-low"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 1.5, ease: editorialEasing }}
           >
-            <Image 
-              src="/images/hero-basketball-v2.png" 
-              alt="Youth Empowerment through Sports" 
-              fill 
-              priority
-              className="object-cover lg:object-center grayscale hover:grayscale-0 transition-all duration-[3s] group-hover:scale-105" 
-            />
+            <AnimatePresence mode="popLayout">
+              <motion.div
+                key={currentImage}
+                initial={{ opacity: 0, scale: 1.05, filter: "blur(30px)" }}
+                animate={{ opacity: 1, scale: 1, filter: "blur(0px)" }}
+                exit={{ opacity: 0, scale: 1.02, filter: "blur(30px)" }}
+                transition={{ duration: 1.2, ease: [0.23, 1, 0.32, 1] }}
+                className="absolute inset-0 z-0"
+              >
+                <Image 
+                  src={heroImages[currentImage]} 
+                  alt="Mijing Youth Foundation Focus Areas" 
+                  fill 
+                  priority
+                  className="object-cover lg:object-center grayscale hover:grayscale-0 transition-all duration-[2s]" 
+                />
+              </motion.div>
+            </AnimatePresence>
             {/* Gradient blend for smooth text transition on smaller mobile screens */}
-            <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent opacity-80 lg:hidden" />
+            <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent opacity-80 lg:hidden z-10 pointer-events-none" />
             
             {/* Floating Impact Metric */}
             <div className="absolute bottom-8 right-8 lg:bottom-24 lg:left-12 lg:right-auto bg-surface-lowest/90 backdrop-blur-md p-8 rounded-sm max-w-[280px] shadow-premium border-l-4 border-tertiary z-20">
