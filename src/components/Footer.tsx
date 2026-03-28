@@ -7,7 +7,7 @@ import { fadeInUp, staggerContainer } from "@/lib/animations"
 
 export function Footer() {
   return (
-    <footer className="bg-[#0b0c0b] text-white py-32 px-6 lg:px-12 relative overflow-hidden">
+    <footer className="bg-[#0b0c0b] text-white py-20 px-6 lg:px-12 relative overflow-hidden">
       {/* Background Decorative Text - Positioned to not overlap content */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full flex flex-col justify-center items-center pointer-events-none gap-4">
         <span className="text-[10vw] font-black uppercase tracking-tighter leading-none opacity-[0.03] select-none">RESOURCES</span>
@@ -22,7 +22,7 @@ export function Footer() {
         whileInView="animate"
         viewport={{ once: true }}
       >
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-16 lg:gap-8 pb-32">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-16 lg:gap-8 pb-16">
           {/* Logo & Info */}
           <motion.div className="space-y-8" variants={fadeInUp}>
             <div className="space-y-4">

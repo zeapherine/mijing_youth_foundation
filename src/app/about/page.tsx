@@ -251,9 +251,9 @@ export default function About() {
       </section>
 
       {/* Team CTA Section */}
-      <section className="py-24 px-6 md:px-12 lg:px-16 overflow-hidden">
+      <section className="py-16 px-6 md:px-12 lg:px-16 overflow-hidden">
          <motion.div 
-            className="max-w-7xl mx-auto border-t border-foreground/5 pt-24 pb-12 flex flex-col md:flex-row justify-between items-center gap-12"
+            className="max-w-7xl mx-auto border-t border-foreground/5 pt-16 pb-8 flex flex-col md:flex-row justify-between items-center gap-12"
             variants={fadeInUp}
             initial="initial"
             whileInView="animate"
