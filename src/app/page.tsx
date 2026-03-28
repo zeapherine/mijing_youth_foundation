@@ -12,12 +12,13 @@ export default function Home() {
     <main className="relative min-h-screen bg-background overflow-x-hidden selection:bg-primary/20">
 
       {/* Hero Section: The Human Connection */}
-      <section className="relative min-h-[90vh] flex items-center pt-32 pb-20 px-6 overflow-hidden bg-background">
-        <div className="max-w-7xl mx-auto w-full grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
+      {/* 1. HERO SECTION - Split Editorial Layout */}
+      <section className="pt-24 lg:pt-0 lg:min-h-screen flex items-center overflow-hidden border-b border-foreground/5 bg-background relative">
+        <div className="w-full grid grid-cols-1 lg:grid-cols-2 gap-0 relative z-10 lg:pl-0">
           
           {/* Narrative Column */}
           <motion.div 
-            className="lg:col-span-12 xl:col-span-12 space-y-12 z-20"
+            className="px-6 md:px-12 lg:px-16 py-16 lg:py-24 xl:py-32 flex flex-col justify-center space-y-12 z-20 lg:border-r border-primary/10"
             variants={staggerContainer}
             initial="initial"
             animate="animate"
@@ -29,54 +30,50 @@ export default function Home() {
 
             <motion.h1 
               variants={fadeInUp}
-              className="font-heading font-black tracking-tight leading-[0.9] text-primary" 
-              style={{ fontSize: 'var(--display-lg)' }}
+              className="font-heading font-black tracking-tighter leading-[0.85] text-primary xl:text-[6rem] lg:text-[5rem] text-[4rem]" 
             >
               Investing in <br />
-              <span className="italic serif opacity-80">Human Potential</span> <br />
+              <span className="italic serif opacity-80 text-tertiary">Youth</span> <br />
               Since 2012.
             </motion.h1>
             
-            <motion.div variants={fadeInUp} className="grid grid-cols-1 md:grid-cols-2 gap-12 items-end">
-              <p className="text-body-lg text-primary/60 max-w-xl font-medium leading-relaxed border-l-2 border-tertiary/20 pl-8">
-                Mijing Youth Foundation is a catalyst for change. We empower the next generation through holistic development, environmental stewardship, and community-driven innovation.
-              </p>
-              <div className="flex flex-wrap gap-4">
-                <Button size="xl" className="px-12 h-20 text-xl font-black uppercase tracking-widest transition-all">
-                  Get Involved
-                </Button>
-                <Button size="xl" variant="outline" className="px-12 h-20 text-xl font-black uppercase tracking-widest transition-all">
-                  Our Impact
-                </Button>
-              </div>
+            <motion.div variants={fadeInUp} className="space-y-12">
+               <p className="text-body-lg text-primary/60 max-w-lg font-medium leading-relaxed border-l-2 border-tertiary/20 pl-8 italic">
+                 Mijing Youth Foundation is a catalyst for change. We empower the next generation through athletic discipline, physical resilience, and community-driven innovation.
+               </p>
+               <div className="flex flex-col sm:flex-row gap-4">
+                 <Button size="xl" className="h-16 px-10 text-lg font-black uppercase tracking-widest transition-all bg-primary text-on-primary hover:bg-tertiary hover:text-on-tertiary">
+                   Get Involved
+                 </Button>
+                 <Button size="xl" variant="outline" className="h-16 px-10 text-lg font-black uppercase tracking-widest transition-all border-primary/20 hover:bg-primary/5">
+                   Our Impact
+                 </Button>
+               </div>
             </motion.div>
           </motion.div>
 
-          {/* Immersive Imagery Column - Now full width for maximalist impact */}
+          {/* Right: Immersive Imagery (Above the fold) */}
           <motion.div 
-            className="lg:col-span-12 mt-12 relative"
-            initial={{ opacity: 0, y: 50 }}
-            animate={{ opacity: 1, y: 0 }}
+            className="relative w-full h-[60vh] lg:h-screen lg:min-h-[800px] overflow-hidden group"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
             transition={{ duration: 1.5, ease: editorialEasing }}
           >
-            <div className="relative aspect-[21/9] rounded-sm overflow-hidden group">
-              <Image 
-                src="/images/hero-unified-v2.png" 
-                alt="Empowering Young Minds" 
-                fill 
-                priority
-                className="object-cover transition-transform duration-[3s] group-hover:scale-110" 
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-primary/40 to-transparent" />
-              
-              {/* Overlay Content */}
-              <div className="absolute bottom-12 left-12 right-12 flex flex-col md:flex-row justify-between items-end gap-8">
-                <div className="bg-surface-lowest/90 backdrop-blur-md p-10 rounded-sm max-w-sm shadow-premium border-l-4 border-tertiary">
-                  <p className="text-display-sm font-black text-primary leading-none mb-2">1.2k</p>
-                  <p className="text-xs font-black uppercase tracking-widest text-primary/40 mb-4">Lives Impacted To Date</p>
-                  <p className="text-body-sm text-primary/70 italic">&quot;We don't just build programs; we build futures.&quot;</p>
-                </div>
-              </div>
+            <Image 
+              src="/images/hero-basketball-v2.png" 
+              alt="Youth Empowerment through Sports" 
+              fill 
+              priority
+              className="object-cover lg:object-center grayscale hover:grayscale-0 transition-all duration-[3s] group-hover:scale-105" 
+            />
+            {/* Gradient blend for smooth text transition on smaller mobile screens */}
+            <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent opacity-80 lg:hidden" />
+            
+            {/* Floating Impact Metric */}
+            <div className="absolute bottom-8 right-8 lg:bottom-24 lg:left-12 lg:right-auto bg-surface-lowest/90 backdrop-blur-md p-8 rounded-sm max-w-[280px] shadow-premium border-l-4 border-tertiary z-20">
+               <p className="text-5xl font-black text-primary leading-none mb-2">1.2k</p>
+               <p className="text-xs font-black uppercase tracking-widest text-primary/50 mb-2">Lives Impacted To Date</p>
+               <p className="text-body-sm text-primary/70 italic">&quot;We don't just build programs; we build futures.&quot;</p>
             </div>
           </motion.div>
         </div>
