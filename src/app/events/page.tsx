@@ -16,7 +16,7 @@ export default function EventsPage() {
     <main className="min-h-screen bg-parchment pt-32 pb-24 overflow-hidden">
       <div className="max-w-[90vw] mx-auto">
         <header className="mb-24 md:mb-32">
-          <h1 className="text-forest uppercase tracking-tighter leading-[0.85] mb-8 font-heading font-extrabold text-[clamp(4rem,15vw,12rem)] md:-ml-2">
+          <h1 className="text-forest uppercase tracking-tighter leading-[0.85] mb-8 font-heading font-extrabold text-[clamp(2.5rem,15vw,12rem)] md:-ml-2">
             Events
             <span className="text-terracotta inline-block md:block pt-2">Calendar</span>
           </h1>

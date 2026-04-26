@@ -23,7 +23,7 @@ export default function LabsPage() {
     <main className="min-h-screen bg-[#131313] text-white selection:bg-[#b9f600]/30 selection:text-white">
       
       {/* 1. HERO SECTION - Radical Masthead */}
-      <section className="relative pt-48 pb-32 px-6 md:px-12 lg:px-16 overflow-hidden">
+      <section className="relative pt-32 lg:pt-48 pb-16 lg:pb-32 px-6 md:px-12 lg:px-16 overflow-hidden">
         <motion.div 
           className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-16 items-end relative z-10"
           variants={staggerContainer}
@@ -69,7 +69,7 @@ export default function LabsPage() {
       </section>
 
       {/* 2. AVIATION LAB SECTION - The High Altitude Mandate */}
-      <section className="px-6 md:px-12 lg:px-16 py-32 bg-[#1c1b1b]">
+      <section className="px-6 md:px-12 lg:px-16 py-20 lg:py-32 bg-[#1c1b1b]">
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-24 items-center">
             <motion.div 
@@ -85,8 +85,8 @@ export default function LabsPage() {
                 fill 
                 className="object-cover" 
               />
-              <div className="absolute inset-0 border-[20px] border-[#1c1b1b] pointer-events-none" />
-              <div className="absolute bottom-8 right-8 bg-[#b9f600] text-[#131313] p-6 lg:p-10 font-heading font-black text-3xl uppercase leading-none group-hover:scale-105 transition-transform">
+              <div className="absolute inset-0 border-[10px] md:border-[20px] border-[#1c1b1b] pointer-events-none" />
+              <div className="absolute bottom-4 right-4 md:bottom-8 md:right-8 bg-[#b9f600] text-[#131313] p-6 lg:p-10 font-heading font-black text-2xl md:text-3xl uppercase leading-none group-hover:scale-105 transition-transform">
                 SKY <br/> BOUND.
               </div>
             </motion.div>
@@ -128,7 +128,7 @@ export default function LabsPage() {
       </section>
 
       {/* 3. HOSPITALITY SECTION - Tactical Service */}
-      <section className="px-6 md:px-12 lg:px-16 py-32 bg-[#131313]">
+      <section className="px-6 md:px-12 lg:px-16 py-20 lg:py-32 bg-[#131313]">
         <div className="max-w-7xl mx-auto flex flex-col lg:flex-row gap-24 items-center">
           <motion.div 
             variants={fadeInUp}
@@ -183,19 +183,19 @@ export default function LabsPage() {
               className="object-cover" 
             />
             <div className="absolute inset-0 bg-gradient-to-tr from-[#131313] via-transparent to-transparent opacity-60" />
-            <div className="absolute top-0 left-0 p-12 space-y-4">
-              <h3 className="text-6xl font-black tracking-tighter leading-none text-[#b9f600]">100%</h3>
-              <p className="text-xs font-black uppercase tracking-[0.2em] text-white/50">Placement Rate in 2024</p>
+            <div className="absolute top-0 left-0 p-8 lg:p-12 space-y-4">
+              <h3 className="text-4xl lg:text-6xl font-black tracking-tighter leading-none text-[#b9f600]">100%</h3>
+              <p className="text-[10px] font-black uppercase tracking-[0.2em] text-white/50">Placement Rate in 2024</p>
             </div>
           </motion.div>
         </div>
       </section>
 
       {/* 4. ENROLLMENT & LOGISTICS - The Spring 2025 Mandate */}
-      <section className="px-6 md:px-12 lg:px-16 py-48 bg-[#b9f600] text-[#131313] overflow-hidden relative">
-        <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-24 items-center">
+      <section className="px-6 md:px-12 lg:px-16 py-24 lg:py-48 bg-[#b9f600] text-[#131313] overflow-hidden relative">
+        <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-center">
             <div className="space-y-12">
-               <h2 className="font-heading font-black tracking-tighter uppercase leading-[0.8] text-6xl lg:text-9xl">
+               <h2 className="font-heading font-black tracking-tighter uppercase leading-[0.8] text-5xl md:text-7xl lg:text-9xl">
                  JOIN THE <br/> COHORT.
                </h2>
                <p className="text-2xl font-medium leading-tight max-w-lg border-l-4 border-[#131313]/20 pl-8">

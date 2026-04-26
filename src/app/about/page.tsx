@@ -12,7 +12,7 @@ export default function About() {
     <main className="min-h-screen bg-background text-foreground selection:bg-primary/10">
       
       {/* Hero Section - Immersive Editorial */}
-      <section className="relative pt-48 pb-32 px-6 lg:px-16 overflow-hidden">
+      <section className="relative pt-32 lg:pt-48 pb-16 lg:pb-32 px-6 lg:px-16 overflow-hidden">
         <motion.div 
           className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-16 items-center"
           variants={staggerContainer}
@@ -234,7 +234,7 @@ export default function About() {
             whileInView="animate"
             viewport={{ once: true }}
           >
-            <h2 className="text-6xl md:text-8xl font-heading font-black tracking-tighter uppercase leading-[0.8]">
+            <h2 className="text-4xl md:text-6xl lg:text-8xl font-heading font-black tracking-tighter uppercase leading-[0.8]">
               Join the <br />
               <span className="text-tertiary italic font-serif">Movement.</span>
             </h2>

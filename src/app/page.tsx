@@ -52,7 +52,7 @@ export default function Home() {
 
             <motion.h1 
               variants={fadeInUp}
-              className="font-heading font-black tracking-tighter leading-[0.85] text-primary xl:text-[6rem] lg:text-[5rem] text-[4rem]" 
+              className="font-heading font-black tracking-tighter leading-[0.85] text-primary xl:text-[6rem] lg:text-[5rem] text-[3.5rem] sm:text-[4rem]" 
             >
               Investing in <br />
               <span className="italic serif opacity-80 text-tertiary">Youth</span> <br />
@@ -118,10 +118,10 @@ export default function Home() {
       <FeaturedEvent />
 
       {/* Strategic Pillars: The Vertical Narrative */}
-      <section className="py-32 px-6 bg-surface-low">
+      <section className="py-20 lg:py-32 px-6 bg-surface-low">
         <div className="max-w-7xl mx-auto">
           <motion.div 
-            className="mb-32 space-y-6"
+            className="mb-20 lg:mb-32 space-y-6"
             variants={fadeInUp}
             initial="initial"
             whileInView="animate"
@@ -131,9 +131,9 @@ export default function Home() {
              <div className="h-1 w-32 bg-tertiary" />
           </motion.div>
 
-          <div className="space-y-48">
+          <div className="space-y-32 lg:space-y-48">
             {/* Pillar 01: Skill Lab */}
-            <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
               <motion.div 
                 className="lg:col-span-5 space-y-8"
                 initial={{ opacity: 0, x: -30 }}
@@ -223,7 +223,7 @@ export default function Home() {
       </section>
 
       {/* Impact Stats: Quantifying the Future */}
-      <section className="py-48 px-6 bg-primary text-on-primary">
+      <section className="py-24 lg:py-48 px-6 bg-primary text-on-primary">
         <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-16 lg:gap-32 items-end">
           <motion.div 
             className="lg:col-span-6 space-y-12"
@@ -257,8 +257,8 @@ export default function Home() {
                { val: "12", label: "Active Regions" },
                { val: "92%", label: "Placement Rate" }
              ].map((stat, i) => (
-               <motion.div key={i} className="pl-8 border-l border-tertiary/40 space-y-2" variants={fadeInUp}>
-                  <p className="text-6xl md:text-7xl font-heading font-black tracking-tighter text-on-primary">{stat.val}</p>
+               <motion.div key={i} className="pl-6 md:pl-8 border-l border-tertiary/40 space-y-2" variants={fadeInUp}>
+                  <p className="text-5xl md:text-7xl font-heading font-black tracking-tighter text-on-primary">{stat.val}</p>
                   <p className="text-[10px] font-black uppercase tracking-[0.3em] text-on-primary/40">{stat.label}</p>
                </motion.div>
              ))}
@@ -267,7 +267,7 @@ export default function Home() {
       </section>
 
       {/* Final Movement: Call to Action */}
-      <section className="relative py-48 px-6 bg-surface-lowest overflow-hidden">
+      <section className="relative py-24 lg:py-48 px-6 bg-surface-lowest overflow-hidden">
          <div className="max-w-4xl mx-auto text-center space-y-16 relative z-10">
             <motion.div 
               className="space-y-6"

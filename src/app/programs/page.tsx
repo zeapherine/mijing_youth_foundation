@@ -23,7 +23,7 @@ export default function ProgramsPage() {
     <main className="min-h-screen bg-background selection:bg-primary/10">
       
       {/* 1. HERO SECTION - Minimalist Impact */}
-      <section className="pt-48 pb-24 px-6 md:px-12 lg:px-16 overflow-hidden border-b border-foreground/5">
+      <section className="pt-32 lg:pt-48 pb-16 lg:pb-24 px-6 md:px-12 lg:px-16 overflow-hidden border-b border-foreground/5">
         <motion.div 
           className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-end"
           variants={staggerContainer}
@@ -71,7 +71,7 @@ export default function ProgramsPage() {
             initial="initial"
             whileInView="animate"
             viewport={{ once: true }}
-            className="lg:col-span-12 mb-12"
+            className="lg:col-span-12 mb-12 hidden lg:block"
           >
              <h2 className="text-[10vw] font-heading font-black opacity-[0.03] absolute top-10 right-0 select-none">CULTURE</h2>
           </motion.div>
@@ -129,9 +129,9 @@ export default function ProgramsPage() {
       </section>
 
       {/* 3. SOCIAL SERVICE & HEALTH SECTION - High Contrast Layout */}
-      <section className="px-6 md:px-12 lg:px-16 py-32 bg-primary text-on-primary overflow-hidden">
+      <section className="px-6 md:px-12 lg:px-16 py-20 lg:py-32 bg-primary text-on-primary overflow-hidden">
         <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-24 items-center">
-           <div className="relative aspect-[4/5] w-full max-w-lg lg:order-2">
+           <div className="relative aspect-square md:aspect-[4/5] w-full max-w-lg lg:order-2">
               <motion.div 
                 className="relative w-full h-full rounded-sm overflow-hidden shadow-premium"
                 initial={{ opacity: 0, y: 50 }}
@@ -152,10 +152,10 @@ export default function ProgramsPage() {
                 whileInView={{ opacity: 1, x: 0 }}
                 transition={{ delay: 0.5 }}
                 viewport={{ once: true }}
-                className="absolute -bottom-12 -left-12 bg-tertiary p-12 rounded-sm text-on-tertiary space-y-4 shadow-premium max-w-sm"
+                className="absolute -bottom-6 -left-6 lg:-bottom-12 lg:-left-12 bg-tertiary p-8 lg:p-12 rounded-sm text-on-tertiary space-y-2 lg:space-y-4 shadow-premium max-w-[240px] md:max-w-sm"
               >
-                 <p className="text-6xl font-heading font-black leading-none">12,000+</p>
-                 <p className="text-sm font-bold uppercase tracking-widest leading-tight">Lives Touched through our mobile triage units and emergency logistics.</p>
+                 <p className="text-4xl lg:text-6xl font-heading font-black leading-none">12,000+</p>
+                 <p className="text-[10px] lg:text-sm font-bold uppercase tracking-widest leading-tight">Lives Touched through our mobile triage units.</p>
               </motion.div>
            </div>
 
@@ -251,7 +251,7 @@ export default function ProgramsPage() {
       </section>
 
       {/* 5. TOURISM & SKILL DEVELOPMENT - Technical Editorial */}
-      <section className="px-6 md:px-12 lg:px-16 py-32 bg-surface-low relative overflow-hidden">
+      <section className="px-6 md:px-12 lg:px-16 py-20 lg:py-32 bg-surface-low relative overflow-hidden">
         <div className="max-w-7xl mx-auto">
            <div className="grid grid-cols-1 lg:grid-cols-12 gap-24 items-start">
               <div className="lg:col-span-12">
@@ -308,7 +308,7 @@ export default function ProgramsPage() {
       </section>
 
       {/* 6. IMPACT CTA - Maximalist Closure */}
-      <section className="py-48 px-6 text-center bg-background border-t border-foreground/5">
+      <section className="py-24 lg:py-48 px-6 text-center bg-background border-t border-foreground/5">
         <motion.div 
           variants={staggerContainer}
           initial="initial"

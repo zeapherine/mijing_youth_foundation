@@ -21,7 +21,7 @@ export default function ContactPage() {
     <main className="min-h-screen bg-parchment text-forest">
       
       {/* Hero Section */}
-      <section className="pt-40 pb-20 px-6 max-w-7xl mx-auto">
+      <section className="pt-32 lg:pt-40 pb-16 lg:pb-20 px-6 max-w-7xl mx-auto">
         <motion.div 
           className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start"
           variants={staggerContainer}
@@ -103,8 +103,8 @@ export default function ContactPage() {
             variants={fadeInUp}
             className="lg:sticky lg:top-40"
           >
-            <div className="relative rounded-sm overflow-hidden min-h-[700px] flex items-end p-8 bg-forest border border-forest/5 shadow-2xl">
-              <div className="relative w-full bg-parchment rounded-sm p-10 space-y-10 group transition-all duration-700">
+            <div className="relative rounded-sm overflow-hidden min-h-[500px] md:min-h-[700px] flex items-end p-6 md:p-8 bg-forest border border-forest/5 shadow-2xl">
+              <div className="relative w-full bg-parchment rounded-sm p-8 md:p-10 space-y-8 md:space-y-10 group transition-all duration-700">
                 <h2 className="font-heading font-black tracking-tight text-forest uppercase leading-[0.9]" style={{ fontSize: 'var(--headline-lg)' }}>Reach Out Directly</h2>
                 
                 <div className="space-y-8">
@@ -128,9 +128,9 @@ export default function ContactPage() {
                     </div>
                   </div>
 
-                  <div className="flex gap-6 items-start">
-                    <div className="h-12 w-12 rounded-sm bg-forest/5 flex items-center justify-center shrink-0 border border-forest/10">
-                      <PhoneCall className="h-6 w-6 text-terracotta" />
+                  <div className="flex gap-4 md:gap-6 items-start">
+                    <div className="h-10 w-10 md:h-12 md:w-12 rounded-sm bg-forest/5 flex items-center justify-center shrink-0 border border-forest/10">
+                      <PhoneCall className="h-5 w-5 md:h-6 md:w-6 text-terracotta" />
                     </div>
                     <div>
                       <p className="font-black text-body-lg uppercase tracking-tight text-forest">Call Center</p>
