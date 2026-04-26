@@ -16,6 +16,7 @@ import {
   Leaf
 } from "lucide-react"
 import { fadeInUp, staggerContainer } from "@/lib/animations"
+import Link from "next/link"
 
 export default function ProgramsPage() {
   return (
@@ -118,7 +119,7 @@ export default function ProgramsPage() {
             className="lg:col-span-7 relative aspect-video lg:aspect-square rounded-sm overflow-hidden shadow-premium"
           >
             <Image 
-              src="/images/impact-athletics-v2.png" 
+              src="/images/actual-sp-3.jpg" 
               alt="Sports & Culture" 
               fill 
               className="object-cover grayscale hover:grayscale-0 transition-all duration-1000" 
@@ -265,6 +266,12 @@ export default function ProgramsPage() {
                       Bridging the gap between aspiration and industry proficiency. Our labs 
                       provide specialized training in aviation, hospitality, and sustainable tourism.
                     </p>
+                    <Link href="/programs/labs">
+                      <Button variant="link" className="px-0 flex items-center gap-4 text-primary font-black uppercase tracking-widest group">
+                        Explore our Labs
+                        <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-2" />
+                      </Button>
+                    </Link>
                  </div>
 
                  <div className="grid md:grid-cols-2 gap-12">
@@ -284,7 +291,7 @@ export default function ProgramsPage() {
               <div className="lg:col-span-5 relative">
                  <Card level={2} className="p-0 border-none overflow-hidden rounded-sm relative aspect-[4/5] shadow-premium group">
                     <Image 
-                      src="/images/programs-vocational-v2.png" 
+                      src="/images/actual-sp-7.jpg" 
                       alt="Skills training" 
                       fill 
                       className="object-cover grayscale group-hover:grayscale-0 transition-all duration-1000" 

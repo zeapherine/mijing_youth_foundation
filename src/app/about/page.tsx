@@ -194,7 +194,7 @@ export default function About() {
             viewport={{ once: true }}
           >
             {[
-              { name: "Dr. Lwin Moe", role: "Executive Director", image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?q=80&w=2070&auto=format&fit=crop" },
+              { name: "Agwma Basumatary", role: "President", image: "/images/actual-sp-1.jpg" },
               { name: "Sarah Chen", role: "Head of Programs", image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?q=80&w=2070&auto=format&fit=crop" },
               { name: "Michael Abiola", role: "Operations Lead", image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=2070&auto=format&fit=crop" }
             ].map((member, i) => (

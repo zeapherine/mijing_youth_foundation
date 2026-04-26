@@ -96,7 +96,7 @@ export const ImpactStories = () => {
         title="A Champion&apos;s Spirit"
         description="Leo didn&apos;t have shoes when he started running. He had a heart that beat faster than his legs could carry him."
         quote="Today, he leads the National Youth Relay Team, proving that speed is nothing without the endurance of the soul."
-        image="/images/impact-athletics-v2.png"
+        image="/images/actual-sp-4.jpg"
       />
     </>
   )

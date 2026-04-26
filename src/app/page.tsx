@@ -7,13 +7,16 @@ import Image from "next/image"
 import { motion, AnimatePresence } from "framer-motion"
 import { Laptop, Trophy, Heart, TreePine, Palette, Megaphone, Users, ArrowRight } from "lucide-react"
 import { fadeInUp, staggerContainer, editorialEasing } from "@/lib/animations"
+import Link from "next/link"
 
 const heroImages = [
-  "/images/hero-basketball-v2.png", // Sports & Youth
-  "/images/programs-health-v2.png", // Health & Crisis
-  "/images/impact-green-v2.png",    // Environment
-  "/images/programs-vocational-v2.png" // Social/Vocational
+  "/images/actual-sp-4.jpg",
+  "/images/actual-sp-7.jpg",
+  "/images/actual-sp-8.jpg",
+  "/images/actual-sp-6.jpg"
 ];
+
+import { FeaturedEvent } from "@/components/impact/FeaturedEvent"
 
 export default function Home() {
   const [currentImage, setCurrentImage] = useState(0);
@@ -31,6 +34,7 @@ export default function Home() {
       {/* Hero Section: The Human Connection */}
       {/* 1. HERO SECTION - Split Editorial Layout */}
       <section className="pt-24 lg:pt-0 lg:min-h-screen flex items-center overflow-hidden border-b border-foreground/5 bg-background relative">
+        {/* ... existing hero code ... */}
         <div className="w-full grid grid-cols-1 lg:grid-cols-2 gap-0 relative z-10 lg:pl-0">
           
           {/* Narrative Column */}
@@ -40,6 +44,7 @@ export default function Home() {
             initial="initial"
             animate="animate"
           >
+            {/* ... */}
             <motion.div variants={fadeInUp} className="inline-flex items-center gap-4 px-4 py-2 border border-primary/10 rounded-sm bg-surface-low/50">
                <span className="h-2 w-2 rounded-full bg-tertiary animate-pulse" />
                <span className="text-[10px] font-black uppercase tracking-[0.3em] text-primary/60">Founded on Purpose. Driven by Youth.</span>
@@ -62,9 +67,11 @@ export default function Home() {
                  <Button size="xl" className="h-16 px-10 text-lg font-black uppercase tracking-widest transition-all bg-primary text-on-primary hover:bg-tertiary hover:text-on-tertiary">
                    Get Involved
                  </Button>
-                 <Button size="xl" variant="outline" className="h-16 px-10 text-lg font-black uppercase tracking-widest transition-all border-primary/20 hover:bg-primary/5">
-                   Our Impact
-                 </Button>
+                 <Link href="/impact">
+                   <Button size="xl" variant="outline" className="h-16 px-10 text-lg font-black uppercase tracking-widest transition-all border-primary/20 hover:bg-primary/5">
+                     Our Impact
+                   </Button>
+                 </Link>
                </div>
             </motion.div>
           </motion.div>
@@ -107,6 +114,9 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Featured Event Section */}
+      <FeaturedEvent />
+
       {/* Strategic Pillars: The Vertical Narrative */}
       <section className="py-32 px-6 bg-surface-low">
         <div className="max-w-7xl mx-auto">
@@ -135,10 +145,12 @@ export default function Home() {
                 <p className="text-primary/60 text-body-lg leading-relaxed">
                   Bridge the gap between potential and opportunity. Our digital literacy workshops and vocational training centers are designed for the 21st-century economy.
                 </p>
-                <Button variant="link" className="px-0 flex items-center gap-4 text-primary font-black uppercase tracking-widest group">
-                  Learn About Our Labs
-                  <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-2" />
-                </Button>
+                <Link href="/programs/labs">
+                  <Button variant="link" className="px-0 flex items-center gap-4 text-primary font-black uppercase tracking-widest group">
+                    Learn About Our Labs
+                    <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-2" />
+                  </Button>
+                </Link>
               </motion.div>
               <motion.div 
                 className="lg:col-span-7 relative aspect-video"
@@ -146,7 +158,7 @@ export default function Home() {
                 whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true }}
               >
-                <Image src="/images/skills-lab-v2.png" alt="Skill Development" fill className="object-cover rounded-sm shadow-premium grayscale hover:grayscale-0 transition-all duration-1000" />
+                <Image src="/images/actual-sp-6.jpg" alt="Skill Development" fill className="object-cover rounded-sm shadow-premium grayscale hover:grayscale-0 transition-all duration-1000" />
               </motion.div>
             </div>
 
@@ -159,7 +171,7 @@ export default function Home() {
                 viewport={{ once: true }}
               >
                 <div className="absolute inset-0 bg-primary/10 rounded-sm -rotate-2" />
-                <Image src="/images/impact-athletics-v2.png" alt="Sports & Athletics" fill className="object-cover rounded-sm shadow-premium z-10" />
+                <Image src="/images/actual-sp-2.jpg" alt="Sports & Athletics" fill className="object-cover rounded-sm shadow-premium z-10" />
               </motion.div>
               <motion.div 
                 className="lg:col-span-5 lg:order-2 space-y-8"

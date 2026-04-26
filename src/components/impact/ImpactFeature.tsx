@@ -22,7 +22,7 @@ export const ImpactFeature = () => {
             className="relative aspect-[16/9] md:aspect-[21/9] rounded-sm overflow-hidden bg-parchment-deep border border-forest/5 group"
           >
             <Image 
-              src="/images/impact-sports-v2.png" 
+              src="/images/actual-sp-8.jpg" 
               alt="The Collective Future" 
               fill 
               className="object-cover grayscale hover:grayscale-0 transition-all duration-1000 group-hover:scale-105"
