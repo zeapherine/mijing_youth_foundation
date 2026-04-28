@@ -14,7 +14,95 @@ import {
   Puzzle,
   UserCheck
 } from "lucide-react"
+import { useSearchParams } from "next/navigation"
+import { useEffect, useState, Suspense } from "react"
 import { fadeInUp, staggerContainer } from "@/lib/animations"
+
+function ContactForm() {
+  const searchParams = useSearchParams()
+  const [interest, setInterest] = useState("Volunteering")
+
+  useEffect(() => {
+    const type = searchParams.get("type")
+    if (type === "volunteer") setInterest("Volunteering")
+    if (type === "partner") setInterest("Partnership")
+    if (type === "donate") setInterest("Donation")
+  }, [searchParams])
+
+  return (
+    <div className="space-y-12">
+      <motion.div variants={fadeInUp} className="space-y-6">
+        <span className="inline-block px-4 py-1.5 rounded-sm bg-forest/5 border border-forest/10 text-forest text-xs font-bold tracking-[0.3em] uppercase">
+          Connect With Us
+        </span>
+        <h1 className="font-heading font-black leading-[0.9] tracking-tighter uppercase text-forest" style={{ fontSize: 'var(--display-lg)' }}>
+          Join the <br />
+          <span className="text-terracotta italic">Movement.</span>
+        </h1>
+        <p className="text-body-lg text-forest/60 font-medium max-w-lg leading-relaxed">
+          Your energy, skills, and support can change lives. Send us a message and let&apos;s start a conversation about empowering the youth of Assam.
+        </p>
+      </motion.div>
+
+      <motion.form 
+        variants={fadeInUp} 
+        className="space-y-8"
+        onSubmit={(e) => e.preventDefault()}
+      >
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div className="space-y-2">
+            <label className="text-xs font-bold uppercase tracking-widest text-forest/40 ml-1">Full Name</label>
+            <input 
+              type="text" 
+              placeholder="John Doe"
+              className="w-full h-16 px-6 rounded-sm bg-forest/5 border border-forest/10 focus:border-terracotta/30 transition-all font-medium placeholder:text-forest/20 outline-none"
+            />
+          </div>
+          <div className="space-y-2">
+            <label className="text-xs font-bold uppercase tracking-widest text-forest/40 ml-1">Email Address</label>
+            <input 
+              type="email" 
+              placeholder="hello@example.com"
+              className="w-full h-16 px-6 rounded-sm bg-forest/5 border border-forest/10 focus:border-terracotta/30 transition-all font-medium placeholder:text-forest/20 outline-none"
+            />
+          </div>
+        </div>
+
+        <div className="space-y-2">
+          <label className="text-xs font-bold uppercase tracking-widest text-forest/40 ml-1">Interest</label>
+          <select 
+            value={interest}
+            onChange={(e) => setInterest(e.target.value)}
+            className="w-full h-16 px-6 rounded-sm bg-forest/5 border border-forest/10 focus:border-terracotta/30 transition-all font-medium appearance-none outline-none cursor-pointer"
+          >
+            <option value="Volunteering">Volunteering</option>
+            <option value="Partnership">Partnership</option>
+            <option value="Donation">Donation</option>
+            <option value="Media Query">Media Query</option>
+          </select>
+        </div>
+
+        <div className="space-y-2">
+          <label className="text-xs font-bold uppercase tracking-widest text-forest/40 ml-1">Your Message</label>
+          <textarea 
+            rows={4}
+            placeholder="How would you like to contribute?"
+            className="w-full p-6 rounded-sm bg-forest/5 border border-forest/10 focus:border-terracotta/30 transition-all font-medium placeholder:text-forest/20 outline-none resize-none"
+          />
+        </div>
+
+        <motion.div
+          whileHover={{ y: -2 }}
+          whileTap={{ scale: 0.98 }}
+        >
+          <Button className="w-full h-16 bg-forest text-parchment rounded-sm text-lg font-black uppercase tracking-wider flex items-center justify-center gap-3 hover:bg-forest/90 transition-all">
+            Send Message <ArrowRight className="h-5 w-5" />
+          </Button>
+        </motion.div>
+      </motion.form>
+    </div>
+  )
+}
 
 export default function ContactPage() {
   return (
@@ -29,74 +117,10 @@ export default function ContactPage() {
           whileInView="animate"
           viewport={{ once: true }}
         >
-          {/* Left: Form */}
-          <div className="space-y-12">
-            <motion.div variants={fadeInUp} className="space-y-6">
-              <span className="inline-block px-4 py-1.5 rounded-sm bg-forest/5 border border-forest/10 text-forest text-xs font-bold tracking-[0.3em] uppercase">
-                Connect With Us
-              </span>
-              <h1 className="font-heading font-black leading-[0.9] tracking-tighter uppercase text-forest" style={{ fontSize: 'var(--display-lg)' }}>
-                Join the <br />
-                <span className="text-terracotta italic">Movement.</span>
-              </h1>
-              <p className="text-body-lg text-forest/60 font-medium max-w-lg leading-relaxed">
-                Your energy, skills, and support can change lives. Send us a message and let&apos;s start a conversation about empowering the youth of Assam.
-              </p>
-            </motion.div>
-
-            <motion.form 
-              variants={fadeInUp} 
-              className="space-y-8"
-              onSubmit={(e) => e.preventDefault()}
-            >
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                <div className="space-y-2">
-                  <label className="text-xs font-bold uppercase tracking-widest text-forest/40 ml-1">Full Name</label>
-                  <input 
-                    type="text" 
-                    placeholder="John Doe"
-                    className="w-full h-16 px-6 rounded-sm bg-forest/5 border border-forest/10 focus:border-terracotta/30 transition-all font-medium placeholder:text-forest/20 outline-none"
-                  />
-                </div>
-                <div className="space-y-2">
-                  <label className="text-xs font-bold uppercase tracking-widest text-forest/40 ml-1">Email Address</label>
-                  <input 
-                    type="email" 
-                    placeholder="hello@example.com"
-                    className="w-full h-16 px-6 rounded-sm bg-forest/5 border border-forest/10 focus:border-terracotta/30 transition-all font-medium placeholder:text-forest/20 outline-none"
-                  />
-                </div>
-              </div>
-
-              <div className="space-y-2">
-                <label className="text-xs font-bold uppercase tracking-widest text-forest/40 ml-1">Interest</label>
-                <select className="w-full h-16 px-6 rounded-sm bg-forest/5 border border-forest/10 focus:border-terracotta/30 transition-all font-medium appearance-none outline-none cursor-pointer">
-                  <option>Volunteering</option>
-                  <option>Partnership</option>
-                  <option>Donation</option>
-                  <option>Media Query</option>
-                </select>
-              </div>
-
-              <div className="space-y-2">
-                <label className="text-xs font-bold uppercase tracking-widest text-forest/40 ml-1">Your Message</label>
-                <textarea 
-                  rows={4}
-                  placeholder="How would you like to contribute?"
-                  className="w-full p-6 rounded-sm bg-forest/5 border border-forest/10 focus:border-terracotta/30 transition-all font-medium placeholder:text-forest/20 outline-none resize-none"
-                />
-              </div>
-
-              <motion.div
-                whileHover={{ y: -2 }}
-                whileTap={{ scale: 0.98 }}
-              >
-                <Button className="w-full h-16 bg-forest text-parchment rounded-sm text-lg font-black uppercase tracking-wider flex items-center justify-center gap-3 hover:bg-forest/90 transition-all">
-                  Send Message <ArrowRight className="h-5 w-5" />
-                </Button>
-              </motion.div>
-            </motion.form>
-          </div>
+          {/* Left: Form wrapped in Suspense for useSearchParams */}
+          <Suspense fallback={<div className="h-96 animate-pulse bg-forest/5 rounded-sm" />}>
+            <ContactForm />
+          </Suspense>
 
           {/* Right: Info Card */}
           <motion.div 

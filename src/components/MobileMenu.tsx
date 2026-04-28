@@ -96,9 +96,11 @@ export function MobileMenu({ isOpen, onClose, navLinks, pathname }: MobileMenuPr
               className="space-y-4"
             >
               <p className="text-[10px] font-black uppercase tracking-[0.4em] text-parchment/20">Institutional Mandate 2024</p>
-              <button className="w-full py-5 bg-terracotta text-parchment font-black uppercase tracking-widest rounded-sm active:scale-[0.98] transition-transform">
-                Get Involved
-              </button>
+              <Link href="/get-involved" onClick={onClose}>
+                <button className="w-full py-5 bg-terracotta text-parchment font-black uppercase tracking-widest rounded-sm active:scale-[0.98] transition-transform">
+                  Get Involved
+                </button>
+              </Link>
             </motion.div>
           </div>
 

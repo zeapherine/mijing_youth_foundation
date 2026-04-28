@@ -42,8 +42,7 @@ export default function About() {
               variants={fadeInUp}
               className="text-body-lg text-foreground/60 max-w-xl font-medium leading-relaxed border-l-4 border-tertiary/20 pl-8"
             >
-              Mijing Youth Empowerment Foundation is an institutional force for good, 
-              dedicated to bridging the gap between untapped potential and systemic opportunity.
+              Operating across the entirety of Assam, the Mijing Youth Empowerment Foundation is an institutional force dedicated to bridging the gap between untapped potential and systemic opportunity—building self-reliance, combating grassroots inequality, and fostering profound social integration.
             </motion.p>
           </div>
 
@@ -94,9 +93,7 @@ export default function About() {
                   <h3 className="text-3xl font-heading font-black uppercase">The Directive</h3>
                 </div>
                 <p className="text-body-lg text-foreground/70 font-medium leading-relaxed italic">
-                  "To empower young minds through quality education, vocational training, and holistic 
-                  development programs. We strive to create opportunities that bridge the gap 
-                  between potential and excellence."
+                  "To systematically empower young minds through athletic discipline, vocational and digital skill development, targeted health interventions, and cultural preservation. We act as first responders to societal crises and relentless builders of a self-reliant generation."
                 </p>
                 <div className="h-px w-full bg-foreground/10" />
               </div>
@@ -109,14 +106,49 @@ export default function About() {
                   <h3 className="text-3xl font-heading font-black uppercase">The Aspiration</h3>
                 </div>
                 <p className="text-body-lg text-foreground/70 font-medium leading-relaxed italic">
-                  "A world where every young individual has the resources, skills, and confidence 
-                  to shape their own future and contribute meaningfully to society and 
-                  environmental sustainability."
+                  "An Assam completely free from intolerance, illiteracy, and systemic poverty—where profound brotherhood reigns, natural heritage is fiercely protected, and youth invariably lead the charge toward unparalleled socio-economic development."
                 </p>
                 <div className="h-px w-full bg-foreground/10" />
               </div>
             </div>
           </motion.div>
+        </div>
+      </section>
+
+      {/* Structural Approach - Direct & Indirect Impact (New Section based on The Ant) */}
+      <section className="py-32 px-6 lg:px-16 bg-surface-lowest">
+        <div className="max-w-7xl mx-auto space-y-16">
+           <motion.div 
+              className="text-left space-y-6 max-w-3xl"
+              variants={fadeInUp}
+              initial="initial"
+              whileInView="animate"
+              viewport={{ once: true }}
+            >
+               <h2 className="font-heading font-black tracking-tight uppercase leading-[0.9]" style={{ fontSize: 'var(--display-md)' }}>Operational <br/> Methodology</h2>
+               <p className="text-body-lg text-foreground/50 font-medium border-l-4 border-tertiary pl-8">We tackle vast, systemic socio-economic disparity through two parallel channels of impact.</p>
+            </motion.div>
+
+            <motion.div 
+               className="grid grid-cols-1 md:grid-cols-2 gap-16"
+               variants={staggerContainer}
+               initial="initial"
+               whileInView="animate"
+               viewport={{ once: true }}
+            >
+               <div className="space-y-6">
+                 <h3 className="text-3xl font-heading font-black uppercase text-primary">01. Direct Grassroots Intervention</h3>
+                 <p className="text-body-lg text-foreground/70 font-medium leading-relaxed">
+                   At the immediate community level, we execute high-velocity interventions. We distribute vital goods during natural calamities, set up entirely free medical health camps to prevent epidemics, organize deeply engaging sporting matches that construct rural brotherhood, and curate massive youth-led afforestation drives constructing nurseries alongside barren river-banks.
+                 </p>
+               </div>
+               <div className="space-y-6">
+                 <h3 className="text-3xl font-heading font-black uppercase text-primary">02. Strategic Institutional Alignment</h3>
+                 <p className="text-body-lg text-foreground/70 font-medium leading-relaxed">
+                   At a structural altitude, we collaborate intrinsically with government apparatus and peer NGOs. We aggressively combat complex societal maladies—eradicating illiteracy, human trafficking, and archaic superstitions. By deeply aligning with initiatives like Swachh Bharat and regional vocational authorities, we engineer sustainable tourism and long-term socio-economic sovereignty.
+                 </p>
+               </div>
+            </motion.div>
         </div>
       </section>
 
@@ -147,11 +179,11 @@ export default function About() {
             viewport={{ once: true }}
           >
             {[
-              { title: "Inclusivity", desc: "Universal talent, localized opportunity. We break systemic barriers to entry.", icon: Users2 },
-              { title: "Integrity", desc: "Radical transparency is the foundation of our community trust.", icon: ShieldCheck },
-              { title: "Compassion", desc: "Empathy is our engine for understanding real community needs.", icon: Heart },
-              { title: "Innovation", desc: "Evolving our pedagogical methods for a digital-first world.", icon: Sparkles },
-              { title: "Advocacy", desc: "Amplifying the muted voices in the corridors of power.", icon: Megaphone }
+              { title: "Unconditional Equity", desc: "Working relentlessly without any discrimination of caste, race, creed, religion, or gender.", icon: Users2 },
+              { title: "Cultural Preservation", desc: "Fiercely protecting the ethnic traditional roots, tribal songs, culture, and native ecosystem of our region.", icon: ShieldCheck },
+              { title: "Direct Intervention", desc: "Acting as robust first-responders during health crises and natural calamities.", icon: Heart },
+              { title: "Systemic Empowerment", desc: "Training youth in 21st-century vocational domains to forge unshakeable self-reliance.", icon: Sparkles },
+              { title: "Civic Tranquility", desc: "Using athletics and leadership programs as deliberate instruments for peace-building and brotherhood.", icon: Megaphone }
             ].map((value, i) => (
               <div key={i} className="bg-background p-12 space-y-8 group hover:bg-surface-low transition-colors duration-500">
                 <div className="flex justify-between items-start">

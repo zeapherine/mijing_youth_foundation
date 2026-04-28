@@ -66,9 +66,11 @@ export function Navbar() {
           </div>
 
           <div className="flex items-center gap-4">
-            <Button className="hidden sm:flex rounded-sm px-6 md:px-8 bg-forest hover:bg-forest/90 text-parchment font-bold h-10 md:h-12 border-none text-[12px] md:text-[13px] uppercase tracking-widest transition-transform active:scale-95">
-              Get Involved
-            </Button>
+            <Link href="/get-involved">
+              <Button className="hidden sm:flex rounded-sm px-6 md:px-8 bg-forest hover:bg-forest/90 text-parchment font-bold h-10 md:h-12 border-none text-[12px] md:text-[13px] uppercase tracking-widest transition-transform active:scale-95">
+                Get Involved
+              </Button>
+            </Link>
             
             {/* Mobile Menu Toggle */}
             <button 

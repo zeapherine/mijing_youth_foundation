@@ -56,17 +56,19 @@ export default function Home() {
             >
               Investing in <br />
               <span className="italic serif opacity-80 text-tertiary">Youth</span> <br />
-              Since 2012.
+              Since 2024.
             </motion.h1>
             
             <motion.div variants={fadeInUp} className="space-y-12">
                <p className="text-body-lg text-primary/60 max-w-lg font-medium leading-relaxed border-l-2 border-tertiary/20 pl-8 italic">
-                 Mijing Youth Foundation is a catalyst for change. We empower the next generation through athletic discipline, physical resilience, and community-driven innovation.
+                 Headquartered in Kokrajhar, Assam, the Mijing Youth Foundation is an institutional force dedicated to the holistic empowerment of young minds across the region. We tackle systemic challenges directly at the grassroots—bridging the gap between untapped potential and socio-economic opportunity through deep investments in physical resilience, vocational skill development, ecological stewardship, and community health. We are building the leaders of tomorrow without discrimination of caste, creed, religion, or gender.
                </p>
                <div className="flex flex-col sm:flex-row gap-4">
-                 <Button size="xl" className="h-16 px-10 text-lg font-black uppercase tracking-widest transition-all bg-primary text-on-primary hover:bg-tertiary hover:text-on-tertiary">
-                   Get Involved
-                 </Button>
+                 <Link href="/get-involved">
+                   <Button size="xl" className="h-16 px-10 text-lg font-black uppercase tracking-widest transition-all bg-primary text-on-primary hover:bg-tertiary hover:text-on-tertiary">
+                     Get Involved
+                   </Button>
+                 </Link>
                  <Link href="/impact">
                    <Button size="xl" variant="outline" className="h-16 px-10 text-lg font-black uppercase tracking-widest transition-all border-primary/20 hover:bg-primary/5">
                      Our Impact
@@ -141,10 +143,15 @@ export default function Home() {
                 viewport={{ once: true }}
               >
                 <p className="text-display-sm font-serif italic text-tertiary opacity-40 leading-none">01.</p>
-                <h3 className="font-heading font-black uppercase text-primary" style={{ fontSize: 'var(--headline-lg)' }}>Digital Skill <br/> Development</h3>
-                <p className="text-primary/60 text-body-lg leading-relaxed">
-                  Bridge the gap between potential and opportunity. Our digital literacy workshops and vocational training centers are designed for the 21st-century economy.
-                </p>
+                <h3 className="font-heading font-black uppercase text-primary" style={{ fontSize: 'var(--headline-lg)' }}>Vocational & <br/> Digital Skills</h3>
+                <div className="space-y-4">
+                   <p className="text-primary/60 text-body-lg leading-relaxed font-bold">
+                     Bridging the gap between potential and socio-economic independence.
+                   </p>
+                   <p className="text-primary/60 text-body-md leading-relaxed">
+                     Our targeted vocational training and skill development programs reduce youth unemployment in underprivileged communities. We provide practical, hands-on training spanning digital literacy, hospitality, aviation, and essential trades (knitting, tailoring, electronics, masonry, and carpentry). By equipping the youth with industry-relevant competencies and fostering entrepreneurial start-ups, we forge self-reliant community leaders ready for the 21st-century economy.
+                   </p>
+                </div>
                 <Link href="/programs/labs">
                   <Button variant="link" className="px-0 flex items-center gap-4 text-primary font-black uppercase tracking-widest group">
                     Learn About Our Labs
@@ -180,14 +187,21 @@ export default function Home() {
                 viewport={{ once: true }}
               >
                 <p className="text-display-sm font-serif italic text-tertiary opacity-40 leading-none">02.</p>
-                <h3 className="font-heading font-black uppercase text-primary" style={{ fontSize: 'var(--headline-lg)' }}>Athletics & <br/> Resilience</h3>
-                <p className="text-primary/60 text-body-lg leading-relaxed">
-                  Building teamwork, discipline, and community resilience through local sports leagues and outdoor leadership programs.
-                </p>
-                <Button variant="link" className="px-0 flex items-center gap-4 text-primary font-black uppercase tracking-widest group">
-                  Explore Youth Leagues
-                  <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-2" />
-                </Button>
+                <h3 className="font-heading font-black uppercase text-primary" style={{ fontSize: 'var(--headline-lg)' }}>Athletics & <br/> Fraternity</h3>
+                <div className="space-y-4">
+                   <p className="text-primary/60 text-body-lg leading-relaxed font-bold">
+                     Using sports as a profound mechanism for social integration and peace-building. 
+                   </p>
+                   <p className="text-primary/60 text-body-md leading-relaxed">
+                     We organize structured athletic competitions in football, volleyball, cricket, and swimming across rural landscapes, providing all necessary equipment free of cost. Beyond cultivating physical fitness and preparing athletes for national stages, our friendly leagues are deliberately engineered to maintain domestic tranquility, dispel intolerance, and forge an unbreakable brotherhood across diverse communities.
+                   </p>
+                </div>
+                <Link href="/programs/sports">
+                  <Button variant="link" className="px-0 flex items-center gap-4 text-primary font-black uppercase tracking-widest group">
+                    Explore Youth Leagues
+                    <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-2" />
+                  </Button>
+                </Link>
               </motion.div>
             </div>
 
@@ -201,13 +215,20 @@ export default function Home() {
               >
                 <p className="text-display-sm font-serif italic text-tertiary opacity-40 leading-none">03.</p>
                 <h3 className="font-heading font-black uppercase text-primary" style={{ fontSize: 'var(--headline-lg)' }}>Ecological <br/> Stewardship</h3>
-                <p className="text-primary/60 text-body-lg leading-relaxed">
-                  Planting the seeds for a sustainable future. Our afforestation projects combine climate science with youth-led community action.
-                </p>
-                <Button variant="link" className="px-0 flex items-center gap-4 text-primary font-black uppercase tracking-widest group">
-                  Our Green Mission
-                  <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-2" />
-                </Button>
+                <div className="space-y-4">
+                   <p className="text-primary/60 text-body-lg leading-relaxed font-bold">
+                     Preserving the natural heritage and ecological balance of Northeast India.
+                   </p>
+                   <p className="text-primary/60 text-body-md leading-relaxed">
+                     Our youth-led afforestation programs actively protect indigenous, rare flora by constructing natural nurseries and executing massive tree-planting campaigns along river banks and barren lands. We combine soil conservation, flood-control measures, and public environmental awareness camps to curate a sustainable future, fiercely protecting our wildlife and natural monuments for the coming generations.
+                   </p>
+                </div>
+                <Link href="/programs/ecology">
+                  <Button variant="link" className="px-0 flex items-center gap-4 text-primary font-black uppercase tracking-widest group mt-8">
+                    Our Green Mission
+                    <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-2" />
+                  </Button>
+                </Link>
               </motion.div>
               <motion.div 
                 className="lg:col-span-7 relative aspect-video"
@@ -215,7 +236,43 @@ export default function Home() {
                 whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true }}
               >
-                <Image src="/images/impact-green-v2.png" alt="Afforestation" fill className="object-cover rounded-sm shadow-premium" />
+                <Image src="/images/impact-green-v2.png" alt="Afforestation" fill className="object-cover rounded-sm shadow-premium grayscale hover:grayscale-0 transition-all duration-1000" />
+              </motion.div>
+            </div>
+
+            {/* Pillar 04: Health & Social Relief */}
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-center flex-row-reverse">
+              <motion.div 
+                className="lg:col-span-7 lg:order-1 relative aspect-video"
+                initial={{ opacity: 0, scale: 0.95 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true }}
+              >
+                <div className="absolute inset-0 bg-tertiary/10 rounded-sm -rotate-2" />
+                <Image src="/images/actual-sp-3.jpg" alt="Health and Social Services" fill className="object-cover rounded-sm shadow-premium z-10 grayscale hover:grayscale-0 transition-all duration-1000" />
+              </motion.div>
+              <motion.div 
+                className="lg:col-span-5 lg:order-2 space-y-8"
+                initial={{ opacity: 0, x: 30 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+              >
+                <p className="text-display-sm font-serif italic text-tertiary opacity-40 leading-none">04.</p>
+                <h3 className="font-heading font-black uppercase text-primary" style={{ fontSize: 'var(--headline-lg)' }}>Health & <br/> Social Relief</h3>
+                <div className="space-y-4">
+                   <p className="text-primary/60 text-body-lg leading-relaxed font-bold">
+                     Direct rapid-response intervention and community welfare.
+                   </p>
+                   <p className="text-primary/60 text-body-md leading-relaxed">
+                     We aggressively tackle grassroots social issues by removing illiteracy, combating child labor, human trafficking, and eradicating superstition. Acting as first responders during natural calamities alongside District Administration, we distribute vital foods, medicines, and drinking water. Furthermore, our free health camps and sanitation awareness programs work to prevent epidemic diseases and foster widespread community wellness.
+                   </p>
+                </div>
+                <Link href="/programs/health">
+                  <Button variant="link" className="px-0 flex items-center gap-4 text-primary font-black uppercase tracking-widest group">
+                    Our Social Impact
+                    <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-2" />
+                  </Button>
+                </Link>
               </motion.div>
             </div>
           </div>
@@ -237,7 +294,7 @@ export default function Home() {
                 <span className="text-tertiary italic serif normal-case">Momentum.</span>
              </h2>
              <p className="text-body-lg text-on-primary/60 max-w-md font-medium leading-relaxed">
-                Strategic focus leads to measurable results. Our annual transparency report provides a deep dive into our operational efficiency and community impact.
+                We believe that radical transparency and strategic focus are the true foundations of community trust. Every initiative we launch—from our vocational workshops to our large-scale afforestation and health camps—is meticulously tracked for systemic, long-term impact across the region.
              </p>
              <Button size="xl" variant="inverted" className="px-12 h-20 text-xl font-black uppercase tracking-widest transition-all">
                 Download Report

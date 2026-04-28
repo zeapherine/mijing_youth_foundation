@@ -1,6 +1,7 @@
 "use client"
 
 import { motion } from "framer-motion"
+import Link from "next/link"
 import { ArrowRight } from "lucide-react"
 import { fadeInUp, staggerContainer } from "@/lib/animations"
 
@@ -31,12 +32,16 @@ export const ImpactCTA = () => {
           </motion.p>
           
           <motion.div variants={fadeInUp} className="flex flex-col md:flex-row items-center justify-center gap-6">
-            <button className="px-12 py-6 bg-parchment text-forest rounded-sm text-body-lg font-black uppercase tracking-wider hover:bg-parchment/90 transition-all flex items-center gap-3 active:scale-95 shadow-xl">
-              Partner With Us <ArrowRight className="w-5 h-5" />
-            </button>
-            <button className="px-12 py-6 border border-parchment/30 text-parchment rounded-sm text-body-lg font-black uppercase tracking-wider hover:bg-parchment/10 transition-colors active:scale-95">
-              Impact Report
-            </button>
+            <Link href="/get-involved">
+              <button className="px-12 py-6 bg-parchment text-forest rounded-sm text-body-lg font-black uppercase tracking-wider hover:bg-parchment/90 transition-all flex items-center gap-3 active:scale-95 shadow-xl">
+                Partner With Us <ArrowRight className="w-5 h-5" />
+              </button>
+            </Link>
+            <Link href="/impact">
+              <button className="px-12 py-6 border border-parchment/30 text-parchment rounded-sm text-body-lg font-black uppercase tracking-wider hover:bg-parchment/10 transition-colors active:scale-95">
+                Impact Archives
+              </button>
+            </Link>
           </motion.div>
         </div>
       </motion.div>

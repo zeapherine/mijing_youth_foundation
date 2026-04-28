@@ -109,6 +109,13 @@ export default function ProgramsPage() {
                 <ArrowRight className="h-6 w-6 opacity-0 group-hover:opacity-100 transition-all" />
               </div>
             </div>
+
+            <Link href="/programs/sports">
+              <Button variant="link" className="px-0 flex items-center gap-4 text-primary font-black uppercase tracking-widest group mt-6">
+                Explore Youth Leagues
+                <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-2" />
+              </Button>
+            </Link>
           </motion.div>
           
           <motion.div 
@@ -192,6 +199,13 @@ export default function ProgramsPage() {
                     </div>
                  </div>
               </div>
+
+              <Link href="/programs/health">
+                <Button variant="link" className="px-0 flex items-center gap-4 text-tertiary hover:text-on-primary font-black uppercase tracking-widest group">
+                  Explore Health Initiatives
+                  <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-2" />
+                </Button>
+              </Link>
            </div>
         </div>
       </section>
@@ -199,7 +213,7 @@ export default function ProgramsPage() {
       {/* 4. AFFORESTATION - Environmental Grid */}
       <section className="px-6 md:px-12 lg:px-16 py-32 bg-background">
         <div className="max-w-7xl mx-auto flex flex-col items-center">
-           <motion.div 
+            <motion.div 
              variants={staggerContainer}
              initial="initial"
              whileInView="animate"
@@ -212,6 +226,13 @@ export default function ProgramsPage() {
                 Restoring ecological balance through intentional afforestation and youth-led 
                 conservation efforts across the western Assam corridor.
               </p>
+              
+              <Link href="/programs/ecology">
+                <Button variant="link" className="px-0 flex items-center gap-4 text-secondary font-black uppercase tracking-widest group">
+                  Explore Green Mandate
+                  <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-2" />
+                </Button>
+              </Link>
            </motion.div>
 
            <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 w-full">

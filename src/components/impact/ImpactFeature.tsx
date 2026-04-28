@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion"
 import Image from "next/image"
+import Link from "next/link"
 import { ArrowRight } from "lucide-react"
 import { fadeInUp, staggerContainer } from "@/lib/animations"
 
@@ -17,10 +18,11 @@ export const ImpactFeature = () => {
           className="relative group cursor-pointer"
         >
           {/* Main Large Card */}
-          <motion.div 
-            variants={fadeInUp}
-            className="relative aspect-[16/9] md:aspect-[21/9] rounded-sm overflow-hidden bg-parchment-deep border border-forest/5 group"
-          >
+          <Link href="/impact/journey/flight-scholars">
+            <motion.div 
+              variants={fadeInUp}
+              className="relative aspect-[16/9] md:aspect-[21/9] rounded-sm overflow-hidden bg-parchment-deep border border-forest/5 group"
+            >
             <Image 
               src="/images/actual-sp-8.jpg" 
               alt="The Collective Future" 
@@ -51,6 +53,7 @@ export const ImpactFeature = () => {
               </div>
             </div>
           </motion.div>
+          </Link>
 
           {/* Overlapping Text Element */}
           <motion.div
