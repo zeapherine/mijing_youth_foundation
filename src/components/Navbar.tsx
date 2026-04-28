@@ -34,7 +34,7 @@ export function Navbar() {
       >
         <div className="w-full max-w-7xl bg-parchment/80 backdrop-blur-md border border-forest/10 rounded-sm px-6 md:px-10 py-4 md:py-5 flex items-center justify-between shadow-xl">
           <Link href="/" className="text-xl md:text-2xl font-heading font-extrabold tracking-tighter text-forest group shrink-0">
-            Mijing <span className="text-terracotta transition-colors group-hover:text-forest">Foundation</span>
+            Mijing Youth <span className="text-terracotta transition-colors group-hover:text-forest">Foundation</span>
           </Link>
           
           {/* Desktop Links */}

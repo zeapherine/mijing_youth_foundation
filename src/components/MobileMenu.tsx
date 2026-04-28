@@ -28,7 +28,7 @@ export function MobileMenu({ isOpen, onClose, navLinks, pathname }: MobileMenuPr
           {/* Header */}
           <div className="flex justify-between items-center mb-16">
             <Link href="/" onClick={onClose} className="text-xl font-heading font-extrabold tracking-tighter text-parchment">
-              Mijing <span className="text-terracotta">Foundation</span>
+              Mijing Youth <span className="text-terracotta">Foundation</span>
             </Link>
             <button 
               onClick={onClose}

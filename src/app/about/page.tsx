@@ -4,156 +4,245 @@ import { Button } from "@/components/ui/button"
 import { Card } from "@/components/ui/Card"
 import Image from "next/image"
 import { motion } from "framer-motion"
-import { Target, Users2, ShieldCheck, Heart, Sparkles, Megaphone, Linkedin, Mail, ExternalLink, ArrowRight } from "lucide-react"
+import { Target, Users2, ShieldCheck, Heart, Sparkles, Megaphone, Linkedin, Mail, ExternalLink, ArrowRight, MapPin, History, Scale, Landmark } from "lucide-react"
 import { fadeInUp, staggerContainer } from "@/lib/animations"
+import Link from "next/link"
 
 export default function About() {
   return (
-    <main className="min-h-screen bg-background text-foreground selection:bg-primary/10">
+    <main className="min-h-screen bg-background text-foreground selection:bg-primary/10 overflow-x-hidden">
       
       {/* Hero Section - Immersive Editorial */}
-      <section className="relative pt-32 lg:pt-48 pb-16 lg:pb-32 px-6 lg:px-16 overflow-hidden">
+      <section className="relative pt-32 lg:pt-48 pb-16 px-6 lg:px-20 overflow-hidden">
         <motion.div 
           className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-16 items-center"
           variants={staggerContainer}
           initial="initial"
           animate="animate"
         >
-          <div className="lg:col-span-8 space-y-12">
+          <div className="lg:col-span-8 space-y-12 px-6 lg:px-0">
             <motion.div
               variants={fadeInUp}
-              className="flex items-center gap-4 text-tertiary font-bold text-sm uppercase tracking-widest"
+              className="flex items-center gap-4 text-tertiary font-black text-[10px] uppercase tracking-[0.4em]"
             >
               <span className="w-12 h-px bg-tertiary" />
-              Our Identity
+              Institutional Identity
             </motion.div>
 
             <motion.h1 
               variants={fadeInUp}
-              className="font-heading font-black tracking-tight leading-[0.9] text-foreground"
-              style={{ fontSize: 'var(--display-lg)' }}
+              className="font-heading font-black tracking-tighter leading-[0.85] text-primary break-words"
+              style={{ fontSize: 'clamp(2.5rem, 8vw, calc(var(--display-lg) * 0.9))' }}
             >
               Building a <br />
-              <span className="text-tertiary italic font-serif">Legacy</span> of <br />
+              <span className="text-tertiary italic font-serif opacity-80">Legacy</span> of <br />
               Empowerment.
             </motion.h1>
             
-            <motion.p 
+            <motion.div 
               variants={fadeInUp}
-              className="text-body-lg text-foreground/60 max-w-xl font-medium leading-relaxed border-l-4 border-tertiary/20 pl-8"
+              className="space-y-8 border-l-4 border-tertiary/20 pl-8"
             >
-              Operating across the entirety of Assam, the Mijing Youth Empowerment Foundation is an institutional force dedicated to bridging the gap between untapped potential and systemic opportunity—building self-reliance, combating grassroots inequality, and fostering profound social integration.
-            </motion.p>
+              <p className="text-body-lg text-primary/60 max-w-xl font-medium leading-relaxed italic">
+                &quot;The Mijing Youth Foundation is more than an organization; it is a movement of hope, born from the urgent need to bridge the gap between untapped potential and systemic opportunity in Northeast India.&quot;
+              </p>
+              <div className="flex flex-wrap gap-8 pt-4">
+                <div className="space-y-1">
+                  <p className="text-[10px] font-black uppercase tracking-widest text-primary/40">Est. Year</p>
+                  <p className="text-2xl font-black text-primary">2024</p>
+                </div>
+                <div className="space-y-1">
+                  <p className="text-[10px] font-black uppercase tracking-widest text-primary/40">Headquarters</p>
+                  <p className="text-2xl font-black text-primary">Kokrajhar, Assam</p>
+                </div>
+                <div className="space-y-1">
+                  <p className="text-[10px] font-black uppercase tracking-widest text-primary/40">Reach</p>
+                  <p className="text-2xl font-black text-primary">State-wide</p>
+                </div>
+              </div>
+            </motion.div>
           </div>
 
           <motion.div 
             variants={fadeInUp}
-            className="lg:col-span-4 relative aspect-[4/5] rounded-sm overflow-hidden shadow-premium"
+            className="lg:col-span-4 relative aspect-[4/5] rounded-sm overflow-hidden shadow-premium group mx-6 lg:mx-0"
           >
             <Image 
-              src="https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?q=80&w=2070&auto=format&fit=crop"
-              alt="Community impact"
+              src="/images/actual-sp-4.jpg"
+              alt="Mijing Youth Foundation Leadership"
               fill
-              className="object-cover grayscale hover:grayscale-0 transition-all duration-1000"
+              className="object-cover grayscale transition-all duration-1000 group-hover:grayscale-0 group-hover:scale-105"
             />
+            <div className="absolute inset-0 bg-primary/10 mix-blend-overlay group-hover:bg-transparent transition-colors duration-700" />
           </motion.div>
         </motion.div>
-
-        {/* Decorative subtle texture */}
-        <div className="absolute inset-0 -z-10 opacity-[0.03] pointer-events-none bg-[url('https://www.transparenttextures.com/patterns/paper-fibers.png')]" />
       </section>
 
-      {/* Philosophy Section - Vertical Narrative */}
-      <section className="py-32 px-6 lg:px-16 bg-surface-low relative">
+      {/* The Origin Narrative - Detailed Textual Content */}
+      <section className="py-24 lg:py-32 px-6 lg:px-20 bg-surface-low relative overflow-hidden">
         <div className="max-w-7xl mx-auto">
           <motion.div 
-            className="grid grid-cols-1 md:grid-cols-2 gap-24 items-start"
+            className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-24 items-start"
             variants={staggerContainer}
             initial="initial"
             whileInView="animate"
             viewport={{ once: true }}
           >
-            <div className="space-y-12 sticky top-32">
-               <h2 className="font-heading font-black uppercase tracking-tight leading-[0.85]" style={{ fontSize: 'var(--display-md)' }}>
+            <div className="lg:col-span-4 space-y-8 lg:sticky lg:top-32">
+               <History className="h-12 w-12 text-tertiary" />
+               <h2 className="font-heading font-black uppercase tracking-tight leading-[0.9] text-primary" style={{ fontSize: 'var(--display-md)' }}>
                  Our <br />
-                 <span className="text-tertiary">Mission</span> & <br />
-                 Vision
+                 <span className="text-tertiary">Founding</span> <br />
+                 Story
                </h2>
-               <p className="text-body-lg text-foreground/50 font-medium max-w-sm">
-                 We are guided by a dual mandate: immediate impact and long-term systemic change.
+               <p className="text-body-lg text-primary/50 font-medium">
+                 Understanding the roots of our mission in the heart of the BTR region.
                </p>
             </div>
 
-            <div className="space-y-16">
-              <div className="space-y-8">
-                <div className="flex items-center gap-6">
-                  <div className="h-16 w-16 rounded-sm bg-primary text-on-primary flex items-center justify-center">
-                    <Target className="h-8 w-8" />
-                  </div>
-                  <h3 className="text-3xl font-heading font-black uppercase">The Directive</h3>
-                </div>
-                <p className="text-body-lg text-foreground/70 font-medium leading-relaxed italic">
-                  "To systematically empower young minds through athletic discipline, vocational and digital skill development, targeted health interventions, and cultural preservation. We act as first responders to societal crises and relentless builders of a self-reliant generation."
-                </p>
-                <div className="h-px w-full bg-foreground/10" />
-              </div>
-
-              <div className="space-y-8">
-                <div className="flex items-center gap-6">
-                  <div className="h-16 w-16 rounded-sm bg-tertiary text-on-tertiary flex items-center justify-center">
-                    <Sparkles className="h-8 w-8" />
-                  </div>
-                  <h3 className="text-3xl font-heading font-black uppercase">The Aspiration</h3>
-                </div>
-                <p className="text-body-lg text-foreground/70 font-medium leading-relaxed italic">
-                  "An Assam completely free from intolerance, illiteracy, and systemic poverty—where profound brotherhood reigns, natural heritage is fiercely protected, and youth invariably lead the charge toward unparalleled socio-economic development."
-                </p>
-                <div className="h-px w-full bg-foreground/10" />
-              </div>
+            <div className="lg:col-span-8 space-y-12">
+               <div className="prose prose-xl prose-primary max-w-none space-y-8">
+                 <p className="text-xl lg:text-2xl font-bold text-primary leading-relaxed">
+                   Headquartered in Kokrajhar, the cultural heart of the Bodoland Territorial Region (BTR) in Assam, the Mijing Youth Foundation was established in 2024 with a singular, unshakeable directive: to serve as an institutional catalyst for youth-led socio-economic transformation.
+                 </p>
+                 <div className="h-px w-32 bg-tertiary" />
+                 <p className="text-body-lg text-primary/70 leading-relaxed font-medium">
+                   The name &quot;Mijing&quot; translates to &quot;Hope&quot;—a sentiment that serves as the foundation of every initiative we launch. We recognized that while the youth of Assam possess unparalleled resilience and talent, they often lack the systemic scaffolding required to convert that potential into tangible success. 
+                 </p>
+                 <p className="text-body-lg text-primary/70 leading-relaxed font-medium">
+                   From our inception, we have operated as a non-partisan, non-sectarian force, dedicated to the holistic empowerment of young minds without discrimination of caste, race, creed, religion, or gender. We began by identifying the most critical gaps in rural development—unemployment, ecological degradation, and social fragmentation—and engineered a multi-pronged approach to address them simultaneously.
+                 </p>
+                 <div className="grid grid-cols-1 md:grid-cols-2 gap-12 py-8">
+                    <div className="p-8 bg-background border border-primary/5 rounded-sm space-y-4">
+                       <MapPin className="h-6 w-6 text-tertiary" />
+                       <h4 className="font-black uppercase tracking-tight text-primary">Strategic Presence</h4>
+                       <p className="text-body-sm text-primary/60 font-medium">Operating across diverse landscapes—from the riverine tracts of the Brahmaputra to the dense forests of the BTR.</p>
+                    </div>
+                    <div className="p-8 bg-background border border-primary/5 rounded-sm space-y-4">
+                       <Scale className="h-6 w-6 text-tertiary" />
+                       <h4 className="font-black uppercase tracking-tight text-primary">Institutional Integrity</h4>
+                       <p className="text-body-sm text-primary/60 font-medium">Governed by a rigorous Memorandum of Association that ensures transparency and radical accountability.</p>
+                    </div>
+                 </div>
+               </div>
             </div>
           </motion.div>
         </div>
       </section>
 
-      {/* Structural Approach - Direct & Indirect Impact (New Section based on The Ant) */}
-      <section className="py-32 px-6 lg:px-16 bg-surface-lowest">
-        <div className="max-w-7xl mx-auto space-y-16">
-           <motion.div 
-              className="text-left space-y-6 max-w-3xl"
-              variants={fadeInUp}
-              initial="initial"
-              whileInView="animate"
-              viewport={{ once: true }}
-            >
-               <h2 className="font-heading font-black tracking-tight uppercase leading-[0.9]" style={{ fontSize: 'var(--display-md)' }}>Operational <br/> Methodology</h2>
-               <p className="text-body-lg text-foreground/50 font-medium border-l-4 border-tertiary pl-8">We tackle vast, systemic socio-economic disparity through two parallel channels of impact.</p>
-            </motion.div>
+      {/* Philosophy Section - Mission & Vision */}
+      <section className="py-24 lg:py-48 px-6 lg:px-20 bg-background relative overflow-hidden">
+        <div className="max-w-7xl mx-auto">
+          <motion.div 
+            className="grid grid-cols-1 md:grid-cols-2 gap-12 lg:gap-24"
+            variants={staggerContainer}
+            initial="initial"
+            whileInView="animate"
+            viewport={{ once: true }}
+          >
+            <Card level={1} className="p-12 lg:p-16 space-y-12 bg-surface-low border-none overflow-hidden relative group">
+              <div className="relative z-10 space-y-8">
+                <div className="h-20 w-20 rounded-sm bg-primary text-on-primary flex items-center justify-center shadow-premium">
+                  <Target className="h-10 w-10" />
+                </div>
+                <h3 className="text-4xl lg:text-5xl font-heading font-black uppercase tracking-tighter text-primary">The <br/>Directive</h3>
+                <p className="text-body-lg text-primary/70 font-medium leading-relaxed italic border-l-4 border-tertiary/20 pl-8">
+                  &quot;To systematically empower young minds through athletic discipline, vocational and digital skill development, targeted health interventions, and cultural preservation. We act as first responders to societal crises and relentless builders of a self-reliant generation.&quot;
+                </p>
+              </div>
+              <div className="text-[10rem] font-black text-primary/5 absolute -bottom-10 -right-10 select-none group-hover:text-primary/10 transition-colors">
+                MISSION
+              </div>
+            </Card>
 
-            <motion.div 
-               className="grid grid-cols-1 md:grid-cols-2 gap-16"
-               variants={staggerContainer}
-               initial="initial"
-               whileInView="animate"
-               viewport={{ once: true }}
-            >
-               <div className="space-y-6">
-                 <h3 className="text-3xl font-heading font-black uppercase text-primary">01. Direct Grassroots Intervention</h3>
-                 <p className="text-body-lg text-foreground/70 font-medium leading-relaxed">
-                   At the immediate community level, we execute high-velocity interventions. We distribute vital goods during natural calamities, set up entirely free medical health camps to prevent epidemics, organize deeply engaging sporting matches that construct rural brotherhood, and curate massive youth-led afforestation drives constructing nurseries alongside barren river-banks.
-                 </p>
-               </div>
-               <div className="space-y-6">
-                 <h3 className="text-3xl font-heading font-black uppercase text-primary">02. Strategic Institutional Alignment</h3>
-                 <p className="text-body-lg text-foreground/70 font-medium leading-relaxed">
-                   At a structural altitude, we collaborate intrinsically with government apparatus and peer NGOs. We aggressively combat complex societal maladies—eradicating illiteracy, human trafficking, and archaic superstitions. By deeply aligning with initiatives like Swachh Bharat and regional vocational authorities, we engineer sustainable tourism and long-term socio-economic sovereignty.
-                 </p>
-               </div>
-            </motion.div>
+            <Card level={1} className="p-12 lg:p-16 space-y-12 bg-primary text-on-primary border-none overflow-hidden relative group">
+              <div className="relative z-10 space-y-8">
+                <div className="h-20 w-20 rounded-sm bg-tertiary text-on-tertiary flex items-center justify-center shadow-premium">
+                  <Sparkles className="h-10 w-10" />
+                </div>
+                <h3 className="text-4xl lg:text-5xl font-heading font-black uppercase tracking-tighter">The <br/>Aspiration</h3>
+                <p className="text-body-lg text-on-primary/70 font-medium leading-relaxed italic border-l-4 border-tertiary pl-8">
+                  &quot;An Assam completely free from intolerance, illiteracy, and systemic poverty—where profound brotherhood reigns, natural heritage is fiercely protected, and youth invariably lead the charge toward unparalleled socio-economic development.&quot;
+                </p>
+              </div>
+              <div className="text-[10rem] font-black text-white/5 absolute -bottom-10 -right-10 select-none group-hover:text-white/10 transition-colors">
+                VISION
+              </div>
+            </Card>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* The Institutional Mandate - The "Informative" Part */}
+      <section className="py-24 lg:py-32 px-6 lg:px-20 bg-surface-lowest overflow-hidden">
+        <div className="max-w-7xl mx-auto space-y-24">
+          <motion.div 
+            className="flex flex-col lg:flex-row justify-between items-start lg:items-end gap-12"
+            variants={fadeInUp}
+            initial="initial"
+            whileInView="animate"
+            viewport={{ once: true }}
+          >
+            <div className="space-y-6 max-w-3xl">
+               <Landmark className="h-12 w-12 text-tertiary" />
+               <h2 className="font-heading font-black tracking-tight uppercase leading-[0.9] text-primary" style={{ fontSize: 'var(--display-md)' }}>Institutional <br/> Objectives</h2>
+               <p className="text-body-lg text-primary/50 font-medium border-l-4 border-tertiary pl-8">A formal distillation of our Memorandum of Association (MOA) and the legal pillars of our operation.</p>
+            </div>
+            <div className="text-xs font-black uppercase tracking-[0.3em] text-primary/20 writing-mode-vertical hidden lg:block">
+               MANDATE 2024 / REGIONAL IMPACT
+            </div>
+          </motion.div>
+
+          <motion.div 
+            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12"
+            variants={staggerContainer}
+            initial="initial"
+            whileInView="animate"
+            viewport={{ once: true }}
+          >
+            {[
+              { 
+                title: "Vocational Sovereignty", 
+                desc: "Establishment of specialized training centers for Digital Literacy, Hospitality, Aviation, and traditional trades including Knitting, Tailoring, Electronics, Masonry, and Carpentry."
+              },
+              { 
+                title: "Fraternal Athletics", 
+                desc: "Organizing state-wide competitions in Football, Volleyball, Cricket, and Swimming to build physical resilience and cross-community peace."
+              },
+              { 
+                title: "Ecological Restoration", 
+                desc: "Executing massive afforestation drives, constructing indigenous flora nurseries, and implementing flood-control measures along riverine tracts."
+              },
+              { 
+                title: "Emergency Response", 
+                desc: "Acting as first responders during natural calamities—floods, fires, and epidemics—to provide food, medicine, and logistical support."
+              },
+              { 
+                title: "Social Advocacy", 
+                desc: "Relentless combat against human trafficking, child labor, illiteracy, and archaic superstitions through direct community intervention."
+              },
+              { 
+                title: "Institutional Alignment", 
+                desc: "Collaborating with District Administrations and Government bodies to implement Swachh Bharat and other national welfare schemes."
+              }
+            ].map((obj, i) => (
+              <div key={i} className="space-y-6 group">
+                <div className="h-px w-full bg-primary/10 group-hover:bg-tertiary transition-colors" />
+                <div className="flex gap-6">
+                  <span className="text-sm font-black text-tertiary opacity-40 leading-none">0{i+1}</span>
+                  <div className="space-y-4">
+                    <h4 className="text-xl font-black uppercase tracking-tight text-primary">{obj.title}</h4>
+                    <p className="text-body-md text-primary/60 font-medium leading-relaxed">{obj.desc}</p>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </motion.div>
         </div>
       </section>
 
       {/* Core Values - Grid with Indexing */}
-      <section className="py-32 px-6 lg:px-16 bg-background">
+      <section className="py-24 lg:py-32 px-6 lg:px-20 bg-background overflow-hidden">
         <div className="max-w-7xl mx-auto">
           <motion.div 
             className="flex flex-col md:flex-row justify-between items-start md:items-end mb-24 gap-8 border-b border-foreground/5 pb-12"
@@ -163,16 +252,16 @@ export default function About() {
             viewport={{ once: true }}
           >
             <div className="space-y-4">
-               <h2 className="font-heading font-black tracking-tight uppercase leading-[0.9]" style={{ fontSize: 'var(--display-md)' }}>Ethos of Change</h2>
-               <p className="text-body-lg text-foreground/50 max-w-xl font-medium">The non-negotiable principles that drive our movement.</p>
+               <h2 className="font-heading font-black tracking-tight uppercase leading-[0.9] text-primary" style={{ fontSize: 'var(--display-md)' }}>Ethos of Change</h2>
+               <p className="text-body-lg text-primary/50 max-w-xl font-medium">The non-negotiable principles that drive our movement.</p>
             </div>
-            <div className="text-6xl font-heading font-black text-tertiary/10 select-none">
+            <div className="text-6xl font-heading font-black text-tertiary/10 select-none hidden lg:block">
               VALUES
             </div>
           </motion.div>
 
           <motion.div 
-            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-px bg-foreground/5"
+            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-px bg-primary/5"
             variants={staggerContainer}
             initial="initial"
             whileInView="animate"
@@ -190,11 +279,11 @@ export default function About() {
                   <div className="text-sm font-black text-tertiary font-sans tracking-tighter">
                     {String(i + 1).padStart(2, '0')}
                   </div>
-                  <value.icon className="h-6 w-6 text-foreground/20 group-hover:text-tertiary transition-colors" />
+                  <value.icon className="h-6 w-6 text-primary/20 group-hover:text-tertiary transition-colors" />
                 </div>
                 <div className="space-y-4">
-                  <h3 className="text-2xl font-heading font-black uppercase tracking-tight">{value.title}</h3>
-                  <p className="text-foreground/60 leading-relaxed font-medium">
+                  <h3 className="text-2xl font-heading font-black uppercase tracking-tight text-primary">{value.title}</h3>
+                  <p className="text-primary/60 leading-relaxed font-medium">
                     {value.desc}
                   </p>
                 </div>
@@ -205,7 +294,7 @@ export default function About() {
       </section>
 
       {/* Leadership Section - Institutional Portraits */}
-      <section className="py-32 px-6 lg:px-16 bg-surface-lowest">
+      <section className="py-24 lg:py-48 px-6 lg:px-16 bg-surface-lowest">
         <div className="max-w-7xl mx-auto space-y-24">
           <motion.div 
             className="text-left space-y-6 max-w-3xl"
@@ -214,12 +303,12 @@ export default function About() {
             whileInView="animate"
             viewport={{ once: true }}
           >
-             <h2 className="font-heading font-black tracking-tight uppercase leading-[0.9]" style={{ fontSize: 'var(--display-md)' }}>The Governance</h2>
-             <p className="text-body-lg text-foreground/50 font-medium border-l-4 border-primary pl-8">Architects of our mission, dedicated to long-term impact analysis and stewardship.</p>
+             <h2 className="font-heading font-black tracking-tight uppercase leading-[0.9] text-primary" style={{ fontSize: 'var(--display-md)' }}>The Governance</h2>
+             <p className="text-body-lg text-primary/50 font-medium border-l-4 border-primary pl-8">Architects of our mission, dedicated to long-term impact analysis and stewardship.</p>
           </motion.div>
 
           <motion.div 
-            className="grid grid-cols-1 md:grid-cols-3 gap-8"
+            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8"
             variants={staggerContainer}
             initial="initial"
             whileInView="animate"
@@ -227,10 +316,11 @@ export default function About() {
           >
             {[
               { name: "Agwma Basumatary", role: "President", image: "/images/actual-sp-1.jpg" },
-              { name: "Sarah Chen", role: "Head of Programs", image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?q=80&w=2070&auto=format&fit=crop" },
-              { name: "Michael Abiola", role: "Operations Lead", image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=2070&auto=format&fit=crop" }
+              { name: "Aizak Mashahary", role: "Vice-President", image: "/images/actual-sp-3.jpg" },
+              { name: "John Basumatary", role: "Secretary", image: "/images/actual-sp-5.jpg" },
+              { name: "Raja Mashahary", role: "Treasurer", image: "/images/actual-sp-7.jpg" }
             ].map((member, i) => (
-              <Card key={i} level={2} className="group p-0 overflow-hidden" animateHover={false}>
+              <Card key={i} level={2} className="group p-0 overflow-hidden border-none" animateHover={false}>
                 <div className="relative aspect-[3/4]">
                   <Image 
                     src={member.image} 
@@ -238,18 +328,11 @@ export default function About() {
                     fill 
                     className="object-cover grayscale transition-all duration-700 group-hover:grayscale-0 group-hover:scale-105" 
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-foreground to-transparent opacity-60" />
-                  <div className="absolute bottom-0 left-0 p-8 text-on-primary">
-                    <h3 className="text-2xl font-black uppercase tracking-tight">{member.name}</h3>
-                    <p className="text-tertiary font-bold text-sm uppercase tracking-widest mt-2">{member.role}</p>
+                  <div className="absolute inset-0 bg-gradient-to-t from-primary/80 via-primary/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                  <div className="absolute bottom-0 left-0 p-8 text-on-primary transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
+                    <h3 className="text-xl font-black uppercase tracking-tight">{member.name}</h3>
+                    <p className="text-tertiary font-bold text-[10px] uppercase tracking-widest mt-2">{member.role}</p>
                   </div>
-                </div>
-                <div className="p-8 flex justify-between items-center bg-white">
-                  <div className="flex gap-4">
-                    <Linkedin className="h-4 w-4 text-foreground/40 hover:text-tertiary cursor-pointer transition-colors" />
-                    <Mail className="h-4 w-4 text-foreground/40 hover:text-tertiary cursor-pointer transition-colors" />
-                  </div>
-                  <ArrowRight className="h-5 w-5 text-tertiary opacity-0 group-hover:opacity-100 transition-all transform group-hover:translate-x-2" />
                 </div>
               </Card>
             ))}
@@ -258,9 +341,9 @@ export default function About() {
       </section>
 
       {/* Institutional CTA */}
-      <section className="py-32 px-6 lg:px-16 overflow-hidden bg-primary text-on-primary">
+      <section className="py-24 lg:py-48 px-6 lg:px-16 overflow-hidden bg-primary text-on-primary relative">
          <motion.div 
-            className="max-w-7xl mx-auto flex flex-col items-center text-center space-y-12"
+            className="max-w-7xl mx-auto flex flex-col items-center text-center space-y-12 relative z-10"
             variants={fadeInUp}
             initial="initial"
             whileInView="animate"
@@ -272,22 +355,29 @@ export default function About() {
             </h2>
             <p className="text-xl text-on-primary/60 max-w-2xl font-medium leading-relaxed italic">
               Whether through direct partnership, donation, or expertise, your 
-              stewardship catalyzes the future of youth empowerment.
+              stewardship catalyzes the future of youth empowerment across Assam.
             </p>
             
             <div className="flex flex-wrap gap-6 justify-center pt-8">
-              <Button size="xl" variant="tertiary" className="px-16 group">
-                Contribute Now
-                <ArrowRight className="ml-2 group-hover:translate-x-2 transition-transform" />
-              </Button>
-              <Button size="xl" variant="inverted" className="px-16 group">
-                Explore Programs
-              </Button>
+              <Link href="/get-involved">
+                <Button size="xl" variant="tertiary" className="px-16 h-20 text-lg font-black uppercase tracking-widest group">
+                  Contribute Now
+                  <ArrowRight className="ml-2 group-hover:translate-x-2 transition-transform" />
+                </Button>
+              </Link>
+              <Link href="/programs">
+                <Button size="xl" variant="inverted" className="px-16 h-20 text-lg font-black uppercase tracking-widest group border-white/20">
+                  Explore Programs
+                </Button>
+              </Link>
             </div>
          </motion.div>
+
+         {/* Decorative Background Elements */}
+         <div className="absolute top-0 right-0 w-1/3 h-full bg-white/5 skew-x-[-20deg] translate-x-1/4 pointer-events-none" />
+         <div className="absolute bottom-0 left-0 w-1/4 h-1/2 bg-tertiary/10 blur-3xl pointer-events-none" />
       </section>
 
     </main>
   )
 }
-

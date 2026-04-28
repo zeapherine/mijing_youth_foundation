@@ -78,7 +78,7 @@ export function Footer() {
 
         <div className="border-t border-parchment/10 pt-10 flex flex-col md:flex-row justify-between items-center gap-6">
           <p className="text-[10px] text-parchment/20 font-bold uppercase tracking-widest leading-relaxed">
-            © 2024 Mijing Youth Empowerment Foundation. <br className="md:hidden" />
+            © 2024 Mijing Youth Foundation. <br className="md:hidden" />
             Empowering the Future, Sustainably.
           </p>
           <div className="flex gap-8">
