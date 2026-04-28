@@ -18,6 +18,53 @@ const heroImages = [
   "/images/gallery/republic-3.png"
 ];
 
+const sectors = [
+  { 
+    id: 'sports', 
+    label: 'Athletics & Fraternity', 
+    icon: Trophy, 
+    description: '150+ active local leaders',
+    pos: 'top-32 right-12',
+    delay: 0.2
+  },
+  { 
+    id: 'skills', 
+    label: 'Vocational Labs', 
+    icon: Laptop, 
+    description: '92% placement rate',
+    pos: 'top-1/2 left-[-8%] -translate-y-1/2',
+    delay: 0.4
+  },
+  { 
+    id: 'ecology', 
+    label: 'Ecological Stewardship', 
+    icon: TreePine, 
+    description: '45k+ trees planted',
+    pos: 'top-1/2 right-[-8%] -translate-y-1/2',
+    delay: 0.6
+  },
+  { 
+    id: 'health', 
+    label: 'Health & Relief', 
+    icon: Heart, 
+    description: '1.2k lives impacted',
+    pos: 'bottom-32 right-12',
+    delay: 0.8
+  }
+];
+
+const floatingAnimation = {
+  initial: { y: 0 },
+  animate: {
+    y: [-10, 10, -10],
+    transition: {
+      duration: 6,
+      repeat: Infinity,
+      ease: "easeInOut"
+    }
+  }
+};
+
 import { FeaturedEvent } from "@/components/impact/FeaturedEvent"
 
 export default function Home() {
@@ -108,8 +155,61 @@ export default function Home() {
             {/* Gradient blend for smooth text transition on smaller mobile screens */}
             <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent opacity-80 lg:hidden z-10 pointer-events-none" />
             
+            {/* Floating Sector Cards */}
+            <div className="absolute inset-0 z-30 pointer-events-none hidden lg:block">
+              {sectors.map((sector) => (
+                <motion.div
+                  key={sector.id}
+                  className={`absolute ${sector.pos} pointer-events-auto`}
+                  initial={{ opacity: 0, scale: 0.8, y: 20 }}
+                  animate={{ opacity: 1, scale: 1, y: 0 }}
+                  transition={{ 
+                    duration: 0.8, 
+                    delay: sector.delay, 
+                    ease: editorialEasing 
+                  }}
+                >
+                  <motion.div
+                    variants={floatingAnimation}
+                    initial="initial"
+                    animate="animate"
+                    className="bg-surface-lowest/60 backdrop-blur-xl p-6 rounded-sm border border-primary/5 shadow-premium max-w-[220px] group transition-all hover:bg-surface-lowest/80"
+                  >
+                    <div className="flex items-start gap-4">
+                      <div className="p-3 bg-primary/5 rounded-sm text-tertiary group-hover:bg-tertiary group-hover:text-on-tertiary transition-colors">
+                        <sector.icon size={20} />
+                      </div>
+                      <div className="space-y-1">
+                        <p className="text-[10px] font-black uppercase tracking-widest text-primary/40 leading-none">Our Focus</p>
+                        <p className="text-sm font-black text-primary leading-tight">{sector.label}</p>
+                        <p className="text-[10px] font-bold italic text-tertiary">{sector.description}</p>
+                      </div>
+                    </div>
+                  </motion.div>
+                </motion.div>
+              ))}
+            </div>
+
+            {/* Mobile Sector Pills (Horizontal Scroll) */}
+            <div className="absolute bottom-32 left-0 right-0 z-30 lg:hidden px-6 overflow-x-auto no-scrollbar">
+              <div className="flex gap-3 pb-4">
+                {sectors.map((sector) => (
+                  <motion.div
+                    key={sector.id}
+                    className="flex-shrink-0 bg-surface-lowest/80 backdrop-blur-md px-4 py-3 rounded-full border border-primary/5 shadow-lg flex items-center gap-3"
+                    initial={{ opacity: 0, x: 20 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ delay: sector.delay }}
+                  >
+                    <sector.icon size={14} className="text-tertiary" />
+                    <span className="text-[10px] font-black uppercase tracking-wider text-primary whitespace-nowrap">{sector.label}</span>
+                  </motion.div>
+                ))}
+              </div>
+            </div>
+
             {/* Floating Impact Metric */}
-            <div className="absolute bottom-8 right-8 lg:bottom-24 lg:left-12 lg:right-auto bg-surface-lowest/90 backdrop-blur-md p-8 rounded-sm max-w-[280px] shadow-premium border-l-4 border-tertiary z-20">
+            <div className="absolute bottom-8 right-8 lg:bottom-12 lg:left-12 lg:right-auto bg-surface-lowest/90 backdrop-blur-md p-8 rounded-sm max-w-[280px] shadow-premium border-l-4 border-tertiary z-20">
                <p className="text-5xl font-black text-primary leading-none mb-2">1.2k</p>
                <p className="text-xs font-black uppercase tracking-widest text-primary/50 mb-2">Lives Impacted To Date</p>
                <p className="text-body-sm text-primary/70 italic">&quot;We don't just build programs; we build futures.&quot;</p>
