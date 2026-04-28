@@ -23,32 +23,32 @@ const sectors = [
     id: 'sports', 
     label: 'Athletics & Fraternity', 
     icon: Trophy, 
-    description: '150+ active local leaders',
-    pos: 'top-32 right-12',
+    description: '150+ active leaders',
+    pos: 'lg:top-32 lg:right-8 top-4 left-4', 
     delay: 0.2
   },
   { 
     id: 'skills', 
     label: 'Vocational Labs', 
     icon: Laptop, 
-    description: '92% placement rate',
-    pos: 'top-1/2 left-[-8%] -translate-y-1/2',
+    description: '92% placement',
+    pos: 'lg:top-1/2 lg:left-4 lg:-translate-y-1/2 top-24 left-4',
     delay: 0.4
   },
   { 
     id: 'ecology', 
     label: 'Ecological Stewardship', 
     icon: TreePine, 
-    description: '45k+ trees planted',
-    pos: 'top-1/2 right-[-8%] -translate-y-1/2',
+    description: '45k+ trees',
+    pos: 'lg:top-1/2 lg:right-4 lg:-translate-y-1/2 top-[11rem] left-4',
     delay: 0.6
   },
   { 
     id: 'health', 
     label: 'Health & Relief', 
     icon: Heart, 
-    description: '1.2k lives impacted',
-    pos: 'bottom-32 right-12',
+    description: '1.2k lives',
+    pos: 'lg:bottom-32 lg:right-8 top-[16rem] left-4',
     delay: 0.8
   }
 ];
@@ -76,6 +76,22 @@ export default function Home() {
     }, 5000); // 3s hold + 2s transition
     return () => clearInterval(timer);
   }, []);
+
+  const scrollToSection = (id: string) => {
+    const element = document.getElementById(id);
+    if (element) {
+      const offset = 80; // Account for navbar
+      const bodyRect = document.body.getBoundingClientRect().top;
+      const elementRect = element.getBoundingClientRect().top;
+      const elementPosition = elementRect - bodyRect;
+      const offsetPosition = elementPosition - offset;
+
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: 'smooth'
+      });
+    }
+  };
 
   return (
     <main className="relative min-h-screen bg-background overflow-x-hidden selection:bg-primary/20">
@@ -156,11 +172,11 @@ export default function Home() {
             <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent opacity-80 lg:hidden z-10 pointer-events-none" />
             
             {/* Floating Sector Cards */}
-            <div className="absolute inset-0 z-30 pointer-events-none hidden lg:block">
+            <div className="absolute inset-0 z-30 pointer-events-none">
               {sectors.map((sector) => (
                 <motion.div
                   key={sector.id}
-                  className={`absolute ${sector.pos} pointer-events-auto`}
+                  className={`absolute ${sector.pos} pointer-events-auto cursor-pointer`}
                   initial={{ opacity: 0, scale: 0.8, y: 20 }}
                   animate={{ opacity: 1, scale: 1, y: 0 }}
                   transition={{ 
@@ -168,44 +184,28 @@ export default function Home() {
                     delay: sector.delay, 
                     ease: editorialEasing 
                   }}
+                  onClick={() => scrollToSection(sector.id)}
                 >
                   <motion.div
                     variants={floatingAnimation}
                     initial="initial"
                     animate="animate"
-                    className="bg-surface-lowest/60 backdrop-blur-xl p-6 rounded-sm border border-primary/5 shadow-premium max-w-[220px] group transition-all hover:bg-surface-lowest/80"
+                    className="bg-surface-lowest/60 backdrop-blur-xl p-3 lg:p-6 rounded-sm border border-primary/5 shadow-premium max-w-[160px] lg:max-w-[220px] group transition-all hover:bg-surface-lowest/80 active:scale-95"
                   >
-                    <div className="flex items-start gap-4">
-                      <div className="p-3 bg-primary/5 rounded-sm text-tertiary group-hover:bg-tertiary group-hover:text-on-tertiary transition-colors">
-                        <sector.icon size={20} />
+                    <div className="flex items-start gap-2 lg:gap-4">
+                      <div className="p-2 lg:p-3 bg-primary/5 rounded-sm text-tertiary group-hover:bg-tertiary group-hover:text-on-tertiary transition-colors">
+                        <sector.icon size={16} className="lg:hidden" />
+                        <sector.icon size={20} className="hidden lg:block" />
                       </div>
-                      <div className="space-y-1">
-                        <p className="text-[10px] font-black uppercase tracking-widest text-primary/40 leading-none">Our Focus</p>
-                        <p className="text-sm font-black text-primary leading-tight">{sector.label}</p>
-                        <p className="text-[10px] font-bold italic text-tertiary">{sector.description}</p>
+                      <div className="space-y-0.5 lg:space-y-1">
+                        <p className="text-[8px] lg:text-[10px] font-black uppercase tracking-widest text-primary/40 leading-none">Our Focus</p>
+                        <p className="text-[10px] lg:text-sm font-black text-primary leading-tight">{sector.label}</p>
+                        <p className="text-[8px] lg:text-[10px] font-bold italic text-tertiary">{sector.description}</p>
                       </div>
                     </div>
                   </motion.div>
                 </motion.div>
               ))}
-            </div>
-
-            {/* Mobile Sector Pills (Horizontal Scroll) */}
-            <div className="absolute bottom-32 left-0 right-0 z-30 lg:hidden px-6 overflow-x-auto no-scrollbar">
-              <div className="flex gap-3 pb-4">
-                {sectors.map((sector) => (
-                  <motion.div
-                    key={sector.id}
-                    className="flex-shrink-0 bg-surface-lowest/80 backdrop-blur-md px-4 py-3 rounded-full border border-primary/5 shadow-lg flex items-center gap-3"
-                    initial={{ opacity: 0, x: 20 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    transition={{ delay: sector.delay }}
-                  >
-                    <sector.icon size={14} className="text-tertiary" />
-                    <span className="text-[10px] font-black uppercase tracking-wider text-primary whitespace-nowrap">{sector.label}</span>
-                  </motion.div>
-                ))}
-              </div>
             </div>
 
             {/* Floating Impact Metric */}
@@ -237,7 +237,7 @@ export default function Home() {
 
           <div className="space-y-32 lg:space-y-48">
             {/* Pillar 01: Skill Lab */}
-            <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+            <div id="skills" className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center scroll-mt-24">
               <motion.div 
                 className="lg:col-span-5 space-y-8"
                 initial={{ opacity: 0, x: -30 }}
@@ -272,7 +272,7 @@ export default function Home() {
             </div>
 
             {/* Pillar 02: Athletics */}
-            <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-center flex-row-reverse">
+            <div id="sports" className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-center flex-row-reverse scroll-mt-24">
               <motion.div 
                 className="lg:col-span-7 lg:order-1 relative aspect-video"
                 initial={{ opacity: 0, scale: 0.95 }}
@@ -308,7 +308,7 @@ export default function Home() {
             </div>
 
             {/* Pillar 03: Environment */}
-            <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
+            <div id="ecology" className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-center scroll-mt-24">
               <motion.div 
                 className="lg:col-span-5 space-y-8"
                 initial={{ opacity: 0, x: -30 }}
@@ -343,7 +343,7 @@ export default function Home() {
             </div>
 
             {/* Pillar 04: Health & Social Relief */}
-            <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-center flex-row-reverse">
+            <div id="health" className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-center flex-row-reverse scroll-mt-24">
               <motion.div 
                 className="lg:col-span-7 lg:order-1 relative aspect-video"
                 initial={{ opacity: 0, scale: 0.95 }}
