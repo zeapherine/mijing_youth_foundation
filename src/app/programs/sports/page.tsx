@@ -174,7 +174,7 @@ export default function SportsPage() {
             className="lg:w-1/2 relative aspect-[4/5] order-1 lg:order-2 grayscale hover:grayscale-0 transition-all duration-1000 shadow-premium"
           >
             <Image 
-              src="/images/actual-sp-1.jpg" 
+              src="/images/actual-sp-5.jpg" 
               alt="Track and Field" 
               fill 
               className="object-cover rounded-sm" 
@@ -331,7 +331,7 @@ export default function SportsPage() {
 
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-8">
             {[
-              { src: "/images/actual-sp-1.jpg", span: "lg:col-span-2 lg:row-span-2" },
+              { src: "/images/actual-sp-5.jpg", span: "lg:col-span-2 lg:row-span-2" },
               { src: "/images/actual-sp-4.jpg", span: "lg:col-span-1" },
               { src: "/images/actual-sp-6.jpg", span: "lg:col-span-1" },
               { src: "/images/actual-sp-7.jpg", span: "lg:col-span-2" },

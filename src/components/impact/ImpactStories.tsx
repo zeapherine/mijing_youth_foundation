@@ -83,7 +83,7 @@ export const ImpactStories = () => {
         title="From the Fields to the Air"
         description="Born in a remote agricultural village, Amara never dreamed of the sky. Through the MYF Flight Scholars program, she transitioned from tilling earth to navigating clouds."
         quote="The horizon is no longer a limit; it&apos;s a beginning. My community sees me and knows that gravity is just a suggestion."
-        image="/images/hero-unified-v2.png"
+        image="/images/flight_scholars_kokrajhar_1777399110344.png"
         slug="flight-scholars"
       />
       
@@ -92,7 +92,7 @@ export const ImpactStories = () => {
         title="The Green Guardian"
         description="How a tech-driven reforestation initiative turned a wasteland into a lung for the city, led by visionary youth."
         quote="Trees don&apos;t just absorb CO2; they absorb our stress and give back hope. We are using data to heal the earth."
-        image="/images/impact-green-v2.png"
+        image="/images/afforestation_kokrajhar_1777399093856.png"
         slug="green-guardian"
         reverse
       />

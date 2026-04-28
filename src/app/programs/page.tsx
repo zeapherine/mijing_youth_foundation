@@ -147,7 +147,7 @@ export default function ProgramsPage() {
                 viewport={{ once: true }}
               >
                 <Image 
-                  src="/images/programs-health-v2.png" 
+                  src="/images/mobile_health_clinic_kokrajhar_1777399018964.png" 
                   alt="Social Service" 
                   fill 
                   className="object-cover grayscale" 
@@ -238,7 +238,7 @@ export default function ProgramsPage() {
            <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 w-full">
               <div className="lg:col-span-8 relative aspect-[16/9] lg:aspect-auto min-h-[500px] rounded-sm overflow-hidden group">
                  <Image 
-                    src="/images/impact-green-v2.png" 
+                    src="/images/afforestation_kokrajhar_1777399093856.png" 
                     alt="The Green Belt Initiative" 
                     fill 
                     className="object-cover grayscale group-hover:grayscale-0 transition-all duration-1000" 
@@ -260,7 +260,7 @@ export default function ProgramsPage() {
                  </Card>
                  <div className="relative aspect-square rounded-sm overflow-hidden grayscale">
                     <Image 
-                      src="/images/skills-lab-v2.png" 
+                      src="/images/community_sanctuary_kokrajhar_1777399275132.png" 
                       alt="Forest mapping" 
                       fill 
                       className="object-cover" 
@@ -312,7 +312,7 @@ export default function ProgramsPage() {
               <div className="lg:col-span-5 relative">
                  <Card level={2} className="p-0 border-none overflow-hidden rounded-sm relative aspect-[4/5] shadow-premium group">
                     <Image 
-                      src="/images/actual-sp-7.jpg" 
+                      src="/images/skills_lab_kokrajhar_1777399126349.png" 
                       alt="Skills training" 
                       fill 
                       className="object-cover grayscale group-hover:grayscale-0 transition-all duration-1000" 

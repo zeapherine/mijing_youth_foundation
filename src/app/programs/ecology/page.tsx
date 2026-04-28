@@ -79,7 +79,7 @@ export default function EcologyPage() {
               className="lg:col-span-7 relative aspect-video grayscale hover:grayscale-0 transition-all duration-1000 group shadow-premium"
             >
               <Image 
-                src="/images/impact-green-v2.png" 
+                src="/images/afforestation_kokrajhar_1777399093856.png" 
                 alt="Green Belt Mandate" 
                 fill 
                 className="object-cover rounded-sm" 
@@ -174,7 +174,7 @@ export default function EcologyPage() {
             className="lg:w-1/2 relative aspect-[4/5] order-1 lg:order-2 grayscale hover:grayscale-0 transition-all duration-1000 shadow-premium"
           >
             <Image 
-              src="/images/actual-sp-8.jpg" 
+              src="/images/community_sanctuary_kokrajhar_1777399275132.png" 
               alt="Community Environmental Action" 
               fill 
               className="object-cover rounded-sm" 

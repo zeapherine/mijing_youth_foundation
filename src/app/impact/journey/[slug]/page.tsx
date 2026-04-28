@@ -13,7 +13,7 @@ const JOURNEY_DATA = {
     label: "Vocational Excellence",
     title: "Flight Scholars: From Earth to Skies",
     subtitle: "A deep dive into how vocational aviation training is creating a new class of leaders in Northeast India.",
-    heroImage: "/images/hero-unified-v2.png",
+    heroImage: "/images/flight_scholars_kokrajhar_1777399110344.png",
     content: [
       {
         type: "p",
@@ -60,7 +60,7 @@ const JOURNEY_DATA = {
     label: "Ecological Stewardship",
     title: "The Green Guardian: Reclaiming the Valley",
     subtitle: "How youth-led afforestation is building the lungs of the region while creating a sustainable green economy.",
-    heroImage: "/images/impact-green-v2.png",
+    heroImage: "/images/afforestation_kokrajhar_1777399093856.png",
     content: [
       {
         type: "p",

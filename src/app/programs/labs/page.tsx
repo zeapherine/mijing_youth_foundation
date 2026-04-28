@@ -80,7 +80,7 @@ export default function LabsPage() {
               className="lg:col-span-7 relative aspect-video grayscale hover:grayscale-0 transition-all duration-1000 group shadow-premium"
             >
               <Image 
-                src="/images/aviation-lab.png" 
+                src="/images/aviation_lab.png" 
                 alt="Aviation Training Lab" 
                 fill 
                 className="object-cover rounded-sm" 
@@ -177,7 +177,7 @@ export default function LabsPage() {
             className="lg:w-1/2 relative aspect-[4/5] order-1 lg:order-2 grayscale hover:grayscale-0 transition-all duration-1000 shadow-premium"
           >
             <Image 
-              src="/images/hospitality-lab.png" 
+              src="/images/hospitality_lab.png" 
               alt="Hospitality Training Lab" 
               fill 
               className="object-cover rounded-sm" 

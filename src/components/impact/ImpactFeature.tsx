@@ -24,7 +24,7 @@ export const ImpactFeature = () => {
               className="relative aspect-[16/9] md:aspect-[21/9] rounded-sm overflow-hidden bg-parchment-deep border border-forest/5 group"
             >
             <Image 
-              src="/images/actual-sp-8.jpg" 
+              src="/images/flight_scholars_kokrajhar_1777399110344.png" 
               alt="The Collective Future" 
               fill 
               className="object-cover grayscale hover:grayscale-0 transition-all duration-1000 group-hover:scale-105"

@@ -12,6 +12,8 @@ import Link from "next/link"
 const heroImages = [
   "/images/actual-sp-4.jpg",
   "/images/actual-sp-7.jpg",
+  "/images/afforestation_kokrajhar_1777399093856.png",
+  "/images/mobile_health_clinic_kokrajhar_1777399018964.png",
   "/images/actual-sp-8.jpg",
   "/images/actual-sp-6.jpg"
 ];
@@ -165,7 +167,7 @@ export default function Home() {
                 whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true }}
               >
-                <Image src="/images/actual-sp-6.jpg" alt="Skill Development" fill className="object-cover rounded-sm shadow-premium grayscale hover:grayscale-0 transition-all duration-1000" />
+                <Image src="/images/skills_lab_kokrajhar_1777399126349.png" alt="Skill Development" fill className="object-cover rounded-sm shadow-premium grayscale hover:grayscale-0 transition-all duration-1000" />
               </motion.div>
             </div>
 
@@ -236,7 +238,7 @@ export default function Home() {
                 whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true }}
               >
-                <Image src="/images/impact-green-v2.png" alt="Afforestation" fill className="object-cover rounded-sm shadow-premium grayscale hover:grayscale-0 transition-all duration-1000" />
+                <Image src="/images/afforestation_kokrajhar_1777399093856.png" alt="Afforestation" fill className="object-cover rounded-sm shadow-premium grayscale hover:grayscale-0 transition-all duration-1000" />
               </motion.div>
             </div>
 
@@ -249,7 +251,7 @@ export default function Home() {
                 viewport={{ once: true }}
               >
                 <div className="absolute inset-0 bg-tertiary/10 rounded-sm -rotate-2" />
-                <Image src="/images/actual-sp-3.jpg" alt="Health and Social Services" fill className="object-cover rounded-sm shadow-premium z-10 grayscale hover:grayscale-0 transition-all duration-1000" />
+                <Image src="/images/mobile_health_clinic_kokrajhar_1777399018964.png" alt="Health and Social Services" fill className="object-cover rounded-sm shadow-premium z-10 grayscale hover:grayscale-0 transition-all duration-1000" />
               </motion.div>
               <motion.div 
                 className="lg:col-span-5 lg:order-2 space-y-8"

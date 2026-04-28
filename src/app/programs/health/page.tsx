@@ -79,7 +79,7 @@ export default function HealthPage() {
               className="lg:col-span-7 relative aspect-video grayscale hover:grayscale-0 transition-all duration-1000 group shadow-premium"
             >
               <Image 
-                src="/images/programs-health-v2.png" 
+                src="/images/mobile_health.png" 
                 alt="Mobile Health Clinic" 
                 fill 
                 className="object-cover rounded-sm" 
@@ -174,7 +174,7 @@ export default function HealthPage() {
             className="lg:w-1/2 relative aspect-[4/5] order-1 lg:order-2 grayscale hover:grayscale-0 transition-all duration-1000 shadow-premium"
           >
             <Image 
-              src="/images/actual-sp-2.jpg" 
+              src="/images/crisis_response.png" 
               alt="Medical Team Assistance" 
               fill 
               className="object-cover rounded-sm" 
