@@ -7,6 +7,7 @@ import Image from "next/image"
 import { motion, AnimatePresence } from "framer-motion"
 import { Laptop, Trophy, Heart, TreePine, Palette, Megaphone, Users, ArrowRight } from "lucide-react"
 import { fadeInUp, staggerContainer, editorialEasing } from "@/lib/animations"
+import { cn } from "@/lib/utils"
 import Link from "next/link"
 
 const heroImages = [
@@ -24,7 +25,8 @@ const sectors = [
     label: 'Athletics & Fraternity', 
     icon: Trophy, 
     description: '150+ active leaders',
-    pos: 'lg:top-32 lg:right-8 top-4 left-4', 
+    // Desktop: Top Right (Moved lower to avoid navbar)
+    pos: 'lg:top-[22%] lg:right-[10%] lg:left-auto lg:bottom-auto', 
     delay: 0.2
   },
   { 
@@ -32,7 +34,8 @@ const sectors = [
     label: 'Vocational Labs', 
     icon: Laptop, 
     description: '92% placement',
-    pos: 'lg:top-1/2 lg:left-4 lg:-translate-y-1/2 top-24 left-4',
+    // Desktop: Mid-Top Left
+    pos: 'lg:top-[35%] lg:left-[8%] lg:right-auto lg:bottom-auto',
     delay: 0.4
   },
   { 
@@ -40,7 +43,8 @@ const sectors = [
     label: 'Ecological Stewardship', 
     icon: TreePine, 
     description: '45k+ trees',
-    pos: 'lg:top-1/2 lg:right-4 lg:-translate-y-1/2 top-[11rem] left-4',
+    // Desktop: Mid-Bottom Right
+    pos: 'lg:top-[58%] lg:right-[5%] lg:left-auto lg:bottom-auto',
     delay: 0.6
   },
   { 
@@ -48,12 +52,13 @@ const sectors = [
     label: 'Health & Relief', 
     icon: Heart, 
     description: '1.2k lives',
-    pos: 'lg:bottom-32 lg:right-8 top-[16rem] left-4',
+    // Desktop: Bottom Right (Moved to right to avoid impact metric)
+    pos: 'lg:top-[75%] lg:right-[18%] lg:left-auto lg:bottom-auto',
     delay: 0.8
   }
 ];
 
-const floatingAnimation = {
+const floatingAnimation: any = {
   initial: { y: 0 },
   animate: {
     y: [-10, 10, -10],
@@ -145,7 +150,7 @@ export default function Home() {
 
           {/* Right: Immersive Imagery Slideshow (Above the fold) */}
           <motion.div 
-            className="relative w-full h-[60vh] lg:h-screen lg:min-h-[800px] overflow-hidden group bg-surface-low"
+            className="relative w-full h-auto min-h-screen lg:h-screen lg:min-h-[800px] py-12 lg:py-0 overflow-hidden group bg-surface-low"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 1.5, ease: editorialEasing }}
@@ -171,45 +176,55 @@ export default function Home() {
             {/* Gradient blend for smooth text transition on smaller mobile screens */}
             <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent opacity-80 lg:hidden z-10 pointer-events-none" />
             
-            {/* Floating Sector Cards */}
-            <div className="absolute inset-0 z-30 pointer-events-none">
-              {sectors.map((sector) => (
-                <motion.div
-                  key={sector.id}
-                  className={`absolute ${sector.pos} pointer-events-auto cursor-pointer`}
-                  initial={{ opacity: 0, scale: 0.8, y: 20 }}
-                  animate={{ opacity: 1, scale: 1, y: 0 }}
-                  transition={{ 
-                    duration: 0.8, 
-                    delay: sector.delay, 
-                    ease: editorialEasing 
-                  }}
-                  onClick={() => scrollToSection(sector.id)}
-                >
+            {/* Floating Sector Cards Container */}
+            <div className="relative lg:absolute lg:inset-0 z-30 pointer-events-none p-6 lg:p-0">
+              {/* 
+                MOBILE: Use a structured grid to GUARANTEE zero overlap.
+                DESKTOP: Revert to absolute coordinates for the "floating" scattered look.
+              */}
+              <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:relative lg:block lg:h-full w-full max-w-7xl mx-auto">
+                {sectors.map((sector) => (
                   <motion.div
-                    variants={floatingAnimation}
-                    initial="initial"
-                    animate="animate"
-                    className="bg-surface-lowest/60 backdrop-blur-xl p-3 lg:p-6 rounded-sm border border-primary/5 shadow-premium max-w-[160px] lg:max-w-[220px] group transition-all hover:bg-surface-lowest/80 active:scale-95"
+                    key={sector.id}
+                    className={cn(
+                      "pointer-events-auto cursor-pointer",
+                      "relative lg:absolute", // Relative in grid (mobile), absolute in space (desktop)
+                      sector.pos
+                    )}
+                    initial={{ opacity: 0, scale: 0.8, y: 20 }}
+                    animate={{ opacity: 1, scale: 1, y: 0 }}
+                    transition={{ 
+                      duration: 0.8, 
+                      delay: sector.delay, 
+                      ease: editorialEasing 
+                    }}
+                    onClick={() => scrollToSection(sector.id)}
                   >
-                    <div className="flex items-start gap-2 lg:gap-4">
-                      <div className="p-2 lg:p-3 bg-primary/5 rounded-sm text-tertiary group-hover:bg-tertiary group-hover:text-on-tertiary transition-colors">
-                        <sector.icon size={16} className="lg:hidden" />
-                        <sector.icon size={20} className="hidden lg:block" />
+                    <motion.div
+                      variants={floatingAnimation}
+                      initial="initial"
+                      animate="animate"
+                      className="bg-surface-lowest/70 backdrop-blur-xl p-4 lg:p-6 rounded-sm border border-primary/5 shadow-premium w-full max-w-[240px] lg:max-w-[280px] group transition-all hover:bg-surface-lowest/90 active:scale-95 mx-auto lg:mx-0"
+                    >
+                      <div className="flex items-start gap-3 lg:gap-4">
+                        <div className="p-2 lg:p-3 bg-primary/5 rounded-sm text-tertiary group-hover:bg-tertiary group-hover:text-on-tertiary transition-colors">
+                          <sector.icon size={16} className="lg:hidden" />
+                          <sector.icon size={20} className="hidden lg:block" />
+                        </div>
+                        <div className="space-y-1">
+                          <p className="text-[8px] lg:text-[10px] font-black uppercase tracking-widest text-primary/40 leading-none">Our Focus</p>
+                          <p className="text-[10px] lg:text-sm font-black text-primary leading-tight">{sector.label}</p>
+                          <p className="text-[8px] lg:text-[10px] font-bold italic text-tertiary">{sector.description}</p>
+                        </div>
                       </div>
-                      <div className="space-y-0.5 lg:space-y-1">
-                        <p className="text-[8px] lg:text-[10px] font-black uppercase tracking-widest text-primary/40 leading-none">Our Focus</p>
-                        <p className="text-[10px] lg:text-sm font-black text-primary leading-tight">{sector.label}</p>
-                        <p className="text-[8px] lg:text-[10px] font-bold italic text-tertiary">{sector.description}</p>
-                      </div>
-                    </div>
+                    </motion.div>
                   </motion.div>
-                </motion.div>
-              ))}
+                ))}
+              </div>
             </div>
 
             {/* Floating Impact Metric */}
-            <div className="absolute bottom-8 right-8 lg:bottom-12 lg:left-12 lg:right-auto bg-surface-lowest/90 backdrop-blur-md p-8 rounded-sm max-w-[280px] shadow-premium border-l-4 border-tertiary z-20">
+            <div className="relative lg:absolute mt-12 lg:mt-0 bottom-auto lg:bottom-12 left-auto lg:left-12 bg-surface-lowest/90 backdrop-blur-md p-8 rounded-sm max-w-[280px] shadow-premium border-l-4 border-tertiary z-20 mx-auto lg:mx-0 pointer-events-auto">
                <p className="text-5xl font-black text-primary leading-none mb-2">1.2k</p>
                <p className="text-xs font-black uppercase tracking-widest text-primary/50 mb-2">Lives Impacted To Date</p>
                <p className="text-body-sm text-primary/70 italic">&quot;We don't just build programs; we build futures.&quot;</p>
