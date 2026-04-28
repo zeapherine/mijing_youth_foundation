@@ -17,8 +17,11 @@ import {
 } from "lucide-react"
 import { fadeInUp, staggerContainer } from "@/lib/animations"
 import Link from "next/link"
+import { eventsData } from "@/data/events"
 
 export default function SportsPage() {
+  const upcomingEvent = eventsData.find(e => e.slug === "northeast-open-3x3-2026") || eventsData[0];
+
   return (
     <main className="min-h-screen bg-background text-foreground selection:bg-tertiary/20 selection:text-foreground">
       
@@ -79,7 +82,7 @@ export default function SportsPage() {
               className="lg:col-span-7 relative aspect-video grayscale hover:grayscale-0 transition-all duration-1000 group shadow-premium"
             >
               <Image 
-                src="/images/actual-sp-3.jpg" 
+                src="/images/gallery/ne-open-1.png" 
                 alt="Basketball Tournament" 
                 fill 
                 className="object-cover rounded-sm" 
@@ -174,7 +177,7 @@ export default function SportsPage() {
             className="lg:w-1/2 relative aspect-[4/5] order-1 lg:order-2 grayscale hover:grayscale-0 transition-all duration-1000 shadow-premium"
           >
             <Image 
-              src="/images/actual-sp-5.jpg" 
+              src="/images/gallery/sports-fest-1.png" 
               alt="Track and Field" 
               fill 
               className="object-cover rounded-sm" 
@@ -331,10 +334,10 @@ export default function SportsPage() {
 
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-8">
             {[
-              { src: "/images/actual-sp-5.jpg", span: "lg:col-span-2 lg:row-span-2" },
-              { src: "/images/actual-sp-4.jpg", span: "lg:col-span-1" },
-              { src: "/images/actual-sp-6.jpg", span: "lg:col-span-1" },
-              { src: "/images/actual-sp-7.jpg", span: "lg:col-span-2" },
+              { src: "/images/gallery/republic-1.png", span: "lg:col-span-2 lg:row-span-2" },
+              { src: "/images/gallery/ne-open-1.png", span: "lg:col-span-1" },
+              { src: "/images/gallery/youth-league-1.png", span: "lg:col-span-1" },
+              { src: "/images/gallery/grassroots-1.png", span: "lg:col-span-2" },
             ].map((img, i) => (
               <motion.div
                 key={i}
@@ -368,18 +371,22 @@ export default function SportsPage() {
                  FIELD <br/> READY.
                </h2>
                <p className="text-2xl font-medium leading-tight max-w-lg border-l-4 border-on-primary/20 pl-8 text-on-primary/80">
-                 Registrations for the upcoming Winter League are open. Gather your team and prepare for competition.
+                 Registrations for the {upcomingEvent.title} are open. {upcomingEvent.description.split('.')[0]}.
                </p>
-               <Button size="xl" className="h-20 px-12 text-xl font-black uppercase tracking-widest bg-tertiary text-on-tertiary hover:bg-background hover:text-primary transition-all">
-                  Register Team <ArrowRight className="ml-4 h-6 w-6" />
-               </Button>
+               <Link href={`/events/${upcomingEvent.slug}`}>
+                  <Button 
+                    className="py-10 px-12 text-xl font-black uppercase tracking-widest bg-tertiary text-on-tertiary hover:bg-on-primary hover:text-primary transition-all duration-500 rounded-full shadow-2xl hover:shadow-tertiary/40 flex items-center justify-center gap-6 group"
+                  >
+                    Register Team <ArrowRight className="h-8 w-8 group-hover:translate-x-3 transition-transform duration-300" />
+                  </Button>
+               </Link>
             </div>
 
             <div className="grid grid-cols-1 gap-6 relative z-10">
                {[
-                 { icon: <Calendar />, title: "Next Event", val: "Nov 20, 2025" },
-                 { icon: <Trophy />, title: "Tournament", val: "Kokrajhar Cup" },
-                 { icon: <MapPin />, title: "Venue", val: "SAI Complex" }
+                 { icon: <Calendar />, title: "Next Event", val: upcomingEvent.startDate },
+                 { icon: <Trophy />, title: "Tournament", val: upcomingEvent.title.replace('ALL ', '') },
+                 { icon: <MapPin />, title: "Venue", val: upcomingEvent.venue }
                ].map((item, i) => (
                  <div key={i} className="bg-on-primary/5 backdrop-blur-md p-10 flex justify-between items-center border border-on-primary/10 group hover:bg-background hover:text-primary transition-all duration-300 rounded-sm">
                     <div className="flex items-center gap-6">

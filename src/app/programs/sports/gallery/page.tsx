@@ -9,21 +9,48 @@ import { fadeInUp, staggerContainer } from "@/lib/animations"
 
 const categories = [
   "All",
-  "3x3 Tournaments",
-  "5x5 Open League",
-  "Training & Community"
+  "Republic Day Tournament",
+  "Northeast Open 3x3",
+  "Mijing Youth League",
+  "Grassroots & Community"
 ]
 
 const galleryItems = [
-  { id: 1, src: "/images/actual-sp-1.jpg", category: "Training & Community", title: "Drills at SAI Complex" },
-  { id: 2, src: "/images/actual-sp-2.jpg", category: "3x3 Tournaments", title: "CIT Kokrajhar Finals" },
-  { id: 3, src: "/images/actual-sp-3.jpg", category: "5x5 Open League", title: "Damra Circuit Focus" },
-  { id: 4, src: "/images/actual-sp-4.jpg", category: "3x3 Tournaments", title: "Republic Day Action" },
-  { id: 5, src: "/images/actual-sp-5.jpg", category: "5x5 Open League", title: "Goalpara Semi-Finals" },
-  { id: 6, src: "/images/actual-sp-6.jpg", category: "3x3 Tournaments", title: "High-Intensity Play" },
-  { id: 7, src: "/images/actual-sp-7.jpg", category: "Training & Community", title: "Grassroots Outreach" },
-  { id: 8, src: "/images/actual-sp-8.jpg", category: "Training & Community", title: "Community Field Meet" },
+  { id: 1, src: "/images/gallery/republic-1.png", category: "Republic Day Tournament", title: "Opening Ceremony Layup" },
+  { id: 2, src: "/images/gallery/republic-2.png", category: "Republic Day Tournament", title: "Youth Talent Display" },
+  { id: 3, src: "/images/gallery/republic-3.png", category: "Republic Day Tournament", title: "Championship Intensity" },
+  { id: 4, src: "/images/gallery/ne-open-1.png", category: "Northeast Open 3x3", title: "High-Octane 3x3 Action" },
+  { id: 5, src: "/images/gallery/ne-awards-1.png", category: "Northeast Open 3x3", title: "Podium Excellence" },
+  { id: 6, src: "/images/gallery/youth-league-1.png", category: "Mijing Youth League", title: "League Semi-Final Drive" },
+  { id: 7, src: "/images/gallery/sports-fest-1.png", category: "Mijing Youth League", title: "Festival Spirit" },
+  { id: 8, src: "/images/gallery/grassroots-1.png", category: "Grassroots & Community", title: "Coaching the Future" },
+  { id: 9, src: "/images/gallery/community-meet-1.png", category: "Grassroots & Community", title: "Community Basketball Meet" },
+  { id: 10, src: "/images/gallery/ne-open-1.png", category: "Northeast Open 3x3", title: "Fast-Break Momentum" },
+  { id: 11, src: "/images/gallery/republic-2.png", category: "Republic Day Tournament", title: "Final Buzzer Celebration" },
 ]
+
+const eventDetails: Record<string, { description: string, date: string, location: string }> = {
+  "Republic Day Tournament": {
+    description: "Our annual flagship tournament celebrating national spirit through sports.",
+    date: "January 26, 2026",
+    location: "CIT Kokrajhar"
+  },
+  "Northeast Open 3x3": {
+    description: "The premier 3x3 basketball championship in the Northeast region.",
+    date: "March 1-3, 2026",
+    location: "Kokrajhar City Center"
+  },
+  "Mijing Youth League": {
+    description: "Competitive 5v5 league fostering professional growth and teamwork.",
+    date: "Ongoing 2025-26",
+    location: "Various Venues"
+  },
+  "Grassroots & Community": {
+    description: "Bringing sports to every corner, focusing on rural development and fun.",
+    date: "Year-round",
+    location: "Village Circuits"
+  }
+}
 
 export default function SportsGallery() {
   const [activeCategory, setActiveCategory] = useState("All")
@@ -32,6 +59,8 @@ export default function SportsGallery() {
   const filteredItems = activeCategory === "All" 
     ? galleryItems 
     : galleryItems.filter(item => item.category === activeCategory)
+
+  const currentEvent = activeCategory !== "All" ? eventDetails[activeCategory] : null
 
   return (
     <main className="min-h-screen bg-background text-foreground py-32 md:py-48 px-6 md:px-12 lg:px-16 overflow-hidden">
@@ -56,15 +85,43 @@ export default function SportsGallery() {
               className="font-heading font-black tracking-tighter leading-[0.8] text-primary"
               style={{ fontSize: 'clamp(4rem, 12vw, 10rem)' }}
             >
-              VISUAL <br/> 
-              <span className="text-tertiary font-serif italic lowercase font-light tracking-tight opacity-80">archives.</span>
+              {activeCategory === "All" ? "VISUAL" : activeCategory.split(' ')[0]} <br/> 
+              <span className="text-tertiary font-serif italic lowercase font-light tracking-tight opacity-80">
+                {activeCategory === "All" ? "archives." : activeCategory.split(' ').slice(1).join(' ')}
+              </span>
             </motion.h1>
           </div>
           
           <div className="lg:col-span-4 pb-4">
-             <p className="text-xl text-primary/60 font-medium italic border-l-4 border-tertiary/20 pl-8 max-w-sm">
-                Capturing the sweat, the spirit, and the community of our basketball circuits.
-             </p>
+             <AnimatePresence mode="wait">
+               {currentEvent ? (
+                 <motion.div
+                   key={activeCategory}
+                   initial={{ opacity: 0, x: 20 }}
+                   animate={{ opacity: 1, x: 0 }}
+                   exit={{ opacity: 0, x: -20 }}
+                   className="space-y-4 border-l-4 border-tertiary/20 pl-8"
+                 >
+                    <p className="text-xl text-primary/60 font-medium italic">
+                      {currentEvent.description}
+                    </p>
+                    <div className="flex flex-wrap gap-4 text-[10px] font-black uppercase tracking-widest text-primary/40">
+                      <span>{currentEvent.date}</span>
+                      <span>•</span>
+                      <span>{currentEvent.location}</span>
+                    </div>
+                 </motion.div>
+               ) : (
+                 <motion.p 
+                   key="default"
+                   initial={{ opacity: 0 }}
+                   animate={{ opacity: 1 }}
+                   className="text-xl text-primary/60 font-medium italic border-l-4 border-tertiary/20 pl-8 max-w-sm"
+                 >
+                    Capturing the sweat, the spirit, and the community of our basketball circuits.
+                 </motion.p>
+               )}
+             </AnimatePresence>
           </div>
         </div>
       </div>

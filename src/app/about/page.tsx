@@ -36,7 +36,7 @@ export default function About() {
             >
               Building a <br />
               <span className="text-tertiary italic font-serif opacity-80">Legacy</span> of <br />
-              Empowerment.
+              mijing.
             </motion.h1>
             
             <motion.div 
@@ -44,7 +44,7 @@ export default function About() {
               className="space-y-8 border-l-4 border-tertiary/20 pl-8"
             >
               <p className="text-body-lg text-primary/60 max-w-xl font-medium leading-relaxed italic">
-                &quot;The Mijing Youth Foundation is more than an organization; it is a movement of hope, born from the urgent need to bridge the gap between untapped potential and systemic opportunity in Northeast India.&quot;
+                &quot;The mijing Youth Foundation is more than an organization; it is a movement of hope, born from the urgent need to bridge the gap between untapped potential and systemic opportunity in Northeast India.&quot;
               </p>
               <div className="flex flex-wrap gap-8 pt-4">
                 <div className="space-y-1">
@@ -68,8 +68,8 @@ export default function About() {
             className="lg:col-span-4 relative aspect-[4/5] rounded-sm overflow-hidden shadow-premium group mx-6 lg:mx-0"
           >
             <Image 
-              src="/images/actual-sp-4.jpg"
-              alt="Mijing Youth Foundation Leadership"
+              src="/images/gallery/community-meet-1.png"
+              alt="mijing Youth Foundation Leadership"
               fill
               className="object-cover grayscale transition-all duration-1000 group-hover:grayscale-0 group-hover:scale-105"
             />
@@ -100,14 +100,17 @@ export default function About() {
                </p>
             </div>
 
-            <div className="lg:col-span-8 space-y-12">
+            <div className="lg:col-span-8 space-y-12 pr-6 lg:pr-12">
                <div className="prose prose-xl prose-primary max-w-none space-y-8">
                  <p className="text-xl lg:text-2xl font-bold text-primary leading-relaxed">
-                   Headquartered in Kokrajhar, the cultural heart of the Bodoland Territorial Region (BTR) in Assam, the Mijing Youth Foundation was established in 2024 with a singular, unshakeable directive: to serve as an institutional catalyst for youth-led socio-economic transformation.
+                   Headquartered in Kokrajhar, the cultural heart of the Bodoland Territorial Region (BTR) in Assam, the mijing Youth Foundation was established in 2024 with a singular, unshakeable directive: to serve as an institutional catalyst for youth-led socio-economic transformation.
                  </p>
                  <div className="h-px w-32 bg-tertiary" />
                  <p className="text-body-lg text-primary/70 leading-relaxed font-medium">
-                   The name &quot;Mijing&quot; translates to &quot;Hope&quot;—a sentiment that serves as the foundation of every initiative we launch. We recognized that while the youth of Assam possess unparalleled resilience and talent, they often lack the systemic scaffolding required to convert that potential into tangible success. 
+                   The name &quot;mijing&quot; translates to &quot;Hope&quot;—a sentiment that serves as the foundation of every initiative we launch. We recognized that while the youth of Assam possess unparalleled resilience and talent, they often lack the systemic scaffolding required to convert that potential into tangible success. 
+                 </p>
+                 <p className="text-body-lg text-primary/70 leading-relaxed font-medium">
+                   Our founding philosophy is rooted in the belief that the prosperity of a region is directly proportional to the strength and agency of its youth. By focusing on the unique socio-cultural landscape of the Northeast, we aim to build a future that is both modern and traditionally grounded.
                  </p>
                  <p className="text-body-lg text-primary/70 leading-relaxed font-medium">
                    From our inception, we have operated as a non-partisan, non-sectarian force, dedicated to the holistic empowerment of young minds without discrimination of caste, race, creed, religion, or gender. We began by identifying the most critical gaps in rural development—unemployment, ecological degradation, and social fragmentation—and engineered a multi-pronged approach to address them simultaneously.
@@ -188,7 +191,7 @@ export default function About() {
                <h2 className="font-heading font-black tracking-tight uppercase leading-[0.9] text-primary" style={{ fontSize: 'var(--display-md)' }}>Institutional <br/> Objectives</h2>
                <p className="text-body-lg text-primary/50 font-medium border-l-4 border-tertiary pl-8">A formal distillation of our Memorandum of Association (MOA) and the legal pillars of our operation.</p>
             </div>
-            <div className="text-xs font-black uppercase tracking-[0.3em] text-primary/20 writing-mode-vertical hidden lg:block">
+            <div className="text-xs font-black uppercase tracking-[0.3em] text-primary/20 writing-mode-vertical hidden lg:block overflow-visible">
                MANDATE 2024 / REGIONAL IMPACT
             </div>
           </motion.div>
@@ -217,14 +220,22 @@ export default function About() {
                 title: "Emergency Response", 
                 desc: "Acting as first responders during natural calamities—floods, fires, and epidemics—to provide food, medicine, and logistical support."
               },
-              { 
-                title: "Social Advocacy", 
-                desc: "Relentless combat against human trafficking, child labor, illiteracy, and archaic superstitions through direct community intervention."
-              },
-              { 
-                title: "Institutional Alignment", 
-                desc: "Collaborating with District Administrations and Government bodies to implement Swachh Bharat and other national welfare schemes."
-              }
+               { 
+                 title: "Social Advocacy", 
+                 desc: "Relentless combat against human trafficking, child labor, illiteracy, and archaic superstitions through direct community intervention."
+               },
+               { 
+                 title: "Institutional Alignment", 
+                 desc: "Collaborating with District Administrations and Government bodies to implement Swachh Bharat and other national welfare schemes."
+               },
+               { 
+                 title: "Cultural Preservation", 
+                 desc: "Fiercely protecting the ethnic traditional roots, tribal songs, culture, and native ecosystem of our region."
+               },
+               { 
+                 title: "Digital Sovereignty", 
+                 desc: "Equipping rural youth with advanced digital tools and internet literacy to participate in the global digital economy."
+               }
             ].map((obj, i) => (
               <div key={i} className="space-y-6 group">
                 <div className="h-px w-full bg-primary/10 group-hover:bg-tertiary transition-colors" />
@@ -315,7 +326,7 @@ export default function About() {
             viewport={{ once: true }}
           >
             {[
-              { name: "Agwma Basumatary", role: "President", image: "/images/actual-sp-1.jpg" },
+              { name: "Agwma Basumatary", role: "President", image: "/images/gallery/republic-1.png" },
               { name: "Aizak Mashahary", role: "Vice-President", image: "/images/actual-sp-3.jpg" },
               { name: "John Basumatary", role: "Secretary", image: "/images/actual-sp-5.jpg" },
               { name: "Raja Mashahary", role: "Treasurer", image: "/images/actual-sp-7.jpg" }

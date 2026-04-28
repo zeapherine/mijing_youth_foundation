@@ -110,9 +110,13 @@ export default function GetInvolvedPage() {
                 </div>
               </div>
               
-              <Link href={path.link} className="mt-16">
-                <Button size="xl" className="w-full h-20 text-lg font-black uppercase tracking-widest bg-primary text-on-primary hover:bg-tertiary hover:text-on-tertiary transition-all">
-                  {path.cta} <ArrowRight className="ml-4 h-6 w-6" />
+              <Link href={path.link} className="mt-16 w-full block">
+                <Button 
+                  variant="outline"
+                  className="w-full h-auto py-6 px-6 md:px-8 text-base md:text-lg font-black uppercase tracking-wider border-2 border-primary text-primary hover:bg-primary hover:text-on-primary transition-all duration-500 group/btn rounded-sm shadow-[4px_4px_0px_0px_rgba(27,67,50,1)] hover:shadow-none hover:translate-x-[2px] hover:translate-y-[2px] flex items-center justify-center gap-4 whitespace-normal text-center"
+                >
+                  <span>{path.cta}</span>
+                  <ArrowRight className="h-5 w-5 md:h-6 md:w-6 shrink-0 group-hover/btn:translate-x-2 transition-transform duration-300" />
                 </Button>
               </Link>
             </motion.div>
@@ -143,14 +147,14 @@ export default function GetInvolvedPage() {
             </div>
           </div>
           
-          <div className="relative aspect-square grayscale border-[20px] border-on-primary/5 rounded-sm">
+          <div className="relative aspect-square grayscale hover:grayscale-0 transition-all duration-1000 border-[20px] border-on-primary/5 rounded-sm overflow-hidden group">
              <Image 
-                src="/images/actual-sp-1.jpg" 
-                alt="Impact in the field" 
+                src="/images/gallery/grassroots-1.png" 
+                alt="Grassroots impact" 
                 fill 
-                className="object-cover" 
+                className="object-cover group-hover:scale-105 transition-transform duration-700" 
              />
-             <div className="absolute inset-0 bg-primary/20 mix-blend-multiply" />
+             <div className="absolute inset-0 bg-primary/20 mix-blend-multiply group-hover:bg-transparent transition-colors duration-700" />
           </div>
         </div>
         <div className="absolute top-0 right-0 w-1/3 h-full border-l border-on-primary/10 bg-on-primary opacity-[0.02] -skew-x-12" />

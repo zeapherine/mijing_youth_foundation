@@ -42,7 +42,7 @@ export const eventsData: MyfEvent[] = [
     status: "upcoming",
     prizePool: "₹1,00,000",
     consolationPrize: "₹20,000 (Top 2 Mens: ₹6,000 each | Top 2 Womens: ₹4,000 each)",
-    coverImage: "/images/actual-sp-4.jpg",
+    coverImage: "/images/gallery/ne-open-1.png",
     categories: [
       {
         title: "Men Category",
@@ -66,10 +66,10 @@ export const eventsData: MyfEvent[] = [
     collaborators: ["BTC GOV", "Gurukul National School, Basugaon", "Kushboo Kids Pre School, Kokrajhar", "IIAHM"],
     // Placeholder image array for an image gallery on the detail page
     bannerImages: [
-      "/images/actual-sp-1.jpg",
-      "/images/actual-sp-6.jpg",
-      "/images/actual-sp-7.jpg", 
-      "/images/actual-sp-8.jpg"
+      "/images/gallery/ne-open-1.png",
+      "/images/gallery/ne-awards-1.png",
+      "/images/gallery/youth-league-1.png", 
+      "/images/gallery/republic-2.png"
     ]
   },
 ];

@@ -10,12 +10,12 @@ import { fadeInUp, staggerContainer, editorialEasing } from "@/lib/animations"
 import Link from "next/link"
 
 const heroImages = [
-  "/images/actual-sp-4.jpg",
-  "/images/actual-sp-7.jpg",
+  "/images/gallery/republic-1.png",
+  "/images/gallery/ne-open-1.png",
   "/images/afforestation_kokrajhar_1777399093856.png",
   "/images/mobile_health_clinic_kokrajhar_1777399018964.png",
-  "/images/actual-sp-8.jpg",
-  "/images/actual-sp-6.jpg"
+  "/images/gallery/youth-league-1.png",
+  "/images/gallery/republic-3.png"
 ];
 
 import { FeaturedEvent } from "@/components/impact/FeaturedEvent"
@@ -57,7 +57,7 @@ export default function Home() {
               className="font-heading font-black tracking-tighter leading-[0.85] text-primary xl:text-[6rem] lg:text-[5rem] text-[3.5rem] sm:text-[4rem]" 
             >
               Investing in <br />
-              <span className="italic serif opacity-80 text-tertiary">Youth</span> <br />
+              <span className="italic serif opacity-80 text-tertiary">mijing</span> <br />
               Since 2024.
             </motion.h1>
             
@@ -336,24 +336,21 @@ export default function Home() {
               viewport={{ once: true }}
             >
                <h2 className="font-heading font-black tracking-tight uppercase leading-[0.85] text-primary" style={{ fontSize: 'var(--display-md)' }}>Join the <br/><span className="italic serif opacity-60">Collective.</span></h2>
-               <p className="text-body-lg text-primary/60 max-w-xl mx-auto font-medium border-t-2 border-tertiary/20 pt-8 mt-8">Receive monthly insights from the field, volunteer opportunities, and stories of transformation.</p>
+               <p className="text-body-lg text-primary/60 max-w-xl mx-auto font-medium border-t-2 border-tertiary/20 pt-8 mt-8">Lend your voice, your time, and your expertise to our mission. Join a growing community of leaders dedicated to the sustainable growth of our region.</p>
             </motion.div>
             
             <motion.div 
-              className="max-w-2xl mx-auto flex flex-col md:flex-row gap-4"
+              className="flex justify-center"
               variants={fadeInUp}
               initial="initial"
               whileInView="animate"
               viewport={{ once: true }}
             >
-               <input 
-                  type="email" 
-                  placeholder="name@foundation.org" 
-                  className="flex-1 px-8 py-5 rounded-sm bg-surface-low border border-primary/10 text-primary focus:outline-none font-bold placeholder:text-primary/20"
-               />
-               <Button className="px-12 h-16 text-primary font-black uppercase tracking-widest transition-all">
-                  Subscribe
-               </Button>
+               <Link href="/get-involved">
+                 <Button size="xl" className="px-16 h-24 text-2xl font-black uppercase tracking-[0.2em] bg-primary text-on-primary hover:bg-tertiary hover:text-on-tertiary transition-all shadow-premium group">
+                    Get Involved <ArrowRight className="ml-4 h-8 w-8 group-hover:translate-x-2 transition-transform" />
+                 </Button>
+               </Link>
             </motion.div>
          </div>
 
